@@ -1,7 +1,7 @@
-## Prerequisite
+# Prerequisite
 You will need an Arduino UNO/Nano board based on the ATmega328P. Download the latest Grbl firmware from the [Grbl  repository](https://github.com/grbl/grbl), and [flash Grbl to an Arduino](https://github.com/grbl/grbl/wiki/Flashing-Grbl-to-an-Arduino).
 
-### Running without using Arduino board
+## Running without using Arduino board
 If you don't have an Arduino, check out [grbl-sim](https://github.com/grbl/grbl-sim) and follow the instructions below to compile Grbl into an executable for your computer:
 
 1. Clone this repository into the directory containing the Grbl source code (i.e. `<repo>/grbl/`), like so:
@@ -33,11 +33,11 @@ If you don't have an Arduino, check out [grbl-sim](https://github.com/grbl/grbl-
 
   ![ttyFAKE](https://raw.githubusercontent.com/cheton/cnc.js/master/media/ttyFAKE.png)
 
-## Wireless Communication
+# Wireless Communication
 There is a simple and cheap solution without using a USB cable. Read this article if you want to connect to Arduino using WiFi: https://gist.github.com/ajfisher/1fdbcbbf96b7f2ba73cd
 ![WaveShare WIFI-LPT100 / WIFI400](https://raw.githubusercontent.com/cheton/cnc.js/master/media/WS_WIFI-LPT100_WIFI400.jpg)
 
-## Display Language
+# Display Language
 You can change the display language from the <b>Settings</b> menu, it will set the `lang` query string parameter: `?lang={locale}`
 
 Here is a list of currently supported locales:
@@ -55,5 +55,9 @@ zh-tw  | 中文 (繁體)
 
 We greatly appreciate your contributions for translation. Update resource strings in `web/i18n/{lang}/resource.json` and submit your pull request (PR) to make translation better.
 
-## Widgets
-TBD
+# Control Panel
+## Connection
+## Console
+## Axes
+## GCode
+## GCode Viewer
