@@ -1,5 +1,0 @@
-## [User Guide](https://github.com/cheton/cnc.js/wiki/User-Guide)
-* [Prerequisite](https://github.com/cheton/cnc.js/wiki/User-Guide#prerequisite)
-* [Wireless Communication](https://github.com/cheton/cnc.js/wiki/User-Guide#wireless-communication)
-* [Display Langauge](https://github.com/cheton/cnc.js/wiki/User-Guide#display-language)
-* [Web Console](https://github.com/cheton/cnc.js/wiki/User-Guide#web-console)
