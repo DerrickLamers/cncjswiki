@@ -1,4 +1,3 @@
-## [Home](https://github.com/cheton/cnc.js/wiki/Home)
 ## [User Guide](https://github.com/cheton/cnc.js/wiki/User-Guide)
 * [Prerequisite](https://github.com/cheton/cnc.js/wiki/User-Guide#prerequisite)
 * [Wireless Communication](https://github.com/cheton/cnc.js/wiki/User-Guide#wireless-communication)
