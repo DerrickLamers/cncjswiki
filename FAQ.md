@@ -1,5 +1,5 @@
 ## How do I connect to an Arduino using WiFi? 
-![WaveShare WIFI-LPT100 / WIFI400](https://raw.githubusercontent.com/cheton/cnc.js/master/media/WS_WIFI-LPT100_WIFI400.jpg)
+![WaveShare WIFI-LPT100 / WIFI400](https://raw.githubusercontent.com/cheton/cnc.js/master/media/WS_WIFI-LPT100_WIFI400.png)
 
 These articles might be useful if you want to connect to Arduino using WiFi: 
 * [WiFi your nodebot](https://gist.github.com/ajfisher/1fdbcbbf96b7f2ba73cd)
