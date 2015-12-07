@@ -1,5 +1,44 @@
-## Cannot install serialport with Mac OS X 10.11
+## Install native addons with Node.js v4
+Source: https://github.com/fivdi/onoff/wiki/Node.js-v4-and-native-addons
 
+### Installing gcc/g++ 4.8 on Raspbian Wheezy for the Raspberry Pi
+Run `apt-get update` to update the system's package list:
+```bash
+sudo apt-get update
+```
+
+Install gcc/g++ 4.8 as below:
+```bash
+sudo apt-get install gcc-4.8 g++-4.8
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.6 20
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 50
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.6 20
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
+```
+Check to see which versions of gcc/g++ are installed:
+```bash
+pi@raspberrypi ~ $ gcc --version
+gcc (Raspbian 4.8.2-21~rpi3rpi1) 4.8.2
+Copyright (C) 2013 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+pi@raspberrypi ~ $ g++ --version
+g++ (Raspbian 4.8.2-21~rpi3rpi1) 4.8.2
+Copyright (C) 2013 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+```
+
+It should now be able to install native addons with io.js v3 or Node.js v4 or higher.
+
+If required, use the following commands to switch between the different version gcc/g++, like so:
+```bash
+sudo update-alternatives --config gcc
+sudo update-alternatives --config g++
+```
+
+## Cannot install serialport with Mac OS X 10.11
 If your Mac OS X is El Capitan (version: 10.11), and the [installation](https://github.com/cheton/cnc.js#installation) fails with error `ld: library not found for -lgcc_s.10.5`, check out the following ways:
 - Check out [Installing the Xcode Command Line Tools](https://developer.xamarin.com/guides/testcloud/calabash/configuring/osx/install-xcode-command-line-tools/).
 - If you do not have Xcode installed, just install Xcode 7 from App Store.
