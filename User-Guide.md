@@ -21,7 +21,7 @@ You can use the ShuttleXpress jog dial to work with a CNC controller. The Shuttl
 
 To work with cnc.js, configure three buttons to select/deselect X/Y/Z axis, and another one button to switch the distance value. Set turn jog dial left (CCW) to jog backward/down, and set turn jog right (CW) to jog forward/up.
 
-### ShuttleXpress Settings:
+### ShuttleXpress Settings
 
 **Buttons**
 * Button 2 - Select/Deselect X Axis<br>
