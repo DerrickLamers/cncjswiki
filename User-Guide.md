@@ -30,7 +30,7 @@ To work with cnc.js, configure three buttons to select/deselect X/Y/Z axis, and 
   Type key: `ctrl + alt + command + y`
 * Button 4 - Select/Deselect Z Axis<br>
   Type key: `ctrl + alt + command + z`
-* Button 5 - Switch Distance (1, 0.1, 0.01, 0.001, or custom value) <br>
+* Button 5 - Switch Jog Distance (1, 0.1, 0.01, 0.001, or custom value) <br>
   Type key: `ctrl + alt + command + =`
 
 **Jog**
