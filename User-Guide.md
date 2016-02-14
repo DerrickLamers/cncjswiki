@@ -99,7 +99,7 @@ $120=250.000 (x accel, mm/sec^2)
 $121=250.000 (y accel, mm/sec^2)
 $122=50.000 (z accel, mm/sec^2)
 ```
-In general, higher acceleration speed can significantly reduce humming sound when accelerating and decelerating.
+In general, higher acceleration (mm/sec^2) can significantly reduce humming sound when accelerating and decelerating.
 
 In addition, you can click on the <kbd>Edit</kbd> button at the top of the Axes widget to configure Shuttle Settings. Adjust the following settings according to your preferences:
 * Feed Rate Range: 100-2500 mm/min (default: 500-2000 mm/min)
