@@ -102,7 +102,9 @@ $121=250.000 (y accel, mm/sec^2)
 $122=50.000 (z accel, mm/sec^2)
    :    :
 ok
-> $120=250
+> $110=2500.000
+ok
+> $120=250.00
 ok
 ```
 In general, higher acceleration (mm/sec^2) can significantly reduce humming sound when accelerating and decelerating.
