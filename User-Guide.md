@@ -92,6 +92,8 @@ Adjust the keystroke repeat rate to **10 times per second** for all Shuttle Zone
 #### Reduce humming sound when accelerating and decelerating
 If you'd hear a strange humming noise during acceleration and deceleration, try to increase the max feed rate and the acceleration speed, and make sure it will not miss steps. Use '$'-commands to tweak Grbl system settings, like below:
 ```
+> $$
+  :  :  :
 $110=2500.000 (x max rate, mm/min)
 $111=2500.000 (y max rate, mm/min)
 $112=500.000 (z max rate, mm/min)
