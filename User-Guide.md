@@ -88,3 +88,20 @@ Adjust the keystroke repeat rate to **10 times per second** for all Shuttle Zone
   <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>command</kbd> + <kbd>6</kbd>
 * Shuttle Zone 7<br>
   <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>command</kbd> + <kbd>7</kbd>
+
+#### Reduce humming sound when accelerating and decelerating
+If you'd hear a strange humming noise during acceleration and deceleration, try to increase the max feed rate and the acceleration speed, and make sure it will not miss steps. Use '$'-commands to tweak Grbl system settings, like below:
+```
+$110=2500.000 (x max rate, mm/min)
+$111=2500.000 (y max rate, mm/min)
+$112=500.000 (z max rate, mm/min)
+$120=250.000 (x accel, mm/sec^2)
+$121=250.000 (y accel, mm/sec^2)
+$122=50.000 (z accel, mm/sec^2)
+```
+In general, faster acceleration speed can significantly reduce humming sound.
+
+You have set those settings in Axes widget according to your preferences. 
+* Feed Rate Range: 100-2500 mm/min (default: 500-2000 mm/min)
+* Repeat Rate: 60Hz - 1Hz (default: 10Hz)
+* Distance Overshoot: 1x - 1.5x (default: 1x)
