@@ -99,9 +99,13 @@ $120=250.000 (x accel, mm/sec^2)
 $121=250.000 (y accel, mm/sec^2)
 $122=50.000 (z accel, mm/sec^2)
 ```
-In general, faster acceleration speed can significantly reduce humming sound.
+In general, higher acceleration speed can significantly reduce humming sound when accelerating and decelerating.
 
-You might have to adjust below settings in Axes widget according to your preferences. 
+In addition, you can click on the <kbd>Edit</kbd> button at the top of the Axes widget to configure Shuttle Settings. Adjust the following settings according to your preferences:
 * Feed Rate Range: 100-2500 mm/min (default: 500-2000 mm/min)
+  - Defines the minimum feed rate for Shuttle Zone +1 and -1
+  - Defines the maximum feed rate for Shuttle Zone +7 and -7
 * Repeat Rate: 60Hz - 1Hz (default: 10Hz)
+  - The repeat rate should be equal to your keystroke repeat rate for each Shuttle Zones. 
 * Distance Overshoot: 1x - 1.5x (default: 1x)
+  - Defines the overshoot of the travel distance
