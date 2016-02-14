@@ -101,7 +101,7 @@ $122=50.000 (z accel, mm/sec^2)
 ```
 In general, faster acceleration speed can significantly reduce humming sound.
 
-You have set those settings in Axes widget according to your preferences. 
+You might have to adjust below settings in Axes widget according to your preferences. 
 * Feed Rate Range: 100-2500 mm/min (default: 500-2000 mm/min)
 * Repeat Rate: 60Hz - 1Hz (default: 10Hz)
 * Distance Overshoot: 1x - 1.5x (default: 1x)
