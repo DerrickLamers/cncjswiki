@@ -4,8 +4,8 @@
   * TinyG2 will be supported in CNC.js v2.x
 * 3D Visualizer
 * Allows multiple HTTP connections at the same serial port
-* Keyboard Shortcuts
-* Contour ShuttleXpress support 
+* [Keyboard Shortcuts](https://github.com/cheton/cnc.js/wiki/User-Guide#keyboard-shortcuts)
+* [Contour ShuttleXpress](https://github.com/cheton/cnc.js/wiki/User-Guide#contour-shuttlexpress)
 * Ready for i18n
 * Widget management
   - Axes widget
