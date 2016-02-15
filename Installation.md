@@ -1,4 +1,3 @@
-## Installation
 First, ensure you have `prefix=~/.npm` in  `~/.npmrc`. For example:
 ```bash
 $ echo "prefix=~/.npm" >> ~/.npmrc
