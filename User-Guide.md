@@ -29,7 +29,7 @@ These are the current keys used in the cnc.js (from v0.15.3).<br>
 <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>command</kbd> + <kbd>6</kbd> - Shuttle Forward (Faster)<br>
 <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>command</kbd> + <kbd>7</kbd> - Shuttle Forward (Fastest)<br>
 
-## ShuttleXpress Jog Dial
+## Contour ShuttleXpress
 You can use the ShuttleXpress jog dial to work with a CNC controller. The ShuttleXpress has five programmable buttons, a 10 counts jog dial (the inner wheel), and a 15-position shuttle wheel (the outer wheel) that returns to center when released.
 
 ![](https://raw.githubusercontent.com/cheton/cnc.js/dev/media/ShuttleXpress.jpg)
