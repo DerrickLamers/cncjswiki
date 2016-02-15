@@ -38,7 +38,7 @@ sudo update-alternatives --config gcc
 sudo update-alternatives --config g++
 ```
 
-## Install Serialport with Mac OS X 10.11
+## Install Serialport on Mac OS X 10.11
 If your Mac OS X is El Capitan (version: 10.11), and the [installation](https://github.com/cheton/cnc.js#installation) fails with error `ld: library not found for -lgcc_s.10.5`, check out the following ways:
 - Check out [Installing the Xcode Command Line Tools](https://developer.xamarin.com/guides/testcloud/calabash/configuring/osx/install-xcode-command-line-tools/).
 - If you do not have Xcode installed, just install Xcode 7 from App Store.
