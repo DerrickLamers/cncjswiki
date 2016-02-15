@@ -109,7 +109,7 @@ ok
 ```
 In general, higher acceleration (mm/sec^2) can significantly reduce humming sound when accelerating and decelerating.
 
-In addition, you can click on the <kbd><img src="https://cdn.rawgit.com/cheton/cnc.js/master/media/font-awesome/fa-cog.svg" width="16" title="Edit" /></kbd> button at the top of the Axes widget to configure Shuttle Settings. Adjust these settings according to your preferences:
+In addition, you can click on the <kbd><img src="https://cdn.rawgit.com/cheton/cnc.js/master/media/font-awesome/black/svg/cog.svg" width="16" title="Edit" /></kbd> button at the top of the Axes widget to configure Shuttle Settings. Adjust these settings according to your preferences:
 
 ![](https://raw.githubusercontent.com/cheton/cnc.js/master/media/widgets/axes-settings.png)
 * Feed Rate Range: 100-2500 mm/min (default: 500-2000 mm/min)
