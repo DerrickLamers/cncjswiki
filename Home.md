@@ -1,5 +1,3 @@
-Welcome to the cnc.js wiki!
-
 * [Installation](https://github.com/cheton/cnc.js/wiki/Installation)
   * [NPM Installation](https://github.com/cheton/cnc.js/wiki/Installation#npm-installation)
   * [Git Installation](https://github.com/cheton/cnc.js/wiki/Installation#git-installation)
