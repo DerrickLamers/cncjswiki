@@ -1,6 +1,15 @@
 Welcome to the cnc.js wiki!
 
 * [Installation](https://github.com/cheton/cnc.js/wiki/Installation)
+  * [NPM Installation](https://github.com/cheton/cnc.js/wiki/Installation#npm-installation)
+  * [Git Installation](https://github.com/cheton/cnc.js/wiki/Installation#git-installation)
+  * [Docker Image Installation (x64 only)](https://github.com/cheton/cnc.js/wiki/Installation#docker-image-installation-x64-only)
 * [Prerequisite](https://github.com/cheton/cnc.js/wiki/Prerequisite)
+  * [Running without using Arduino board](https://github.com/cheton/cnc.js/wiki/Prerequisite#running-without-using-arduino-board)
 * [User Guide](https://github.com/cheton/cnc.js/wiki/User-Guide)
+  * [Keyboard Shortcuts](https://github.com/cheton/cnc.js/wiki/User-Guide#keyboard-shortcuts)
+  * [ShuttleXpress Jog Dial](https://github.com/cheton/cnc.js/wiki/User-Guide#shuttlexpress-jog-dial)
 * [FAQ](https://github.com/cheton/cnc.js/wiki/FAQ)
+  * [Install native addons with Node.js v4](https://github.com/cheton/cnc.js/wiki/FAQ#install-native-addons-with-nodejs-v4)
+  * [Install serialport with Mac OS X 10.11](https://github.com/cheton/cnc.js/wiki/FAQ#install-serialport-with-mac-os-x-1011)
+  * [Connect to an Arduino using WiFi](https://github.com/cheton/cnc.js/wiki/FAQ#connect-to-an-arduino-using-wifi)
