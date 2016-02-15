@@ -1,4 +1,4 @@
-## NPM Installation
+# NPM Installation
 
 First, ensure you have `prefix=~/.npm` in  `~/.npmrc`. For example:
 ```bash
@@ -42,7 +42,7 @@ $ cnc -h
     -d, --debug              run in debug mode
 ```
 
-## Git Installation
+# Git Installation
 If you prefer to use Git instead of `npm install`, You can create a local clone of the repository on your computer and sync from GitHub. Type the following commands to install and run `cnc.js`:
 ```bash
 $ git clone https://github.com/cheton/cnc.js.git
@@ -60,7 +60,7 @@ $ ./bin/cnc
 
 This is the fastest method to bring your local copy up-to-date.
 
-## Docker Image Installation (x64 only)
+# Docker Image Installation (x64 only)
 Alternatively, you can install and run a Docker image within a Docker container. The first installation may take a long time to complete, but further updates will be much faster.
 
 To install and set up cnc.js, take the following steps:
