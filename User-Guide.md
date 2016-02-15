@@ -1,5 +1,23 @@
 ## Widget Management
 ![](https://raw.githubusercontent.com/cheton/cnc.js/master/media/widgets.png)
+#### Axes Widget
+This widget shows the XYZ position. It includes jog controls, homing, and axis zeroing.
+#### Connection Widget
+This widget lets you establish a connection to a serial port.
+#### Console Widget
+This widget lets you read and write data to the CNC controller connected to a serial port.
+#### G-code Widget
+This widgets shows the current status of G-code commands.
+#### Grbl Widget
+This widet shows the Grbl state and provides Grbl specific features.
+#### Probe Widget
+This widget helps you use a touch plate to set your Z zero offset.
+#### Spindle Widget
+This widget provides the spindle control.
+#### Visualizer Widget
+This widget visualizes a G-code file and simulates the tool path.
+#### Webcam Widget
+This widget lets you monitor a webcam.
 
 ## Keyboard Shortcuts
 These are the current keys used in the cnc.js (from v0.15.3).<br>
