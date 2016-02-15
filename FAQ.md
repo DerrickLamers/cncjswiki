@@ -49,7 +49,7 @@ cd /usr/local/lib
 sudo ln -s ../../lib/libSystem.B.dylib libgcc_s.10.5.dylib
 ```
 
-## How do I connect to an Arduino using WiFi? 
+## Connect to an Arduino using WiFi
 ![WaveShare WIFI-LPT100 / WIFI400](https://raw.githubusercontent.com/cheton/cnc.js/master/media/WS_WIFI-LPT100_WIFI400.png)
 
 These articles might be useful if you want to connect to Arduino using WiFi: 
