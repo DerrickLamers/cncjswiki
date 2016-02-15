@@ -3,6 +3,8 @@ CNC.js is a web-based CNC milling controller for the Arduino running Grbl. It ru
 
 ![cncjs.png](https://raw.githubusercontent.com/cheton/cnc.js/master/media/cncjs.png) 
 
+## Index
+* [Features](https://github.com/cheton/cnc.js/wiki/Features)
 * [Installation](https://github.com/cheton/cnc.js/wiki/Installation)
   * [NPM Installation](https://github.com/cheton/cnc.js/wiki/Installation#npm-installation)
   * [Git Installation](https://github.com/cheton/cnc.js/wiki/Installation#git-installation)
