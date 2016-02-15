@@ -1,4 +1,5 @@
-## Getting Started
+## Widget Management
+![](https://raw.githubusercontent.com/cheton/cnc.js/master/media/widgets.png)
 
 ## Keyboard Shortcuts
 These are the current keys used in the cnc.js (from v0.15.3).<br>
@@ -107,9 +108,7 @@ ok
 > $120=250.00
 ok
 ```
-In general, higher acceleration (mm/sec^2) can significantly reduce humming sound when accelerating and decelerating.
-
-In addition, you can click on the <kbd><img src="https://cdn.rawgit.com/cheton/cnc.js/master/media/font-awesome/black/svg/cog.svg" width="16" title="Edit" /></kbd> button at the top of the Axes widget to configure Shuttle Settings. Adjust these settings according to your preferences:
+In the general case, higher acceleration (mm/sec^2) can significantly reduce humming sound when accelerating and decelerating, but you may need to adjust various settings with your CNC machine. To adjust ShuttleXpress specific settings, click on the <kbd><img src="https://cdn.rawgit.com/cheton/cnc.js/master/media/font-awesome/black/svg/cog.svg" width="16" title="Edit" /></kbd> button at the top of the Axes widget.
 
 ![](https://raw.githubusercontent.com/cheton/cnc.js/master/media/widgets/axes-settings.png)
 * Feed Rate Range: 100-2500 mm/min (default: 500-2000 mm/min)
