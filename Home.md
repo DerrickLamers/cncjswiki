@@ -13,5 +13,5 @@
   * [Contour ShuttleXpress](https://github.com/cheton/cnc.js/wiki/User-Guide#contour-shuttlexpress)
 * [FAQ](https://github.com/cheton/cnc.js/wiki/FAQ)
   * [Install Native Addons with Node.js v4](https://github.com/cheton/cnc.js/wiki/FAQ#install-native-addons-with-nodejs-v4)
-  * [Install node-serialport with Mac OS X 10.11](https://github.com/cheton/cnc.js/wiki/FAQ#install-serialport-with-mac-os-x-1011)
+  * [Install Serialport on OS X El Capitan](https://github.com/cheton/cnc.js/wiki/FAQ#install-serialport-on-os-x-el-capitan)
   * [Connect to an Arduino using WiFi](https://github.com/cheton/cnc.js/wiki/FAQ#connect-to-an-arduino-using-wifi)
