@@ -1,4 +1,4 @@
-## Install native addons with Node.js v4
+## Install Native Addons with Node.js v4
 Source: https://github.com/fivdi/onoff/wiki/Node.js-v4-and-native-addons
 
 ### Installing gcc/g++ 4.8 on Raspbian Wheezy for the Raspberry Pi
@@ -38,7 +38,7 @@ sudo update-alternatives --config gcc
 sudo update-alternatives --config g++
 ```
 
-## Install serialport with Mac OS X 10.11
+## Install Serialport with Mac OS X 10.11
 If your Mac OS X is El Capitan (version: 10.11), and the [installation](https://github.com/cheton/cnc.js#installation) fails with error `ld: library not found for -lgcc_s.10.5`, check out the following ways:
 - Check out [Installing the Xcode Command Line Tools](https://developer.xamarin.com/guides/testcloud/calabash/configuring/osx/install-xcode-command-line-tools/).
 - If you do not have Xcode installed, just install Xcode 7 from App Store.
