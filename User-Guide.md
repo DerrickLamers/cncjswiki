@@ -54,14 +54,14 @@ $ cnc -h
     -m, --mount [<url>:]<absolute-path>  set the mount point for serving static files (default: /static:static)
 ```
 
-First, copy the [examples/tinyweb](https://github.com/cheton/cnc.js/tree/v0.15.8/examples/tinyweb) to your Raspberry Pi to serve as static files. Let's assume you put it under the directory `/home/tinyweb`.
+First, copy the [examples/tinyweb](https://github.com/cheton/cnc.js/tree/master/examples/tinyweb) to your Raspberry Pi to serve as static files. Let's assume you put it under the directory `/home/tinyweb`.
 
-After that, run cnc with the `-m` option, like below:
+Then, run cnc with the `-m` option, like below:
 ```
 $ cnc -m /tinyweb:/home/tinyweb
 ```
 
-Then, you should be able to see the tinyweb console as shown below at `http://localhost:8000/tinyweb`.
+After that, you should be able to see the tinyweb console as shown below at `http://localhost:8000/tinyweb`.
 
 ![tinyweb-axes.png](https://raw.githubusercontent.com/cheton/cnc.js/master/media/tinyweb-axes.png)
 
