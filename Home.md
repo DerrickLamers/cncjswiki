@@ -9,6 +9,7 @@
   * [Running without using Arduino board](https://github.com/cheton/cnc.js/wiki/Prerequisite#running-without-using-arduino-board)
 * [User Guide](https://github.com/cheton/cnc.js/wiki/User-Guide)
   * [Widget Management](https://github.com/cheton/cnc.js/wiki/User-Guide#widget-management)
+  * [TinyWeb Console on 320x240 LCD Display](https://github.com/cheton/cnc.js/wiki/User-Guide#tinyweb-console-on-320x240-lcd-display)
   * [Keyboard Shortcuts](https://github.com/cheton/cnc.js/wiki/User-Guide#keyboard-shortcuts)
   * [Contour ShuttleXpress](https://github.com/cheton/cnc.js/wiki/User-Guide#contour-shuttlexpress)
 * [FAQ](https://github.com/cheton/cnc.js/wiki/FAQ)
