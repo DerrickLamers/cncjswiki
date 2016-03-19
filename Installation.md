@@ -43,10 +43,10 @@ $ cnc -h
 ```
 
 ## Git Installation
-If you prefer to use Git instead of `npm install`, You can create a local clone of the repository on your computer and sync from GitHub. Type the following commands to install and run `cnc.js`:
+If you prefer to use Git instead of `npm install`, You can create a local clone of the repository on your computer and sync from GitHub. Type the following commands to install and run `cnc`:
 ```bash
-$ git clone https://github.com/cheton/cnc.js.git
-$ cd cnc.js
+$ git clone https://github.com/cheton/cnc.git
+$ cd cnc
 $ npm install --production
 $ ./bin/cnc
 ```
@@ -63,7 +63,7 @@ This is the fastest method to bring your local copy up-to-date.
 ## Docker Image Installation (x64 only)
 Alternatively, you can install and run a Docker image within a Docker container. The first installation may take a long time to complete, but further updates will be much faster.
 
-To install and set up cnc.js, take the following steps:
+To install and set up cnc, take the following steps:
 
 <b>Step 1:</b> Enter the following command to retrieve the latest version of the image:
 ```bash
