@@ -44,7 +44,7 @@ This widget lets you monitor a webcam.
 
 ![](https://raw.githubusercontent.com/cheton/cnc.js/master/media/widgets/webcam.png)
 
-## A TinyWeb Console on 320x240 LCD Display
+## TinyWeb Console on 320x240 LCD Display
 
 For users who want the jog function on a small 320x240 LCD display, use the mount option to set a mount point to serve static files. For example:
 ```
