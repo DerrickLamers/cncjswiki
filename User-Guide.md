@@ -44,6 +44,29 @@ This widget lets you monitor a webcam.
 
 ![](https://raw.githubusercontent.com/cheton/cnc.js/master/media/widgets/webcam.png)
 
+## A TinyWeb Console on 320x240 LCD Display
+
+For users who want the jog function with cnc.js on a small 320x240 LCD display, use the mount option to set a mount point to serve static files. For example:
+```
+$ cnc -h
+  Usage: cnc [options]
+  Options:
+    -m, --mount [<url>:]<absolute-path>  set the mount point for serving static files (default: /static:static)
+```
+
+First, copy the [examples/tinyweb](https://github.com/cheton/cnc.js/tree/v0.15.8/examples/tinyweb) to your Raspberry Pi to serve as static files. Let's assume you put it under the directory `/home/tinyweb`.
+
+After that, run cnc with the `-m` option, like below:
+```
+$ cnc -m /tinyweb:/home/tinyweb
+```
+
+Then, you should be able to see the tinyweb console as shown below at `http://localhost:8000/tinyweb`.
+
+![tinyweb-axes.png](https://raw.githubusercontent.com/cheton/cnc.js/master/media/tinyweb-axes.png)
+
+It should fit perfectly with your 320x240 LCD display.
+
 ## Keyboard Shortcuts
 These are the current keys used in the cnc.js (from v0.15.3).<br>
 <kbd>!</kbd> - Feed Hold<br>
