@@ -46,7 +46,7 @@ This widget lets you monitor a webcam.
 
 ## A TinyWeb Console on 320x240 LCD Display
 
-For users who want the jog function with cnc.js on a small 320x240 LCD display, use the mount option to set a mount point to serve static files. For example:
+For users who want the jog function on a small 320x240 LCD display, use the mount option to set a mount point to serve static files. For example:
 ```
 $ cnc -h
   Usage: cnc [options]
