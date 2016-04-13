@@ -17,7 +17,7 @@ If you want to run it on Raspberry Pi with Raspbian Wheezy, be sure to [install 
 Check out [Git Installation](https://github.com/cheton/cnc.js#git-installation) and [Docker Image Installation (x64 only)](https://github.com/cheton/cnc.js#docker-image-installation-x64-only) for other installation methods.
 
 ### Upgrade
-Run `npm update -g cncjs` to upgrade to a newer version.
+Run `npm update -g cncjs` to upgrade to a newer version. To determine the version, use `cnc -V`.
 
 ### Usage
 Run `cnc` or `~/.npm/bin/cnc` to start the server, and visit `http://yourhostname:8000/` to view the web interface:
@@ -26,20 +26,26 @@ $ cnc
 ```
 
 Run `cnc` with -h for detailed usage:
-```
+```bash
 $ cnc -h
 
   Usage: cnc [options]
   
   Options:
 
-    -h, --help               output usage information
-    -V, --version            output the version number
-    -p, --port               set listen port (default: 8000)
-    -l, --host               set listen address or hostname (default: 0.0.0.0)
-    -b, --backlog            set listen backlog (default: 511)
-    -c, --config <filename>  set config file (default: ~/.cncrc)
-    -d, --debug              run in debug mode
+    -h, --help                  output usage information
+    -V, --version               output the version number
+    -p, --port                  set listen port (default: 8000)
+    -l, --host                  set listen address or hostname (default: 0.0.0.0)
+    -b, --backlog               set listen backlog (default: 511)
+    -c, --config <filename>     set config file (default: ~/.cncrc)
+    -v, --verbose               increase the verbosity level
+    -m, --mount [<url>:]<path>  set the mount point for serving static files (default: /static:static)
+```
+
+If you need view detailed logs for troubleshooting, you can run the server in debug mode.
+```bash
+$ cnc -vv
 ```
 
 ## Git Installation
