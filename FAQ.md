@@ -39,7 +39,7 @@ sudo update-alternatives --config g++
 ```
 
 ## Install Serialport on OS X El Capitan
-If you're running with OS X El Capitan (version: 10.11), and the [installation](https://github.com/cheton/cnc.js#installation) fails with error `ld: library not found for -lgcc_s.10.5`, check out the following ways:
+If you're running with OS X El Capitan (version: 10.11), and the [installation](https://github.com/cheton/cnc#installation) fails with error `ld: library not found for -lgcc_s.10.5`, check out the following ways:
 - Check out [Installing the Xcode Command Line Tools](https://developer.xamarin.com/guides/testcloud/calabash/configuring/osx/install-xcode-command-line-tools/).
 - If you do not have Xcode installed, just install Xcode 7 from App Store.
 - There is an issue with Mac OS X 10.11 and Xcode 6. If your Xcode version is 6.x, you need to upgrade it to Xcode 7, or use this as temporary fix:
@@ -50,7 +50,7 @@ sudo ln -s ../../lib/libSystem.B.dylib libgcc_s.10.5.dylib
 ```
 
 ## Connect to an Arduino using WiFi
-![WaveShare WIFI-LPT100 / WIFI400](https://raw.githubusercontent.com/cheton/cnc.js/master/media/WS_WIFI-LPT100_WIFI400.png)
+![WaveShare WIFI-LPT100 / WIFI400](https://raw.githubusercontent.com/cheton/cnc/master/media/WS_WIFI-LPT100_WIFI400.png)
 
 These articles might be useful if you want to connect to Arduino using WiFi: 
 * [WiFi your nodebot](https://gist.github.com/ajfisher/1fdbcbbf96b7f2ba73cd)
