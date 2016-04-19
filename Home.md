@@ -16,4 +16,5 @@
   * [Install Native Addons with Node.js v4](https://github.com/cheton/cnc.js/wiki/FAQ#install-native-addons-with-nodejs-v4)
   * [Install Serialport on OS X El Capitan](https://github.com/cheton/cnc.js/wiki/FAQ#install-serialport-on-os-x-el-capitan)
   * [Connect to an Arduino using WiFi](https://github.com/cheton/cnc.js/wiki/FAQ#connect-to-an-arduino-using-wifi)
+* [Resources](https://github.com/cheton/cnc.js/wiki/Resources)
 * [Others](https://github.com/cheton/cnc.js/wiki/Others)
