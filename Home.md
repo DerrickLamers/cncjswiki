@@ -5,6 +5,7 @@
   * [NPM Installation](https://github.com/cheton/cnc/wiki/Installation#npm-installation)
   * [Git Installation](https://github.com/cheton/cnc/wiki/Installation#git-installation)
   * [Docker Image Installation (x64 only)](https://github.com/cheton/cnc/wiki/Installation#docker-image-installation-x64-only)
+* [Install Desktop Application](https://github.com/cheton/cnc/wiki/Installl-Desktop-Application)
 * [Prerequisite](https://github.com/cheton/cnc/wiki/Prerequisite)
   * [Running without using Arduino board](https://github.com/cheton/cnc/wiki/Prerequisite#running-without-using-arduino-board)
 * [User Guide](https://github.com/cheton/cnc/wiki/User-Guide)
