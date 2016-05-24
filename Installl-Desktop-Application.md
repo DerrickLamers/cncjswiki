@@ -1,5 +1,7 @@
 Visit https://github.com/cheton/cnc/releases to find the latest releases.
 
+![image](https://cloud.githubusercontent.com/assets/447801/15508462/1941a68e-2202-11e6-9dc2-3273bb11ca15.png)
+
 ### Windows (x64)
 Download "cnc-{version}-win-x64.exe" to install the app in Windows (x64).
 
