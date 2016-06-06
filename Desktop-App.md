@@ -25,8 +25,8 @@ After that, you can restore the setting to default. Gatekeeper won't show you th
 
 ![image](https://cloud.githubusercontent.com/assets/447801/15507483/60e07a64-21fe-11e6-8433-018ba975c661.png)
 
-### Linux (x86)
-Download "cnc-{version}-linux-i386.deb" or "cnc-{version}-linux-i386.tar.gz" to install the app in Debian or Ubuntu Linux (i386).
+### Linux (ia32)
+Download "cnc-{version}-linux-ia32.deb" or "cnc-{version}-linux-ia32.tar.gz" to install the app in Debian or Ubuntu Linux (i386).
 
 ### Linux (x64)
-Download "cnc-{version}-linux-amd64.deb" or "cnc-{version}-linux-amd64.tar.gz" to install the app in Debian or Ubuntu Linux (amd64).
+Download "cnc-{version}-linux-x64.deb" or "cnc-{version}-linux-x64.tar.gz" to install the app in Debian or Ubuntu Linux (amd64).
