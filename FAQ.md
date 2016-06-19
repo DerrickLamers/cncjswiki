@@ -31,7 +31,7 @@ $ sudo nano mjpg-streamer.sh
 $ ./mjpg-streamer.sh start
 ```
 
-Once you have finished setup, input the URL in the webcam widget to play the HTTP M-JPEG stream:
+Once you have finished setup, input the URL in the webcam widget to play the M-JPEG stream:
 ```bash
 # Replace raspberrypi with your IP address
 http://raspberrypi:8080/?action=stream
@@ -51,7 +51,7 @@ http://www.howtoembed.com/get?download=36:mjpg-streamer-rpi
 
 ## Restream RTSP to M-JPEG
 
-<i>FFmpeg is available for Windows and Linux, but FFserver is available only on Linux.</i>
+**<i>FFmpeg is available for Windows and Linux, but FFserver is available only on Linux.</i>**
 
 Sample `/etc/ffserver.conf` file:
 ```
@@ -84,12 +84,10 @@ ffmpeg \
     http://localhost:8090/monitoring1.ffm
 ```
 
-Now you can access the M-JPEG stream by accessing following address:
+Now you can input the URL in the webcam widget to play the M-JPEG stream:
 ```
 http://localhost:8090/monitoring1.mjpg
 ```
-
-If everything works fine, you can type the URL in the webcam widget.
 
 ## Connect to an Arduino using WiFi
 ![WaveShare WIFI-LPT100 / WIFI400](https://raw.githubusercontent.com/cheton/cnc/master/media/WS_WIFI-LPT100_WIFI400.png)
