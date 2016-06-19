@@ -15,6 +15,7 @@
   * [Contour ShuttleXpress](https://github.com/cheton/cnc/wiki/User-Guide#contour-shuttlexpress)
 * [FAQ](https://github.com/cheton/cnc/wiki/FAQ)
   * [Webcam Streaming with Raspberry Pi](https://github.com/cheton/cnc/wiki/FAQ/#webcam-streaming-with-raspberry-pi)
+  * [Restream RTSP to M-JPEG](https://github.com/cheton/cnc/wiki/FAQ/#restream-rtsp-to-m-jpeg)
   * [Connect to an Arduino using WiFi](https://github.com/cheton/cnc/wiki/FAQ#connect-to-an-arduino-using-wifi)
   * [Install Native Addons with Node.js v4](https://github.com/cheton/cnc/wiki/FAQ#install-native-addons-with-nodejs-v4)
   * [Install Serialport on OS X El Capitan](https://github.com/cheton/cnc/wiki/FAQ/#install-serialport-on-os-x-el-capitan)
