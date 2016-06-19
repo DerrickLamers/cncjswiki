@@ -44,6 +44,8 @@ This widget lets you monitor a webcam.
 
 ![](https://raw.githubusercontent.com/cheton/cnc/master/media/widgets/webcam.png)
 
+Checkout [Webcam Streaming with Raspberry Pi](https://github.com/cheton/cnc/wiki/FAQ#webcam-streaming-with-raspberry-pi) to learn how to setup and configure webcam streaming with Raspberry Pi.
+
 ## TinyWeb Console for 320x240 LCD Display
 
 For users who want the jog function on a small 320x240 LCD display, use the mount option to set a mount point to serve static files. For example:
