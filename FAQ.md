@@ -1,3 +1,47 @@
+## Webcam Streaming with Raspberry Pi
+
+Checkout [mjpg-streamer](https://github.com/jacksonliam/mjpg-streamer) to learn how to [stream JPEG data from the input_raspicam plugin via HTTP](https://github.com/jacksonliam/mjpg-streamer/blob/master/mjpg-streamer-experimental/plugins/output_http/README.md).
+
+Follow the steps from this [article](http://www.howtoembed.com/projects/raspberry-pi/78-pieye-webcam-streaming-in-m-jpg-format-with-raspberry-pi):
+
+1. Make sure you have an updated version of <i>Raspberry Pi</i>'s OS.
+2. Install `libv4l-0` package, available in Raspbian: `sudo aptitude install libv4l-0`.
+3. Connect the web camera to USB. The web camera must be Linux compatible; to check this, make sure `/dev/video0` file is available on <i>Raspberry Pi</i>, else the camera does not have a Linux driver or required extra configuration to work.
+4. Download [mjpg-streamer-rpi.tar.gz](http://www.howtoembed.com/projects/raspberry-pi/78-pieye-webcam-streaming-in-m-jpg-format-with-raspberry-pi#rpi-mjpg-streamer) archive on <i>Raspberry Pi</i> and extract it. Destination folder is not relevant. You don't need root access if you are using the default pi user. Go to `mjpg-streamer` folder, where you extracted the `tar.gz` file.
+5. Open `mjpg-streamer.sh` file; this is a simple bash script to control the mini-webserver. The header contains some writable parameters, as refresh rate or resolution. The default settings should work in most situations.
+6. Start the server with `./mjpg-streamer.sh` start command in the current folder.
+7. Run your prefered web browser and go to <b>http://raspberrypi:8080/?action=stream</b> (where raspberrypi is it's IP address). You should see the image from the webcam. Current version has some issues with Chrome, just use Firefox if the image is not refreshed.
+8. If the system doesn't work, see the `mjpg-streamer.log` file for debug info.
+
+See below required commands for not-Linux geeks:
+```bash
+$ sudo aptitude install libv4l-0
+$ ls /dev/video0
+$ wget http://www.bobtech.ro/get?download=36:mjpg-streamer-rpi
+$ mv get\?download\=36\:mjpg-streamer-rpi mjpg-streamer-rpi.tar.gz
+$ tar -zxvf mjpg-streamer-rpi.tar.gz
+$ cd mjpg-streamer
+$ sudo nano mjpg-streamer.sh
+$ ./mjpg-streamer.sh start
+```
+
+Once you have finished setup, input the URL in the webcam widget to play the HTTP M-JPEG stream:
+```
+http://raspberrypi:8080/?action=stream
+```
+
+#### Change Video Parameters
+To change video parameters you have to install <b>v4l2-ctl</b>:
+```bash
+$ sudo apt-get install v4l-utils
+$ v4l2-ctl --list-ctrls
+$ v4l2-ctl --set-ctrl brightness=200
+$ v4l2-ctl --set-ctrl saturation=32
+```
+
+#### Download
+http://www.howtoembed.com/get?download=36:mjpg-streamer-rpi
+
 ## Install Native Addons with Node.js v4
 Source: https://github.com/fivdi/onoff/wiki/Node.js-v4-and-native-addons
 
