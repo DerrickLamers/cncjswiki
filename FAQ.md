@@ -55,26 +55,25 @@ http://www.howtoembed.com/get?download=36:mjpg-streamer-rpi
 
 Sample `/etc/ffserver.conf` file:
 ```
+HTTPPort 8090
+
 <Feed monitoring1.ffm>
-File /tmp/monitoring1.ffm
-FileMaxSize 50M
-ACL allow 127.0.0.1
+  File /tmp/monitoring1.ffm
+  FileMaxSize 50M
+  ACL allow 127.0.0.1
 </Feed>
 
 <Stream monitoring1.mjpg>
-Feed monitoring1.ffm
-Format mpjpeg
-VideoCodec mjpeg
-VideoFrameRate 22
-VideoBufferSize 80
-VideoSize 720x264
-NoAudio
+  Feed monitoring1.ffm
+  Format mpjpeg
+  VideoCodec mjpeg
+  NoAudio
 </Stream>
 ```
 
 After that started server with command:
 ```
-ffserver
+ffserver -d -f ./ffserver.conf
 ```
 
 and run streaming with command:
