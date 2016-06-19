@@ -1,8 +1,13 @@
+## Index
+
+* [Webcam Streaming with Raspberry Pi](https://github.com/cheton/cnc/wiki/FAQ/_edit#webcam-streaming-with-raspberry-pi)
+* [Connect to an Arduino using WiFi](https://github.com/cheton/cnc/wiki/FAQ#connect-to-an-arduino-using-wifi)
+* [Install Native Addons with Node.js v4](https://github.com/cheton/cnc/wiki/FAQ#install-native-addons-with-nodejs-v4)
+* [Install Serialport on OS X El Capitan](https://github.com/cheton/cnc/wiki/FAQ/#install-serialport-on-os-x-el-capitan)
+
 ## Webcam Streaming with Raspberry Pi
 
-Checkout [mjpg-streamer](https://github.com/jacksonliam/mjpg-streamer) to learn how to [stream JPEG data from the input_raspicam plugin via HTTP](https://github.com/jacksonliam/mjpg-streamer/blob/master/mjpg-streamer-experimental/plugins/output_http/README.md).
-
-Follow the steps from this [article](http://www.howtoembed.com/projects/raspberry-pi/78-pieye-webcam-streaming-in-m-jpg-format-with-raspberry-pi):
+Checkout [mjpg-streamer](https://github.com/jacksonliam/mjpg-streamer) to learn how to [stream JPEG data from the input_raspicam plugin via HTTP](https://github.com/jacksonliam/mjpg-streamer/blob/master/mjpg-streamer-experimental/plugins/output_http/README.md), and follow the steps in this [article](http://www.howtoembed.com/projects/raspberry-pi/78-pieye-webcam-streaming-in-m-jpg-format-with-raspberry-pi):
 
 1. Make sure you have an updated version of <i>Raspberry Pi</i>'s OS.
 2. Install `libv4l-0` package, available in Raspbian: `sudo aptitude install libv4l-0`.
@@ -26,7 +31,8 @@ $ ./mjpg-streamer.sh start
 ```
 
 Once you have finished setup, input the URL in the webcam widget to play the HTTP M-JPEG stream:
-```
+```bash
+# Replace raspberrypi with your IP address
 http://raspberrypi:8080/?action=stream
 ```
 
@@ -41,6 +47,35 @@ $ v4l2-ctl --set-ctrl saturation=32
 
 #### Download
 http://www.howtoembed.com/get?download=36:mjpg-streamer-rpi
+
+## Connect to an Arduino using WiFi
+![WaveShare WIFI-LPT100 / WIFI400](https://raw.githubusercontent.com/cheton/cnc/master/media/WS_WIFI-LPT100_WIFI400.png)
+
+These articles might be useful if you want to connect to Arduino using WiFi: 
+* [WiFi your nodebot](https://gist.github.com/ajfisher/1fdbcbbf96b7f2ba73cd)
+* [Arduino Wifi With Hi Flying HF-LPT100/USR WIFI232-T](http://2xod.com/articles/Arduino_Wifi_With_Hi_Flying_HF-LPT100_or_USR-WIFI232/)
+
+### Module Setup (w/ Breakout Board)
+![WIFI400](http://cheton.github.io/jsdc2015/images/usr-wifi232/HF-LPT100-Breakout-WIFI400-Front-sm.jpg)
+
+| WiFi232      | Arduino    |
+|--------------|------------|
+| Pin 1 (GND)  | GND        |
+| Pin 2 (3.3V) | 3V3 (3.3V) |
+| Pin 5 (RX)   | Pin 1 (TX) |
+| Pin 6 (TX)   | Pin 0 (RX) |
+
+### Johnny-Five Setup
+Node.js &ndash; Pseudo Terminal (~/dev/ttyV0) &ndash; TCP Socket (10.0.1.12:8899)
+
+1. Use `socat` to fake a serial terminal:
+```bash
+socat -d -d pty,nonblock,link=$HOME/dev/ttyV0 tcp:10.0.1.12:8899
+```
+2. Execute it like this:
+```bash
+node blink.js ~/dev/ttyV0
+```
 
 ## Install Native Addons with Node.js v4
 Source: https://github.com/fivdi/onoff/wiki/Node.js-v4-and-native-addons
@@ -91,34 +126,4 @@ If you're running with OS X El Capitan (version: 10.11), and the [installation](
 ```bash
 cd /usr/local/lib
 sudo ln -s ../../lib/libSystem.B.dylib libgcc_s.10.5.dylib
-```
-
-## Connect to an Arduino using WiFi
-![WaveShare WIFI-LPT100 / WIFI400](https://raw.githubusercontent.com/cheton/cnc/master/media/WS_WIFI-LPT100_WIFI400.png)
-
-These articles might be useful if you want to connect to Arduino using WiFi: 
-* [WiFi your nodebot](https://gist.github.com/ajfisher/1fdbcbbf96b7f2ba73cd)
-* [Arduino Wifi With Hi Flying HF-LPT100/USR WIFI232-T](http://2xod.com/articles/Arduino_Wifi_With_Hi_Flying_HF-LPT100_or_USR-WIFI232/)
-
-## Module Setup (w/ Breakout Board)
-![WIFI400](http://cheton.github.io/jsdc2015/images/usr-wifi232/HF-LPT100-Breakout-WIFI400-Front-sm.jpg)
-
-| WiFi232      | Arduino    |
-|--------------|------------|
-| Pin 1 (GND)  | GND        |
-| Pin 2 (3.3V) | 3V3 (3.3V) |
-| Pin 5 (RX)   | Pin 1 (TX) |
-| Pin 6 (TX)   | Pin 0 (RX) |
-
-
-## Johnny-Five Setup
-Node.js &ndash; Pseudo Terminal (~/dev/ttyV0) &ndash; TCP Socket (10.0.1.12:8899)
-
-1. Use `socat` to fake a serial terminal:
-```bash
-socat -d -d pty,nonblock,link=$HOME/dev/ttyV0 tcp:10.0.1.12:8899
-```
-2. Execute it like this:
-```bash
-node blink.js ~/dev/ttyV0
 ```
