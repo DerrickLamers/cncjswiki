@@ -44,7 +44,7 @@ This widget lets you monitor a webcam.
 
 ![](https://raw.githubusercontent.com/cheton/cnc/master/media/widgets/webcam.png)
 
-Checkout [Webcam Streaming with Raspberry Pi](https://github.com/cheton/cnc/wiki/FAQ#webcam-streaming-with-raspberry-pi) to learn how to setup and configure webcam streaming with Raspberry Pi.
+Checkout [FAQ](https://github.com/cheton/cnc/wiki/FAQ) to learn how to setup and configure webcam streaming with Raspberry Pi.
 
 ## TinyWeb Console for 320x240 LCD Display
 
