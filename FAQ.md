@@ -1,6 +1,7 @@
 ## Index
 
 * [Webcam Streaming with Raspberry Pi](https://github.com/cheton/cnc/wiki/FAQ/#webcam-streaming-with-raspberry-pi)
+* [Restream RTSP to M-JPEG](https://github.com/cheton/cnc/wiki/FAQ/#restream-rtsp-to-m-jpeg)
 * [Connect to an Arduino using WiFi](https://github.com/cheton/cnc/wiki/FAQ#connect-to-an-arduino-using-wifi)
 * [Install Native Addons with Node.js v4](https://github.com/cheton/cnc/wiki/FAQ#install-native-addons-with-nodejs-v4)
 * [Install Serialport on OS X El Capitan](https://github.com/cheton/cnc/wiki/FAQ/#install-serialport-on-os-x-el-capitan)
@@ -47,6 +48,48 @@ $ v4l2-ctl --set-ctrl saturation=32
 
 #### Download
 http://www.howtoembed.com/get?download=36:mjpg-streamer-rpi
+
+## Restream RTSP to M-JPEG
+
+<i>FFmpeg is available for Windows and Linux, but FFserver is available only on Linux.</i>
+
+Sample `/etc/ffserver.conf` file:
+```
+<Feed monitoring1.ffm>
+File /tmp/monitoring1.ffm
+FileMaxSize 50M
+ACL allow 127.0.0.1
+</Feed>
+
+<Stream monitoring1.mjpg>
+Feed monitoring1.ffm
+Format mpjpeg
+VideoCodec mjpeg
+VideoFrameRate 22
+VideoBufferSize 80
+VideoSize 720x264
+NoAudio
+</Stream>
+```
+
+After that started server with command:
+```
+ffserver
+```
+
+and run streaming with command:
+```
+ffmpeg \
+    -i "rtsp://<ip-camera>:554/user=admin&password=xxxx" \
+    http://localhost:8090/monitoring1.ffm
+```
+
+Now you can access the M-JPEG stream by accessing following address:
+```
+http://localhost:8090/monitoring1.mjpg
+```
+
+If everything works fine, you can type the URL in the webcam widget.
 
 ## Connect to an Arduino using WiFi
 ![WaveShare WIFI-LPT100 / WIFI400](https://raw.githubusercontent.com/cheton/cnc/master/media/WS_WIFI-LPT100_WIFI400.png)
