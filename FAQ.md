@@ -1,6 +1,6 @@
 ## Index
 
-* [Webcam Streaming with Raspberry Pi](https://github.com/cheton/cnc/wiki/FAQ/_edit#webcam-streaming-with-raspberry-pi)
+* [Webcam Streaming with Raspberry Pi](https://github.com/cheton/cnc/wiki/FAQ/#webcam-streaming-with-raspberry-pi)
 * [Connect to an Arduino using WiFi](https://github.com/cheton/cnc/wiki/FAQ#connect-to-an-arduino-using-wifi)
 * [Install Native Addons with Node.js v4](https://github.com/cheton/cnc/wiki/FAQ#install-native-addons-with-nodejs-v4)
 * [Install Serialport on OS X El Capitan](https://github.com/cheton/cnc/wiki/FAQ/#install-serialport-on-os-x-el-capitan)
