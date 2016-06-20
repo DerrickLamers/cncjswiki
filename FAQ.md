@@ -57,14 +57,13 @@ Sample `/etc/ffserver.conf` file:
 ```
 HTTPPort 8090
 
-<Feed monitoring1.ffm>
-  File /tmp/monitoring1.ffm
+<Feed webcam.ffm>
+  File /tmp/webcam.ffm
   FileMaxSize 50M
-  ACL allow 127.0.0.1
 </Feed>
 
-<Stream monitoring1.mjpg>
-  Feed monitoring1.ffm
+<Stream webcam.mjpg>
+  Feed webcam.ffm
   Format mpjpeg
   VideoCodec mjpeg
   NoAudio
@@ -73,19 +72,17 @@ HTTPPort 8090
 
 After that started server with command:
 ```
-ffserver -d -f ./ffserver.conf
+ffserver -d -f ffserver.conf
 ```
 
 and run streaming with command:
 ```
-ffmpeg \
-    -i "rtsp://<ip-camera>:554/user=admin&password=xxxx" \
-    http://localhost:8090/monitoring1.ffm
+ffmpeg -i "rtsp://<ip-camera>/" http://localhost:8090/webcam.ffm
 ```
 
 Now you can input the URL in the webcam widget to play the M-JPEG stream:
 ```
-http://localhost:8090/monitoring1.mjpg
+http://localhost:8090/webcam.mjpg
 ```
 
 ## Connect to an Arduino using WiFi
