@@ -58,15 +58,17 @@ Sample `ffserver.conf` file:
 HTTPPort 8090
 
 <Feed webcam.ffm>
-  File /tmp/mpjpeg.ffm
+  File /tmp/webcam.ffm
   FileMaxSize 50M
 </Feed>
 
 <Stream webcam.mjpg>
   Feed webcam.ffm
   Format mpjpeg
+  VideoBufferSize 8000
   VideoCodec mjpeg
-  VideoSize 320x240
+  VideoFrameRate 24
+  VideoSize 640x480
   NoAudio
 </Stream>
 ```
