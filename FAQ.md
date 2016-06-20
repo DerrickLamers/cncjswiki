@@ -75,12 +75,12 @@ HTTPPort 8090
 
 After that started server with command:
 ```
-ffserver -d -f ffserver.conf
+$ ffserver -d -f ffserver.conf
 ```
 
 and run streaming with command:
 ```
-ffmpeg -i "rtsp://<ip-camera>/" http://localhost:8090/webcam.ffm
+$ ffmpeg -i "rtsp://<ip-camera>/" http://localhost:8090/webcam.ffm
 ```
 
 Now you can input the URL in the webcam widget to play the M-JPEG stream:
