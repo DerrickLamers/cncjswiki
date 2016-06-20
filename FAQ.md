@@ -53,12 +53,12 @@ http://www.howtoembed.com/get?download=36:mjpg-streamer-rpi
 
 **<i>FFmpeg is available for Windows and Linux, but FFserver is available only on Linux.</i>**
 
-Sample `/etc/ffserver.conf` file:
+Sample `ffserver.conf` file:
 ```
 HTTPPort 8090
 
 <Feed webcam.ffm>
-  File /tmp/webcam.ffm
+  File /tmp/mpjpeg.ffm
   FileMaxSize 50M
 </Feed>
 
@@ -66,6 +66,7 @@ HTTPPort 8090
   Feed webcam.ffm
   Format mpjpeg
   VideoCodec mjpeg
+  VideoSize 320x240
   NoAudio
 </Stream>
 ```
