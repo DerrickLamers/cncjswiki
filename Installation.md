@@ -53,14 +53,18 @@ If you prefer to use Git instead of `npm install`, You can create a local clone 
 ```bash
 $ git clone https://github.com/cheton/cnc.git
 $ cd cnc
-$ npm install --production
+$ git checkout master
+$ npm install
+$ npm run prepublish
 $ ./bin/cnc
 ```
 
 To update your local copy with latest changes, use:
 ```bash
-$ git pull
-$ npm install --production
+$ git checkout master
+$ git pull origin master
+$ npm install
+$ npm run prepublish
 $ ./bin/cnc
 ```
 
