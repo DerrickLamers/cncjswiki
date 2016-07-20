@@ -1,10 +1,74 @@
 ## Index
 
+* [Raspberry Pi: Error opening serial port "ttyAMA0"](https://github.com/cheton/cnc/wiki/FAQ/#raspberry-pi-error-opening-serial-port-ttyama0)
 * [Webcam Streaming with Raspberry Pi](https://github.com/cheton/cnc/wiki/FAQ/#webcam-streaming-with-raspberry-pi)
 * [Restream RTSP to M-JPEG](https://github.com/cheton/cnc/wiki/FAQ/#restream-rtsp-to-m-jpeg)
 * [Connect to an Arduino using WiFi](https://github.com/cheton/cnc/wiki/FAQ#connect-to-an-arduino-using-wifi)
 * [Install Native Addons with Node.js v4](https://github.com/cheton/cnc/wiki/FAQ#install-native-addons-with-nodejs-v4)
 * [Install Serialport on OS X El Capitan](https://github.com/cheton/cnc/wiki/FAQ/#install-serialport-on-os-x-el-capitan)
+
+## Raspberry Pi: Error opening serial port "ttyAMA0"
+
+You may got this error when using the GPIO serial device on the Raspberry Pi:
+```bash
+$ .npm/bin/cnc -vv
+Started the server at http://0.0.0.0:8000/.
+2016-07-17T12:13:40.292Z - error: [cncserver] Error opening serial port "ttyAMA0": err={} 
+```
+
+Add a `~/.cncrc` file under your user home (i.e. `/home/pi/.cncrc`) with the following configuration to specify the path `/dev/ttyAMA0`:
+```js
+{
+    "ports": [
+        {
+            "comName": "/dev/ttyAMA0",
+            "manufacturer": ""
+        }
+    ]
+}
+```
+
+Run `cnc` again and you will see that `/dev/ttyAMA0` is available to use:
+
+![image](https://cloud.githubusercontent.com/assets/447801/16979099/e0d595c8-4e91-11e6-9eb7-9f13be22f387.png)
+
+### Permission denied error
+
+If you still cannot connect to `/dev/ttyAMA0`, use the serialport-terminal tool to check if a "Permission denied" error occurred:
+```bash
+$ node_modules/serialport/bin/serialport-terminal.js -p /dev/ttyAMA0 -b 115200
+Error [Error: Error: Permission denied, cannot open /dev/ttyAMA0]
+```
+
+Follow these steps to fix the permission denied error:
+
+1. Make sure your login account is a member of the `dialout` group:
+  ```bash
+  $ sudo vim /etc/group
+  ```
+
+  add add your login account if not available:
+  ```
+  dialout:x:20:pi,<your_login_account>
+  ```
+
+2. Remove references to `/dev/ttyAMA0` from `/boot/cmdline.txt`:
+
+  <i>The original contents</i>
+  ```bash
+  dwc_otg.lpm_enable=0 console=ttyAMA0,115200 console=tty1 root=/dev/mmcblk0p6 rootfstype=ext4 elevator=deadline rootwait
+  ```
+
+  <i>and new contents</i>
+  ```bash
+  dwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p6 rootfstype=ext4 elevator=deadline rootwait
+  ```
+
+3. Disable the getty on that serial port in `/etc/inittab` by commenting out the following line:
+  ```bash
+  #T0:23:respawn:/sbin/getty -L ttyAMA0 115200 vt100
+  ```
+4. Reboot
 
 ## Webcam Streaming with Raspberry Pi
 
