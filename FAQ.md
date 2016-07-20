@@ -16,7 +16,7 @@ Started the server at http://0.0.0.0:8000/.
 2016-07-17T12:13:40.292Z - error: [cncserver] Error opening serial port "ttyAMA0": err={} 
 ```
 
-Add a `~/.cncrc` file under your user home (i.e. `/home/pi/.cncrc`) with the following configuration to specify the path `/dev/ttyAMA0`:
+Add a `.cncrc` file under the login (home) directory (e.g. `~/.cncrc`) with the following configuration to specify the path `/dev/ttyAMA0`:
 ```js
 {
     "ports": [
