@@ -27,7 +27,7 @@ If you're not using [Node Version Manager](https://github.com/creationix/nvm), m
 ```bash
 echo "prefix=~/.npm" >> ~/.npmrc
 cat ~/.npmrc
-prefix=~/.npm
+# Output: prefix=~/.npm
 ```
 
 ### Getting Started
