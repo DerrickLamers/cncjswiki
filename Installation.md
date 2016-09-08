@@ -23,14 +23,13 @@ If you're using Node.js v4 or earlier versions, it's recommended that you use np
 npm install npm@latest -g
 ```
 
-If you're not using [Node Version Manager](https://github.com/creationix/nvm), make sure you have `prefix=~/.npm` in  `~/.npmrc` to install global packages without `sudo`. For example:
-```bash
-echo "prefix=~/.npm" >> ~/.npmrc
-cat ~/.npmrc
-# Output: prefix=~/.npm
-```
-
 ### Getting Started
+
+Make sure you're using Node.js v4 (or higher) and npm v3:
+```bash
+$ nvm use 4
+Now using node v4.5.0 (npm v3.10.6)
+```
 
 Install `cncjs` without `sudo`, or the `serialport` module may not install correctly on some platforms like Raspberry Pi.
 ```bash
