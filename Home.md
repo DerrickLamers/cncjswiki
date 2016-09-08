@@ -2,7 +2,7 @@
 * [About](https://github.com/cheton/cnc/wiki/About)
 * [Features](https://github.com/cheton/cnc/wiki/Features)
 * [Installation](https://github.com/cheton/cnc/wiki/Installation)
-  * [NPM Installation](https://github.com/cheton/cnc/wiki/Installation#npm-installation)
+  * [Node.js Installation](https://github.com/cheton/cnc/wiki/Installation#nodejs-installation)
   * [Git Installation](https://github.com/cheton/cnc/wiki/Installation#git-installation)
   * [Docker Image Installation (x64 only)](https://github.com/cheton/cnc/wiki/Installation#docker-image-installation-x64-only)
 * [Desktop App](https://github.com/cheton/cnc/wiki/Desktop-App)
