@@ -74,7 +74,10 @@ sudo service iptables-persistent enable
 # Reboot to test
 sudo reboot
 ```
+# You're Done, STOP Here
+The information below is a breakdown of the process above with additional options.
 
+-----------
 
 ## Raspberry Pi Install: System Preparation
 ### Install NOOBS & RASPBIAN on your Raspberry Pi
