@@ -15,6 +15,9 @@ sudo raspi-config
 # Change Timezone
 # Change Hostname
 # Change Boot Option: Boot to CLI (No GUI)
+
+# Recommend you reboot about changing the above settings.
+#sudo reboot
 ```
 
 ### Install Everything
