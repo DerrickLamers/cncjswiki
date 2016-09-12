@@ -1,5 +1,5 @@
 # Raspberry Pi Setup Guide
-I recommend that you use a [Raspberry Pi 3](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) because of the performance requirements of the Node.js application. Raspberry Pi 2 still works but might run a little slow.
+I recommend that you use a [Raspberry Pi 2](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/) or [Raspberry Pi 3](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) because of the performance requirements of the Node.js application.
 
 # The Big Easy (just cut and paste in terminal)
 ### Configure Raspberry Pi
