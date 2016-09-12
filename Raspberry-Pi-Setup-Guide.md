@@ -205,7 +205,7 @@ sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
 network={
   ssid="YOUR_SSID"
   scan_ssid=1
-  psk="YOUR_PASSKRY"
+  psk="YOUR_PASSKEY"
   mode=0
   proto=WPA2
   key_mgmt=WPA-PSK
