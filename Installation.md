@@ -1,5 +1,8 @@
 ## Installation
 
+### [Raspberry Pi Setup Guide](https://github.com/cheton/cnc/wiki/Raspberry-Pi-Setup-Guide)
+A dedicated setup guide for setting up Node.js, NVM, CNC.js, Autostart with pm2.
+
 ### Node.js Installation
 
 Node.js v4 or higher is recommended. You can install [Node Version Manager](https://github.com/creationix/nvm) to manage multiple Node.js versions. If you have `git` installed, just clone the `nvm` repo, and check out the latest version:
