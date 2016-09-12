@@ -170,7 +170,7 @@ sudo service iptables-persistent enable
 
 ## Auto Start Options
 
-# Install [Production Process Manager [PM2]](http://pm2.io)
+### Install [Production Process Manager [PM2]](http://pm2.io)
 ```
 # Install Production Process Manager [PM2]
 npm install pm2 -g
