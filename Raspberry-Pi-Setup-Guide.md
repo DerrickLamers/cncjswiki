@@ -1,6 +1,10 @@
 # Raspberry Pi Setup Guide
 I recommend that you use a [Raspberry Pi 3](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) or [Raspberry Pi 2](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/) because of the performance requirements of the Node.js application. If you a buying a raspberry pi, [buy a Raspberry Pi 3](https://www.amazon.com/Raspberry-Pi-RASP-PI-3-Model-Motherboard/dp/B01CD5VC92) or latest model.
 
+Recommed Software (for a full web capatable CNC software stack):
+* [jscut (converts SVG files to CNC cutting paths)](http://jscut.org/jscut.html)
+* [Kiri:Moto(converts 3D models to 3D mesh CNC cutting paths)](https://grid.space/kiri/?sm:CAM)
+
 # The Big Easy (just cut and paste in terminal)
 ### Configure Raspberry Pi
 https://www.raspberrypi.org/documentation/linux/usage/users.md
