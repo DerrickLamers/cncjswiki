@@ -4,6 +4,7 @@ I recommend that you use a [Raspberry Pi 3](https://www.raspberrypi.org/products
 # The Big Easy (just cut and paste in terminal)
 ### Configure Raspberry Pi
 https://www.raspberrypi.org/documentation/linux/usage/users.md
+https://www.raspberrypi.org/documentation/configuration/raspi-config.md
 
 ```
 # Change User Passwords
