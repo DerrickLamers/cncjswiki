@@ -204,9 +204,9 @@ sudo iwlist wlan0 scan
 sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
 
 network={
-  ssid="now"
+  ssid="YOUR_SSID"
   scan_ssid=1
-  psk="123456789#sterling"
+  psk="YOUR_PASSKRY"
   mode=0
   proto=WPA2
   key_mgmt=WPA-PSK
