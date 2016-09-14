@@ -104,7 +104,7 @@ sudo service iptables-persistent enable
 ```sudo reboot```
 
 #### **You're Done, STOP HERE!!!**
-The information below is a breakdown of the process above with different / additional options as part of a operate process.
+The information below is a breakdown of the process above with different / additional options as part of a separate process.
 
 -----------
 
