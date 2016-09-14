@@ -37,8 +37,8 @@ sudo apt-get install -y build-essential git
 sudo apt-get install htop iotop nmon lsof screen -y
 ```
 
-#### **STOP HERE, decide on which method to use:**
- - [Install Node.js via Package Manager](#install-nodejs-via-package-manager)
+#### **STOP HERE!!!, decide on which method to use:**
+ - [Install Node.js via Package Manager](#install-nodejs-via-package-manager) *(Recommended)*
  - [Install Install Node.js via Node Version Manager (NVM)](#install-install-nodejs-via-node-version-manager-nvm)
  - Additional Configuration Options
 	 - [Wireless Setup](#wireless-setup)
@@ -102,7 +102,7 @@ sudo service iptables-persistent enable
 ### Reboot to test
 ```sudo reboot```
 
-#### **You're Done, STOP HERE**
+#### **You're Done, STOP HERE!!!**
 The information below is a breakdown of the process above with different / additional options as part of a operate process.
 
 -----------
@@ -196,7 +196,7 @@ crontab -u pi -e
 @reboot env PATH=$PATH:/home/pi/.nvm/versions/node/v4.5.0/bin /home/pi/.nvm/versions/node/v4.5.0/bin/cnc >> $HOME/cncjs.log 2>&1
 ```
 
-#### **You're Done, STOP HERE**
+#### **You're Done, STOP HERE!!!**
 
 ---------
 
