@@ -37,7 +37,7 @@ sudo apt-get install -y build-essential git
 sudo apt-get install htop iotop nmon lsof screen -y
 ```
 
-#### **STOP HERE!!!, decide on which method to use:**
+#### **PAUSE HERE!!!, decide on which method to use:**
  - [Install Node.js via Package Manager](#install-nodejs-via-package-manager) *(Recommended)*
  - [Install Install Node.js via Node Version Manager (NVM)](#install-install-nodejs-via-node-version-manager-nvm)
  - Additional Configuration Options
@@ -59,8 +59,8 @@ echo "[NPM] ============"; which npm; npm -v;
 echo "[NODE] ============"; which node; node -v
 ```
 
-### Install Serial Port (Optional/Used for Testing)
-```sudo npm install -g serialport --unsafe-perm  # --fallback-to-build```
+~~### Install Serial Port (Optional/Used for Testing) 
+```sudo npm install -g serialport --unsafe-perm  # --fallback-to-build```~~
 
 ### Install CNC.js
 ```sudo npm install -g cncjs --unsafe-perm```
