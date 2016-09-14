@@ -26,7 +26,7 @@ sudo raspi-config
 
 ### Updates & Upgrades
 ```
- Update System
+# Update System
 sudo apt-get update
 sudo apt-get upgrade -y
 
@@ -59,8 +59,8 @@ echo "[NPM] ============"; which npm; npm -v;
 echo "[NODE] ============"; which node; node -v
 ```
 
-### Install Serial Port (Optional)
-```#sudo npm install -g serialport --unsafe-perm  # --fallback-to-build```
+### Install Serial Port (Optional/Used for Testing)
+```sudo npm install -g serialport --unsafe-perm  # --fallback-to-build```
 
 ### Install CNC.js
 ```sudo npm install -g cncjs --unsafe-perm```
@@ -148,9 +148,6 @@ echo "[NODE] ============"; which node; node -v
 
 ### Install CNC.js
 ```npm install -g cncjs```
-
-### Upgrade CNC.js
-```npm update -g cncjs```
 
 ### Allow access to port 8000 from port 80
 ```
