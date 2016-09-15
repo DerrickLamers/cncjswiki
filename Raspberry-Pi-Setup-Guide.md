@@ -52,7 +52,10 @@ sudo apt-get install htop iotop nmon lsof screen -y
 # Install Node.js via Package Manager & Add Package Source
 curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 sudo apt-get install -y nodejs  # npm nodejs-legacy #(Installed with nodesource)
+```
 
+### Update Node Package Manager (NPM)
+```
 # Update Node Package Manager (NPM)
 sudo npm install npm@latest -g
 
