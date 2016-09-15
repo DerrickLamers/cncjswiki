@@ -29,6 +29,8 @@ sudo raspi-config
 # Update System
 sudo apt-get update
 sudo apt-get upgrade -y
+sudo apt-get dist-upgrade -y
+sudo rpi-update
 
 # Install Build Essentials & GIT
 sudo apt-get install -y build-essential git
@@ -39,7 +41,7 @@ sudo apt-get install htop iotop nmon lsof screen -y
 
 #### **PAUSE HERE!!!, decide on which method to use:**
  - [Install Node.js via Package Manager](#install-nodejs-via-package-manager) *(Recommended)*
- - [Install Install Node.js via Node Version Manager (NVM)](#install-install-nodejs-via-node-version-manager-nvm)
+ - [Install Node.js via Node Version Manager (NVM)](#install-install-nodejs-via-node-version-manager-nvm)
  - Additional Configuration Options
 	 - [Wireless Setup](#wireless-setup)
 
@@ -200,12 +202,20 @@ crontab -u pi -e
 
 
 # [Wireless Setup](https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md)
+https://www.raspberrypi.org/forums/viewtopic.php?f=63&t=139866
+https://www.raspberrypi.org/forums/viewtopic.php?f=28&t=139486
 ```
+# Bring Wireless Up
+#sudo ifdown wlan0
+sudo ifup wlan0
+
 # Scan for wireless networks
 sudo iwlist wlan0 scan
 
 # Open the wpa-supplicant configuration file in nano:
 sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+# ----------
+scan_ssid=1
 
 network={
   ssid="YOUR_SSID"
@@ -220,6 +230,7 @@ network={
   id_str="raspi"
   priority=1
 }
+# ----------
 
 # Restart Interface
 sudo ifdown wlan0
