@@ -24,7 +24,7 @@ sudo raspi-config
 # Change Boot Option: Boot to CLI (No GUI)
 ```
 
-### Updates & Upgrades
+### Updates & Upgrade System
 ```
 # Update System
 sudo apt-get update
@@ -42,7 +42,7 @@ sudo apt-get install htop iotop nmon lsof screen -y
 #### **PAUSE HERE!!!, decide on which method to use:**
  - [Install Node.js via Package Manager](#install-nodejs-via-package-manager) *(Recommended)*
  - [Install Node.js via Node Version Manager (NVM)](#install-install-nodejs-via-node-version-manager-nvm)
- - [Install Node.js Manually](#install-nodejs-manually) (needed for special circumstances)
+ - [Install Node.js Manually](#install-nodejs-manually)
  - Additional Configuration Options
 	 - [Wireless Setup](#wireless-setup)
 
@@ -53,15 +53,6 @@ sudo apt-get install htop iotop nmon lsof screen -y
 # Install Node.js via Package Manager & Add Package Source
 curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 sudo apt-get install -y nodejs  # npm nodejs-legacy #(Installed with nodesource)
-
--- OR ---
-
-# Install Node.js [Manually] 
-wget https://nodejs.org/dist/v4.5.0/node-v4.5.0-linux-armv6l.tar.xz
-tar -xvf node-v4.5.0-linux-armv6l.tar.xz 
-cd node-v4.5.0-linux-armv6l
-sudo cp -R * /usr/local/
-
 ```
 
 ### Update Node Package Manager (NPM)
@@ -73,6 +64,9 @@ sudo npm install npm@latest -g
 echo "[NPM] ============"; which npm; npm -v;
 echo "[NODE] ============"; which node; node -v
 ```
+
+~~### Install Node.JS Serial Port application first (OPTIONAL)
+```npm install serialport```~~
 
 ### Install CNC.js
 ```sudo npm install -g cncjs --unsafe-perm```
@@ -137,7 +131,7 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.7/install.sh | b
 source ~/.bashrc  # Rerun profile after installing nvm
 ```
 
-### [Install Node.js](https://nodejs.org)
+### [Install Node.js via NVM](https://nodejs.org)
 Installing an ARM-version of Node has become very easy:
 
 ```
@@ -157,9 +151,6 @@ echo "[NPM] ============"; which npm; npm -v;
 echo "[NVM] ============"; nvm --version; nvm ls
 echo "[NODE] ============"; which node; node -v
 ```
-
-
-## Install CNC.js
 
 ~~### Install Node.JS Serial Port application first (OPTIONAL)
 ```npm install serialport```~~
@@ -223,9 +214,9 @@ crontab -u pi -e
 
 ---------
 
+### Install Node.js Manually
 Information on how to install Node.js on Raspberry Pi 1 or ARM6 devices
 
-### Install Node.js Manually
 ```
 # Install Node.js [Manually] 
 wget https://nodejs.org/dist/v4.5.0/node-v4.5.0-linux-armv6l.tar.xz
@@ -233,14 +224,60 @@ tar -xvf node-v4.5.0-linux-armv6l.tar.xz
 cd node-v4.5.0-linux-armv6l
 sudo cp -R * /usr/local/
 ```
+Resume install at [Update Node Package Manager (NPM)](#update-node-package-manager-npm)
 
-Resume install with [Update Node Package Manager (NPM)](#update-node-package-manager-npm)
+---------
+
+## Maintaining your Software Stack w/ Updates & Upgrades
+### Updates & Upgrade System
+```
+# Update System
+sudo apt-get update
+sudo apt-get upgrade -y  # Should also update Node.js if you used method #1
+sudo apt-get dist-upgrade -y
+sudo rpi-update
+```
+
+### Update Node Package Manager (NPM)
+```
+# Update Node Package Manager (NPM)
+sudo npm install npm@latest -g
+
+# Get Version info
+echo "[NPM] ============"; which npm; npm -v;
+echo "[NODE] ============"; which node; node -v
+```
+
+### Update CNC.js
+```
+# Stop CNC.js in PM2 
+pm2 stop cnc
+
+# Update CNC.js
+sudo npm update -g cncjs --unsafe-perm  # If fails, then reinstall CNC.js ( sudo npm uninstall -g cncjs; sudo npm install -g cncjs --unsafe-perm ) | https://github.com/cheton/cnc/issues/78
+
+# Restart CNC.js in PM2
+pm2 start cnc
+```
+
+### [Update Production Process Manager [PM2]](http://pm2.keymetrics.io/docs/usage/update-pm2/)
+```
+# First make sure that you save all your processes:
+pm2 save
+
+Then install the latest PM2 version from NPM:
+npm install pm2 -g
+
+And finally update the in-memory PM2 process:
+pm2 update
+```
 
 ---------
 
 # [Wireless Setup](https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md)
 https://www.raspberrypi.org/forums/viewtopic.php?f=63&t=139866
 https://www.raspberrypi.org/forums/viewtopic.php?f=28&t=139486
+
 ```
 # Bring Wireless Up
 sudo ifup wlan0
