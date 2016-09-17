@@ -152,3 +152,14 @@ To view the container in your terminal, use:
 ```bash
 docker attach cnc
 ```
+
+------- 
+
+### Installing a Specific Version of [CNC.js Release](https://github.com/cheton/cnc/releases)
+```
+# Removed Current Version of CNC.js
+sudo npm uninstall -g cncjs
+
+# Install Specific Version of CNC.js
+sudo npm install -g cncjs@1.6.3  --unsafe-perm
+```
