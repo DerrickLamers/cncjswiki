@@ -74,9 +74,6 @@ echo "[NPM] ============"; which npm; npm -v;
 echo "[NODE] ============"; which node; node -v
 ```
 
-~~### Install Serial Port (Optional/Used for Testing) 
-```sudo npm install -g serialport --unsafe-perm  # --fallback-to-build```~~
-
 ### Install CNC.js
 ```sudo npm install -g cncjs --unsafe-perm```
 
