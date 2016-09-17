@@ -42,6 +42,7 @@ sudo apt-get install htop iotop nmon lsof screen -y
 #### **PAUSE HERE!!!, decide on which method to use:**
  - [Install Node.js via Package Manager](#install-nodejs-via-package-manager) *(Recommended)*
  - [Install Node.js via Node Version Manager (NVM)](#install-install-nodejs-via-node-version-manager-nvm)
+ - [Install Node.js Manually](#install-nodejs-manually) (needed for special circumstances)
  - Additional Configuration Options
 	 - [Wireless Setup](#wireless-setup)
 
@@ -52,6 +53,15 @@ sudo apt-get install htop iotop nmon lsof screen -y
 # Install Node.js via Package Manager & Add Package Source
 curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 sudo apt-get install -y nodejs  # npm nodejs-legacy #(Installed with nodesource)
+
+-- OR ---
+
+# Install Node.js [Manually] 
+wget https://nodejs.org/dist/v4.5.0/node-v4.5.0-linux-armv6l.tar.xz
+tar -xvf node-v4.5.0-linux-armv6l.tar.xz 
+cd node-v4.5.0-linux-armv6l
+sudo cp -R * /usr/local/
+
 ```
 
 ### Update Node Package Manager (NPM)
@@ -98,11 +108,17 @@ sudo iptables -t nat -I PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8000
 
 # Make Iptables Persistent
 sudo apt-get install iptables-persistent -y
-sudo sh -c "iptables-save > /etc/iptables/rules.v4"
-sudo sh -c "ip6tables-save > /etc/iptables/rules.v6"
-sudo service iptables-persistent start
-sudo service iptables-persistent enable
-# sudo dpkg-reconfigure iptables-persistent # Run this if issues to reconfigure iptables-persistent
+
+# How-to: Save & Reload Rules
+#sudo netfilter-persistent save
+#sudo netfilter-persistent reload
+
+# How-to: Manually Save Rules
+#sudo sh -c "iptables-save > /etc/iptables/rules.v4"
+#sudo sh -c "ip6tables-save > /etc/iptables/rules.v6"
+
+# Run this if issues to reconfigure iptables-persistent
+# sudo dpkg-reconfigure iptables-persistent
 ```
 
 ### Reboot to test
@@ -161,10 +177,17 @@ sudo iptables -t nat -I PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8000
 
 # Make Iptables Persistent
 sudo apt-get install iptables-persistent -y
-sudo sh -c "iptables-save > /etc/iptables/rules.v4"
-sudo sh -c "ip6tables-save > /etc/iptables/rules.v6"
-sudo service iptables-persistent start
-sudo service iptables-persistent enable
+
+# How-to: Save & Reload Rules
+#sudo netfilter-persistent save
+#sudo netfilter-persistent reload
+
+# How-to: Manually Save Rules
+#sudo sh -c "iptables-save > /etc/iptables/rules.v4"
+#sudo sh -c "ip6tables-save > /etc/iptables/rules.v6"
+
+# Run this if issues to reconfigure iptables-persistent
+# sudo dpkg-reconfigure iptables-persistent
 ```
 
 
@@ -203,13 +226,28 @@ crontab -u pi -e
 
 ---------
 
+Information on how to install Node.js on Raspberry Pi 1 or ARM6 devices
+
+### Install Node.js Manually
+```
+# Install Node.js [Manually] 
+wget https://nodejs.org/dist/v4.5.0/node-v4.5.0-linux-armv6l.tar.xz
+tar -xvf node-v4.5.0-linux-armv6l.tar.xz 
+cd node-v4.5.0-linux-armv6l
+sudo cp -R * /usr/local/
+```
+
+Resume install with [Update Node Package Manager (NPM)](#update-node-package-manager-npm)
+
+---------
+
+### Install Node.js Manually
 
 # [Wireless Setup](https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md)
 https://www.raspberrypi.org/forums/viewtopic.php?f=63&t=139866
 https://www.raspberrypi.org/forums/viewtopic.php?f=28&t=139486
 ```
 # Bring Wireless Up
-#sudo ifdown wlan0
 sudo ifup wlan0
 
 # Scan for wireless networks
@@ -218,8 +256,6 @@ sudo iwlist wlan0 scan
 # Open the wpa-supplicant configuration file in nano:
 sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
 # ----------
-scan_ssid=1
-
 network={
   ssid="YOUR_SSID"
   scan_ssid=1
