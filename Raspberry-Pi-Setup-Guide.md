@@ -266,7 +266,7 @@ pm2 start cnc
 pm2 save
 
 Then install the latest PM2 version from NPM:
-npm install pm2 -g
+sudo npm install pm2 -g
 
 And finally update the in-memory PM2 process:
 pm2 update
