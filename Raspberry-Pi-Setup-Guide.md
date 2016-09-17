@@ -241,8 +241,6 @@ Resume install with [Update Node Package Manager (NPM)](#update-node-package-man
 
 ---------
 
-### Install Node.js Manually
-
 # [Wireless Setup](https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md)
 https://www.raspberrypi.org/forums/viewtopic.php?f=63&t=139866
 https://www.raspberrypi.org/forums/viewtopic.php?f=28&t=139486
