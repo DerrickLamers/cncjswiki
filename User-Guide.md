@@ -56,14 +56,14 @@ $ cnc -h
     -m, --mount [<url>:]<absolute-path>  set the mount point for serving static files (default: /static:static)
 ```
 
-First, copy the [tinyweb.zip](https://github.com/cheton/cnc/raw/master/examples/tinyweb.zip) archive from [examples/tinyweb](https://github.com/cheton/cnc/tree/master/examples) to your Raspberry Pi to serve as static files. Let's assume you extract the zip file within the `/home` directory, you will see the a `tinyweb` directory under `/home` after extraction.
+First, download the latest "tinyweb.zip" file from https://github.com/cheton/cnc/releases and save it to your Raspberry Pi to serve as static files. Let's assume you extract the zip file within the `/home` directory, you will see the a `tinyweb` directory under `/home` after extraction.
 
 Then, run cnc with the `-m` option, like below:
 ```
-$ cnc -m /tinyweb:/home/tinyweb
+$ cnc -m /pendant:/home/tinyweb
 ```
 
-After that, you should be able to see the tinyweb console as shown below at `http://localhost:8000/tinyweb`.
+After that, you should be able to see the tinyweb console as shown below at `http://localhost:8000/pendant/`.
 
 ![tinyweb-axes.png](https://raw.githubusercontent.com/cheton/cnc/master/media/tinyweb-axes.png)
 
