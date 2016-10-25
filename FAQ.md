@@ -1,11 +1,19 @@
 ## Index
 
+* [How can I enable WebGL in my browser?](https://github.com/cheton/cnc/wiki/FAQ/#how-can-i-enable-webgl-in-my-browser)
 * [Raspberry Pi: Error opening serial port "ttyAMA0"](https://github.com/cheton/cnc/wiki/FAQ/#raspberry-pi-error-opening-serial-port-ttyama0)
 * [Webcam Streaming with Raspberry Pi](https://github.com/cheton/cnc/wiki/FAQ/#webcam-streaming-with-raspberry-pi)
 * [Restream RTSP to M-JPEG](https://github.com/cheton/cnc/wiki/FAQ/#restream-rtsp-to-m-jpeg)
 * [Connect to an Arduino using WiFi](https://github.com/cheton/cnc/wiki/FAQ#connect-to-an-arduino-using-wifi)
 * [Install Native Addons with Node.js v4](https://github.com/cheton/cnc/wiki/FAQ#install-native-addons-with-nodejs-v4)
 * [Install Serialport on OS X El Capitan](https://github.com/cheton/cnc/wiki/FAQ/#install-serialport-on-os-x-el-capitan)
+
+## How can I enable WebGL in my browser?
+
+Navigate to http://webglreport.com/ to make sure your browser support WebGL.
+
+If your browser does not support WebGL due to certain reasons, follow instructions below to enable WebGL:
+http://superuser.com/questions/836832/how-can-i-enable-webgl-in-my-browser
 
 ## Raspberry Pi: Error opening serial port "ttyAMA0"
 
