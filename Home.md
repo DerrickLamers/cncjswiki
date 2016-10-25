@@ -15,6 +15,8 @@
   * [Keyboard Shortcuts](https://github.com/cheton/cnc/wiki/User-Guide#keyboard-shortcuts)
   * [Contour ShuttleXpress](https://github.com/cheton/cnc/wiki/User-Guide#contour-shuttlexpress)
 * [FAQ](https://github.com/cheton/cnc/wiki/FAQ)
+  * [How can I enable WebGL in my browser?](https://github.com/cheton/cnc/wiki/FAQ/#how-can-i-enable-webgl-in-my-browser)
+  * [Raspberry Pi: Error opening serial port "ttyAMA0"](https://github.com/cheton/cnc/wiki/FAQ/#raspberry-pi-error-opening-serial-port-ttyama0)
   * [Webcam Streaming with Raspberry Pi](https://github.com/cheton/cnc/wiki/FAQ/#webcam-streaming-with-raspberry-pi)
   * [Restream RTSP to M-JPEG](https://github.com/cheton/cnc/wiki/FAQ/#restream-rtsp-to-m-jpeg)
   * [Connect to an Arduino using WiFi](https://github.com/cheton/cnc/wiki/FAQ#connect-to-an-arduino-using-wifi)
