@@ -15,6 +15,17 @@ Navigate to http://webglreport.com/ to make sure your browser support WebGL.
 If your browser does not support WebGL due to certain reasons, follow instructions below to enable WebGL:
 http://superuser.com/questions/836832/how-can-i-enable-webgl-in-my-browser
 
+### Chrome
+
+First, enable hardware acceleration:
+  * Go to [chrome://settings](chrome://settings)
+  * Click the <b>+ Show advanced settings</b> button
+  * In the <b>System</b> section, ensure the <b>Use hardware acceleration when available</b> checkbox is checked (you'll need to relaunch Chrome for any changes to take effect)
+
+Then enable WebGL:
+  * Go to [chrome://flags](chrome://flags)
+  * Ensure that <b>Disable WebGL</b> is not activated (you'll need to relaunch Chrome for any changes to take effect)
+
 ## Raspberry Pi: Error opening serial port "ttyAMA0"
 
 You may got this error when using the GPIO serial device on the Raspberry Pi:
