@@ -10,6 +10,7 @@
 * [Prerequisite](https://github.com/cheton/cnc/wiki/Prerequisite)
   * [Running without using Arduino board](https://github.com/cheton/cnc/wiki/Prerequisite#running-without-using-arduino-board)
 * [User Guide](https://github.com/cheton/cnc/wiki/User-Guide)
+  * [Account Management](https://github.com/cheton/cnc/wiki/User-Guide#account-management)
   * [Widget Management](https://github.com/cheton/cnc/wiki/User-Guide#widget-management)
   * [TinyWeb Console on 320x240 LCD Display](https://github.com/cheton/cnc/wiki/User-Guide#tinyweb-console-on-320x240-lcd-display)
   * [Keyboard Shortcuts](https://github.com/cheton/cnc/wiki/User-Guide#keyboard-shortcuts)
