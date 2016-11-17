@@ -1,3 +1,6 @@
+## Account Management
+![image](https://cloud.githubusercontent.com/assets/447801/20375707/d036adbe-acbb-11e6-8b3f-514c06e7c9e4.png)
+
 ## Widget Management
 ![](https://raw.githubusercontent.com/cheton/cnc/master/media/widgets.png)
 
