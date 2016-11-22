@@ -310,3 +310,95 @@ sudo ifup wlan0
 # Check Interface for IP
 ifconfig wlan0
 ```
+
+---------
+# Raspberry Pi Shutdown Button & LED Script
+Gracefully shutdown the Raspberry Pi using a hardware button.
+- http://www.banggood.com/Power-Symbol-Latching-Switch-LED-Light-Push-Button-SPST-p-1064278.html
+- https://cad.onshape.com/documents/94796d1c35c5a20444b82aa2/w/23a4445409a14a7f19bbd918/e/306a16744c5d0f265eb26f3c
+
+NOTE: Jumping pins 5 & 6 (grounding GPIO3) will power on the RPi. So I altered the script to use GPIO3, rather than pin 40. Now I can use the same button to turn on and off the Pi!
+
+## Python Script
+```
+sudo touch /root/shutdown_button_pi.py  # Create File
+sudo chmod +x /root/shutdown_button_pi.py  # Make Executable
+sudo nano /root/shutdown_button_pi.py  # Edit File
+```
+
+## Python Script: Interrupts & While Loop [For LED Button] (AWEOMENESSS!!!)
+
+```
+#!/usr/bin/env python
+# Instll Python3 #sudo apt-get install python3
+# Usage: sudo /usr/bin/python /root/shutdown_button_pi.py
+# Install: sudo crontab -e
+#          @reboot sudo /usr/bin/python3 /root/shutdown_button_pi.py > /root/shutdown_button_pi.log 2>&1
+
+# Import the modules to send commands to the system and access GPIO pins
+from subprocess import call
+import RPi.GPIO as gpio
+import time
+#import os  # used to run shell commands to os
+
+# Pins
+button_pin = 7
+led_pin = 11  # (3) comes on when pi starts, (11) shuts off when pi powers down.
+
+# Define a function to keep script running
+def loop():
+	#input()  # (more efficient) but does not work with cron job
+	while True:
+		time.sleep(1)
+
+# Define a function to blink LED
+def blink_led(interations):
+	for interation in range(interations):
+		gpio.output(led_pin,gpio.HIGH)
+		time.sleep(.5)
+		gpio.output(led_pin,gpio.LOW)
+		time.sleep(.5)
+		gpio.output(led_pin,gpio.HIGH)
+
+# Define a function to run when an interrupt is called
+def shutdown(pin):
+	# turn off led while pressed
+	gpio.output(led_pin,gpio.LOW)
+
+	#start counting pressed time
+	pressed_time=time.monotonic()
+	while gpio.input(button_pin): #call: is button still pressed
+		# Get Button Pressed Time
+		if time.monotonic()-pressed_time >= 3:
+			#os.system("echo long press, powering down") #os.system("sudo reboot")
+			blink_led(3)
+			call('halt', shell=False)
+			break
+
+	# Turn LED back on
+	gpio.output(led_pin,gpio.HIGH)
+
+# Setup GPIO
+gpio.setmode(gpio.BOARD) # Set pin numbering to board numbering
+
+# Create Button Interrupt
+gpio.setup(button_pin, gpio.IN) # Set up pin 7 as an input
+gpio.add_event_detect(button_pin, gpio.RISING, callback=shutdown, bouncetime=200) # Set up an interrupt to look for button presses
+
+# Setup Power LED
+gpio.setup(led_pin, gpio.OUT, initial=1)
+
+loop() # Run the loop function to keep script running
+```
+
+## Run Script & Test
+```sudo python3 /root/shutdown_button_pi.py```
+
+## Autostart Script
+```
+# Run Crontab
+sudo crontab -e
+
+# Now, enter the line:
+@reboot sudo /usr/bin/python3 /root/shutdown_button_pi.py > /root/shutdown_button_pi.log 2>&1
+```
