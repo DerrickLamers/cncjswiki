@@ -274,6 +274,28 @@ pm2 update
 
 ---------
 
+# [TinyWeb Console for 320x240 LCD Display](https://github.com/cheton/cnc/wiki/User-Guide#tinyweb-console-for-320x240-lcd-display)
+```
+# Remove Older Downloads
+rm *tinyweb.zip
+
+# Download TinyWeb Example
+wget https://github.com/cheton/cnc/releases/download/v1.8.2/cnc-1.8.2-tinyweb.zip
+
+# Extract Achieve
+unzip *tinyweb.zip -d /home/pi/
+
+# How-to Start CNC.js w/ mounted TinyWeb
+#cnc -m /tinyweb:/home/pi/tinyweb
+
+# Start CNC.js (on port 8000) with PM2 w/ mounted TinyWeb
+pm2 stop cnc  # stop pervious instance
+pm2 delete cnc  # delete pervious instance
+pm2 start $(which cnc) -- --port 8000 -m /tinyweb:/home/pi/tinyweb
+```
+
+---------
+
 # [Wireless Setup](https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md)
 https://www.raspberrypi.org/forums/viewtopic.php?f=63&t=139866
 https://www.raspberrypi.org/forums/viewtopic.php?f=28&t=139486
