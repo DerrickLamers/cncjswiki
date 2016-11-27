@@ -30,7 +30,7 @@ sudo raspi-config
 sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt-get dist-upgrade -y
-sudo rpi-update
+# sudo rpi-update. # Update Raspberry Pi kernel and firmware, [is already done with 'apt-get update / upgrade'](github.com/cheton/cnc/issues/97)
 
 # Install Build Essentials & GIT
 sudo apt-get install -y build-essential git
@@ -235,7 +235,7 @@ Resume install at [Update Node Package Manager (NPM)](#update-node-package-manag
 sudo apt-get update
 sudo apt-get upgrade -y  # Should also update Node.js if you used method #1
 sudo apt-get dist-upgrade -y
-sudo rpi-update
+# sudo rpi-update. # Update Raspberry Pi kernel and firmware, [is already done with 'apt-get update / upgrade'](github.com/cheton/cnc/issues/97)
 ```
 
 ### Update Node Package Manager (NPM)
