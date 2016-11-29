@@ -292,6 +292,7 @@ unzip *tinyweb.zip -d /home/pi/
 pm2 stop cnc  # stop pervious instance
 pm2 delete cnc  # delete pervious instance
 pm2 start $(which cnc) -- --port 8000 -m /tinyweb:/home/pi/tinyweb
+pm2 save # Set current running apps to startup
 ```
 
 ---------
