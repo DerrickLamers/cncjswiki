@@ -56,28 +56,37 @@ cnc
 
 Run `cnc` with -h for detailed usage:
 ```bash
-cnc -h
+$ cnc -h
 
   Usage: cnc [options]
   
   Options:
 
-    -h, --help                  output usage information
-    -V, --version               output the version number
-    -p, --port                  set listen port (default: 8000)
-    -l, --host                  set listen address or hostname (default: 0.0.0.0)
-    -b, --backlog               set listen backlog (default: 511)
-    -c, --config <filename>     set config file (default: ~/.cncrc)
-    -v, --verbose               increase the verbosity level
-    -m, --mount [<url>:]<path>  set the mount point for serving static files (default: /static:static)
-    --allow-remote-access       allow remote access to the server
+    -h, --help                    output usage information
+    -V, --version                 output the version number
+    -p, --port                    set listen port (default: 8000)
+    -l, --host                    set listen address or hostname (default: 0.0.0.0)
+    -b, --backlog                 set listen backlog (default: 511)
+    -c, --config <filename>       set config file (default: ~/.cncrc)
+    -v, --verbose                 increase the verbosity level
+    -m, --mount [<url>:]<path>    set the mount point for serving static files (default: /static:static)
+    -w, --watch-directory <path>  watch a directory for changes
+    --allow-remote-access         allow remote access to the server
 
   Examples:
 
     $ cnc -vv
     $ cnc --mount /pendant:/home/pi/tinyweb
+    $ cnc --watch-directory /home/pi/watch
     $ cnc --allow-remote-access
+```
 
+Instead of passing command line options for `--watch-directory` and `--allow-remote-access`, you can create a `~/.cncrc` file that contains the following configuration in JSON format:
+```json
+{
+    "watchDirectory": "/path/to/dir",
+    "allowRemoteAccess": false
+}
 ```
 
 If you need view detailed logs for troubleshooting, you can run the server in debug mode.
