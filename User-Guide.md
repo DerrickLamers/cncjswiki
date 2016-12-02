@@ -32,6 +32,10 @@ This widgets shows the current status of G-code commands.
 This widet shows the Grbl state and provides Grbl specific features.
 
 ![](https://raw.githubusercontent.com/cheton/cnc/master/media/widgets/grbl.png)
+
+Set `$10=2` for Grbl v1.1d (or `$10=15` for Grbl v0.9) to see planner buffer and receive buffer in queue reports.
+![image](https://cloud.githubusercontent.com/assets/447801/20649442/5912660e-b4fb-11e6-8ff8-60b2602f5d79.png)
+
 #### Probe Widget
 This widget helps you use a touch plate to set your Z zero offset.
 
