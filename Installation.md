@@ -48,6 +48,9 @@ Check out [Git Installation](https://github.com/cheton/cnc.js#git-installation) 
 ### Upgrade
 Run `npm install -g cncjs@latest` to install the latest version. To determine the version, use cnc -V.
 
+Maybe you have to uninstall your cncjs version first in case of errors after upgrade, see
+[Installing a Specific Version](https://github.com/cheton/cnc/wiki/Installation#installing-a-specific-version-of-cncjs-release)
+
 ### Usage
 Run `cnc` or `~/.npm/bin/cnc` to start the server, and visit `http://yourhostname:8000/` to view the web interface:
 ```
