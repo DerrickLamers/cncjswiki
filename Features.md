@@ -11,5 +11,6 @@
 * [TinyWeb Console for 320x240 LCD Display](https://github.com/cheton/cnc/wiki/User-Guide#tinyweb-console-for-320x240-lcd-display)
 * [Keyboard Shortcuts](https://github.com/cheton/cnc/wiki/User-Guide#keyboard-shortcuts)
 * [Contour ShuttleXpress](https://github.com/cheton/cnc/wiki/User-Guide#contour-shuttlexpress)
-* I18n Ready
+* Multi-Language Support 
+* Watch Directory
 * Z-Probing
