@@ -96,8 +96,6 @@ Instead of passing command line options for --watch-directory, --access-token-li
 }
 ```
 
-Check out an example configuration file [here](https://github.com/cheton/cnc/blob/master/examples/.cncrc).
-
 If you need view detailed logs for troubleshooting, you can run the server in debug mode.
 ```
 $ cnc -vv
