@@ -7,7 +7,7 @@
 * [Connect to an Arduino using WiFi](https://github.com/cheton/cnc/wiki/FAQ#connect-to-an-arduino-using-wifi)
 * [Install Native Addons with Node.js v4](https://github.com/cheton/cnc/wiki/FAQ#install-native-addons-with-nodejs-v4)
 * [Install Serialport on OS X El Capitan](https://github.com/cheton/cnc/wiki/FAQ/#install-serialport-on-os-x-el-capitan)
-* [Kernel panic issue on macOS Sierra for devices using the CH340G, CH34G or CH34X chipset]()
+* [Kernel panic issue on macOS Sierra for devices using the CH340G, CH34G or CH34X chipset](https://github.com/cheton/cnc/wiki/FAQ#kernel-panic-issue-on-macos-sierra-for-devices-using-the-ch340g-ch34g-or-ch34x-chipset)
 
 ## How can I enable WebGL in my browser?
 
