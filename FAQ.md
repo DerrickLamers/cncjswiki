@@ -7,6 +7,7 @@
 * [Connect to an Arduino using WiFi](https://github.com/cheton/cnc/wiki/FAQ#connect-to-an-arduino-using-wifi)
 * [Install Native Addons with Node.js v4](https://github.com/cheton/cnc/wiki/FAQ#install-native-addons-with-nodejs-v4)
 * [Install Serialport on OS X El Capitan](https://github.com/cheton/cnc/wiki/FAQ/#install-serialport-on-os-x-el-capitan)
+* [How to resolve a kernel panic issue on macOS Sierra for devices using the CH340G, CH34G or CH34X chipset?]()
 
 ## How can I enable WebGL in my browser?
 
@@ -250,3 +251,7 @@ If you're running with OS X El Capitan (version: 10.11), and the [installation](
 cd /usr/local/lib
 sudo ln -s ../../lib/libSystem.B.dylib libgcc_s.10.5.dylib
 ```
+
+## How to resolve a kernel panic issue on macOS Sierra for devices using the CH340G, CH34G or CH34X chipset?
+
+Download and install the latest driver from https://github.com/adrianmihalko/ch340g-ch34g-ch34x-mac-os-x-driver.
