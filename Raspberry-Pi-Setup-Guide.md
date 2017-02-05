@@ -30,7 +30,7 @@ sudo raspi-config
 sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt-get dist-upgrade -y
-# sudo rpi-update. # Update Raspberry Pi kernel and firmware, [is already done with 'apt-get update / upgrade'](github.com/cheton/cnc/issues/97)
+# sudo rpi-update. # Update Raspberry Pi kernel and firmware, [is already done with 'apt-get update / upgrade'](github.com/cncjs/cncjs/cnc/issues/97)
 
 # Install Build Essentials & GIT
 sudo apt-get install -y build-essential git
@@ -235,7 +235,7 @@ Resume install at [Update Node Package Manager (NPM)](#update-node-package-manag
 sudo apt-get update
 sudo apt-get upgrade -y  # Should also update Node.js if you used method #1
 sudo apt-get dist-upgrade -y
-# sudo rpi-update. # Update Raspberry Pi kernel and firmware, [is already done with 'apt-get update / upgrade'](github.com/cheton/cnc/issues/97)
+# sudo rpi-update. # Update Raspberry Pi kernel and firmware, [is already done with 'apt-get update / upgrade'](github.com/cncjs/cncjs/cnc/issues/97)
 ```
 
 ### Update Node Package Manager (NPM)
@@ -254,7 +254,7 @@ echo "[NODE] ============"; which node; node -v
 pm2 stop cnc
 
 # Update CNC.js
-sudo npm update -g cncjs --unsafe-perm  # If fails, then reinstall CNC.js ( sudo npm uninstall -g cncjs; sudo npm install -g cncjs --unsafe-perm ) | https://github.com/cheton/cnc/issues/78
+sudo npm update -g cncjs --unsafe-perm  # If fails, then reinstall CNC.js ( sudo npm uninstall -g cncjs; sudo npm install -g cncjs --unsafe-perm ) | https://github.com/cncjs/cncjs/cnc/issues/78
 
 # Restart CNC.js in PM2
 pm2 start cnc
@@ -274,13 +274,13 @@ pm2 update
 
 ---------
 
-# [TinyWeb Console for 320x240 LCD Display](https://github.com/cheton/cnc/wiki/User-Guide#tinyweb-console-for-320x240-lcd-display)
+# [TinyWeb Console for 320x240 LCD Display](https://github.com/cncjs/cncjs/cnc/wiki/User-Guide#tinyweb-console-for-320x240-lcd-display)
 ```
 # Remove Older Downloads
 rm *tinyweb.zip
 
 # Download TinyWeb Example
-wget https://github.com/cheton/cnc/releases/download/v1.8.2/cnc-1.8.2-tinyweb.zip
+wget https://github.com/cncjs/cncjs/cnc/releases/download/v1.8.2/cnc-1.8.2-tinyweb.zip
 
 # Extract Achieve
 unzip *tinyweb.zip -d /home/pi/
