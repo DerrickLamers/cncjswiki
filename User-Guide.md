@@ -2,36 +2,36 @@
 ![image](https://cloud.githubusercontent.com/assets/447801/20375707/d036adbe-acbb-11e6-8b3f-514c06e7c9e4.png)
 
 ## Widget Management
-![](https://raw.githubusercontent.com/cheton/cnc/master/media/widgets.png)
+![](https://raw.githubusercontent.com/cncjs/cncjs/master/media/widgets.png)
 
 #### Visualizer Widget
 This widget visualizes a G-code file and simulates the tool path.
 
-![](https://raw.githubusercontent.com/cheton/cnc/master/media/widgets/visualizer.png)
+![](https://raw.githubusercontent.com/cncjs/cncjs/master/media/widgets/visualizer.png)
 #### Axes Widget
 This widget shows the XYZ position. It includes jog controls, homing, and axis zeroing.
 
-![](https://raw.githubusercontent.com/cheton/cnc/master/media/widgets/axes.png)
+![](https://raw.githubusercontent.com/cncjs/cncjs/master/media/widgets/axes.png)
 
 #### Connection Widget
 This widget lets you establish a connection to a serial port.
 
-![](https://raw.githubusercontent.com/cheton/cnc/master/media/widgets/connection.png)
+![](https://raw.githubusercontent.com/cncjs/cncjs/master/media/widgets/connection.png)
 
 #### Console Widget
 This widget lets you read and write data to the CNC controller connected to a serial port.
 
-![](https://raw.githubusercontent.com/cheton/cnc/master/media/widgets/console.png)
+![](https://raw.githubusercontent.com/cncjs/cncjs/master/media/widgets/console.png)
 
 #### G-code Widget
 This widgets shows the current status of G-code commands.
 
-![](https://raw.githubusercontent.com/cheton/cnc/master/media/widgets/gcode.png)
+![](https://raw.githubusercontent.com/cncjs/cncjs/master/media/widgets/gcode.png)
 
 #### Grbl Widget
 This widet shows the Grbl state and provides Grbl specific features.
 
-![](https://raw.githubusercontent.com/cheton/cnc/master/media/widgets/grbl.png)
+![](https://raw.githubusercontent.com/cncjs/cncjs/master/media/widgets/grbl.png)
 
 Set `$10=2` for Grbl v1.1d (or `$10=15` for Grbl v0.9) to see planner buffer and receive buffer in queue reports.
 
@@ -40,19 +40,19 @@ Set `$10=2` for Grbl v1.1d (or `$10=15` for Grbl v0.9) to see planner buffer and
 #### Probe Widget
 This widget helps you use a touch plate to set your Z zero offset.
 
-![](https://raw.githubusercontent.com/cheton/cnc/master/media/widgets/probe.png)
+![](https://raw.githubusercontent.com/cncjs/cncjs/master/media/widgets/probe.png)
 
 #### Spindle Widget
 This widget provides the spindle control.
 
-![](https://raw.githubusercontent.com/cheton/cnc/master/media/widgets/spindle.png)
+![](https://raw.githubusercontent.com/cncjs/cncjs/master/media/widgets/spindle.png)
 
 #### Webcam Widget
 This widget lets you monitor a webcam.
 
-![](https://raw.githubusercontent.com/cheton/cnc/master/media/widgets/webcam.png)
+![](https://raw.githubusercontent.com/cncjs/cncjs/master/media/widgets/webcam.png)
 
-Checkout [FAQ](https://github.com/cheton/cnc/wiki/FAQ) to learn how to setup and configure webcam streaming with Raspberry Pi.
+Checkout [FAQ](https://github.com/cncjs/cncjs/wiki/FAQ) to learn how to setup and configure webcam streaming with Raspberry Pi.
 
 ## TinyWeb Console for 320x240 LCD Display
 
@@ -64,7 +64,7 @@ $ cnc -h
     -m, --mount [<url>:]<absolute-path>  set the mount point for serving static files (default: /static:static)
 ```
 
-First, download the latest "tinyweb.zip" file from https://github.com/cheton/cnc/releases and save it to your Raspberry Pi to serve as static files. Let's assume you extract the zip file within the `/home` directory, you will see the a `tinyweb` directory under `/home` after extraction.
+First, download the latest "tinyweb.zip" file from https://github.com/cncjs/cncjs/releases and save it to your Raspberry Pi to serve as static files. Let's assume you extract the zip file within the `/home` directory, you will see the a `tinyweb` directory under `/home` after extraction.
 
 Then, run cnc with the `-m` option, like below:
 ```
@@ -73,7 +73,7 @@ $ cnc -m /pendant:/home/tinyweb
 
 After that, you should be able to see the tinyweb console as shown below at `http://localhost:8000/pendant/`.
 
-![tinyweb-axes.png](https://raw.githubusercontent.com/cheton/cnc/master/media/tinyweb-axes.png)
+![tinyweb-axes.png](https://raw.githubusercontent.com/cncjs/cncjs/master/media/tinyweb-axes.png)
 
 It should fit perfectly with your 320x240 LCD display.
 
@@ -109,7 +109,7 @@ These are the current keys used in the cnc (from v0.15.3).<br>
 ## Contour ShuttleXpress
 You can use the ShuttleXpress jog dial to work with a CNC controller. The ShuttleXpress has five programmable buttons, a 10 counts jog dial (the inner wheel), and a 15-position shuttle wheel (the outer wheel) that returns to center when released.
 
-![](https://raw.githubusercontent.com/cheton/cnc/dev/media/ShuttleXpress.jpg)
+![](https://raw.githubusercontent.com/cncjs/cncjs/dev/media/ShuttleXpress.jpg)
 
 To work with cnc, configure three buttons to select/deselect X/Y/Z axis, and another one button to switch the distance value. Set turn jog dial left (CCW) to jog backward/down, and set turn jog right (CW) to jog forward/up.
 
@@ -184,9 +184,9 @@ ok
 > $120=250.00
 ok
 ```
-In the general case, higher acceleration (mm/sec^2) can significantly reduce humming sound when accelerating and decelerating, but you may need to adjust various settings with your CNC machine. To adjust ShuttleXpress specific settings, click on the <kbd><img src="https://cdn.rawgit.com/cheton/cnc/master/media/font-awesome/black/svg/cog.svg" width="16" title="Edit" /></kbd> button at the top of the Axes widget.
+In the general case, higher acceleration (mm/sec^2) can significantly reduce humming sound when accelerating and decelerating, but you may need to adjust various settings with your CNC machine. To adjust ShuttleXpress specific settings, click on the <kbd><img src="https://cdn.rawgit.com/cncjs/cncjs/master/media/font-awesome/black/svg/cog.svg" width="16" title="Edit" /></kbd> button at the top of the Axes widget.
 
-![](https://raw.githubusercontent.com/cheton/cnc/master/media/widgets/axes-settings.png)
+![](https://raw.githubusercontent.com/cncjs/cncjs/master/media/widgets/axes-settings.png)
 * Feed Rate Range: 100-2500 mm/min (default: 500-2000 mm/min)
   - Defines the minimum feed rate for Shuttle Zone +1 and -1
   - Defines the maximum feed rate for Shuttle Zone +7 and -7
