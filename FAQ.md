@@ -1,13 +1,13 @@
 ## Index
 
-* [How can I enable WebGL in my browser?](https://github.com/cheton/cnc/wiki/FAQ/#how-can-i-enable-webgl-in-my-browser)
-* [Raspberry Pi: Error opening serial port "ttyAMA0"](https://github.com/cheton/cnc/wiki/FAQ/#raspberry-pi-error-opening-serial-port-ttyama0)
-* [Webcam Streaming with Raspberry Pi](https://github.com/cheton/cnc/wiki/FAQ/#webcam-streaming-with-raspberry-pi)
-* [Restream RTSP to M-JPEG](https://github.com/cheton/cnc/wiki/FAQ/#restream-rtsp-to-m-jpeg)
-* [Connect to an Arduino using WiFi](https://github.com/cheton/cnc/wiki/FAQ#connect-to-an-arduino-using-wifi)
-* [Install Native Addons with Node.js v4](https://github.com/cheton/cnc/wiki/FAQ#install-native-addons-with-nodejs-v4)
-* [Install Serialport on OS X El Capitan](https://github.com/cheton/cnc/wiki/FAQ/#install-serialport-on-os-x-el-capitan)
-* [Kernel panic issue on macOS Sierra for devices using the CH340G, CH34G or CH34X chipset](https://github.com/cheton/cnc/wiki/FAQ#kernel-panic-issue-on-macos-sierra-for-devices-using-the-ch340g-ch34g-or-ch34x-chipset)
+* [How can I enable WebGL in my browser?](https://github.com/cncjs/cncjs/wiki/FAQ/#how-can-i-enable-webgl-in-my-browser)
+* [Raspberry Pi: Error opening serial port "ttyAMA0"](https://github.com/cncjs/cncjs/wiki/FAQ/#raspberry-pi-error-opening-serial-port-ttyama0)
+* [Webcam Streaming with Raspberry Pi](https://github.com/cncjs/cncjs/wiki/FAQ/#webcam-streaming-with-raspberry-pi)
+* [Restream RTSP to M-JPEG](https://github.com/cncjs/cncjs/wiki/FAQ/#restream-rtsp-to-m-jpeg)
+* [Connect to an Arduino using WiFi](https://github.com/cncjs/cncjs/wiki/FAQ#connect-to-an-arduino-using-wifi)
+* [Install Native Addons with Node.js v4](https://github.com/cncjs/cncjs/wiki/FAQ#install-native-addons-with-nodejs-v4)
+* [Install Serialport on OS X El Capitan](https://github.com/cncjs/cncjs/wiki/FAQ/#install-serialport-on-os-x-el-capitan)
+* [Kernel panic issue on macOS Sierra for devices using the CH340G, CH34G or CH34X chipset](https://github.com/cncjs/cncjs/wiki/FAQ#kernel-panic-issue-on-macos-sierra-for-devices-using-the-ch340g-ch34g-or-ch34x-chipset)
 
 ## How can I enable WebGL in my browser?
 
@@ -173,7 +173,7 @@ http://localhost:8090/webcam.mjpg
 ```
 
 ## Connect to an Arduino using WiFi
-![WaveShare WIFI-LPT100 / WIFI400](https://raw.githubusercontent.com/cheton/cnc/master/media/WS_WIFI-LPT100_WIFI400.png)
+![WaveShare WIFI-LPT100 / WIFI400](https://raw.githubusercontent.com/cncjs/cncjs/master/media/WS_WIFI-LPT100_WIFI400.png)
 
 These articles might be useful if you want to connect to Arduino using WiFi: 
 * [WiFi your nodebot](https://gist.github.com/ajfisher/1fdbcbbf96b7f2ba73cd)
@@ -242,7 +242,7 @@ sudo update-alternatives --config g++
 ```
 
 ## Install Serialport on OS X El Capitan
-If you're running with OS X El Capitan (version: 10.11), and the [installation](https://github.com/cheton/cnc#installation) fails with error `ld: library not found for -lgcc_s.10.5`, check out the following ways:
+If you're running with OS X El Capitan (version: 10.11), and the [installation](https://github.com/cncjs/cncjs#installation) fails with error `ld: library not found for -lgcc_s.10.5`, check out the following ways:
 - Check out [Installing the Xcode Command Line Tools](https://developer.xamarin.com/guides/testcloud/calabash/configuring/osx/install-xcode-command-line-tools/).
 - If you do not have Xcode installed, just install Xcode 7 from App Store.
 - There is an issue with Mac OS X 10.11 and Xcode 6. If your Xcode version is 6.x, you need to upgrade it to Xcode 7, or use this as temporary fix:
