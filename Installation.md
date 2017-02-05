@@ -1,6 +1,6 @@
 ## Installation
 
-### [Raspberry Pi Setup Guide](https://github.com/cheton/cnc/wiki/Raspberry-Pi-Setup-Guide)
+### [Raspberry Pi Setup Guide](https://github.com/cncjs/cncjs/wiki/Raspberry-Pi-Setup-Guide)
 We have a dedicated setup guide for setting up Node.js, NVM, CNC.js, Autostart with pm2, all tested on the Raspberry Pi. Just use the link above in the title to get to the separate article.
 
 --------------------
@@ -38,20 +38,17 @@ Now using node v4.5.0 (npm v3.10.6)
 
 Install `cncjs` without `sudo`, or the `serialport` module may not install correctly on some platforms like Raspberry Pi.
 ```
-npm install -g cncjs
+$ npm install -g cncjs
 ```
 
 It's recommended that you run [Raspbian Jessie](https://www.raspberrypi.org/downloads/raspbian/) on the RPi2 or RPi3. For Raspbian Wheezy, be sure to [install gcc/g++ 4.8](https://somewideopenspace.wordpress.com/2014/02/28/gcc-4-8-on-raspberry-pi-wheezy/) before npm install.
 
-Check out [Git Installation](https://github.com/cheton/cnc.js#git-installation) and [Docker Image Installation (x64 only)](https://github.com/cheton/cnc.js#docker-image-installation-x64-only) for other installation methods.
+Check out [wiki](https://github.com/cncjs/cncjs/wiki/Installation) for other installation methods.
 
-### Upgrade
-Run `npm install -g cncjs@latest` to install the latest version. To determine the version, use cnc -V.
+## Upgrade
+Run `npm install -g cncjs@latest` to install the latest version. To determine the version, use `cnc -V`.
 
-Maybe you have to uninstall your cncjs version first in case of errors after upgrade, see
-[Installing a Specific Version](https://github.com/cheton/cnc/wiki/Installation#installing-a-specific-version-of-cncjs-release)
-
-### Usage
+## Usage
 Run `cnc` or `~/.npm/bin/cnc` to start the server, and visit `http://yourhostname:8000/` to view the web interface:
 ```
 $ cnc
@@ -87,7 +84,7 @@ $ cnc -h
     $ cnc --allow-remote-access
 ```
 
-Instead of passing command line options for --watch-directory, --access-token-lifetime, and --allow-remote-access, you can create a ~/.cncrc file that contains the following configuration in JSON format:
+Instead of passing command line options for `--watch-directory`, `--access-token-lifetime`, and `--allow-remote-access`, you can create a `~/.cncrc` file that contains the following configuration in JSON format:
 ```json
 {
     "watchDirectory": "/path/to/dir",
@@ -101,10 +98,58 @@ If you need view detailed logs for troubleshooting, you can run the server in de
 $ cnc -vvv
 ```
 
+## Configuration File
+
+The configuration file <b>.cncrc</b> contains settings that are equivalent to the cnc command-line options. The configuration file is stored in user's home directory. To find out the actual location of the home directory, do the following:
+
+* Linux/Mac
+  ```sh
+  echo $HOME
+  ```
+
+* Windows
+  ```sh
+  echo %USERPROFILE%
+  ```
+
+Check out an example configuration file [here](https://github.com/cncjs/cncjs/blob/master/examples/.cncrc).
+
+### File Format
+```json
+{
+  "watchDirectory": "/path/to/dir",
+  "accessTokenLifetime": "30d",
+  "allowRemoteAccess": false,
+  "state": {
+    "checkForUpdates": true
+  },
+  "commands": [
+    {
+      "text": "Update (root user)",
+      "command": "sudo npm install -g cncjs@latest --unsafe-perm; pkill -a -f cnc"
+    },
+    {
+      "text": "Update (non-root user)",
+      "command": "npm install -g cncjs@latest; pkill -a -f cnc"
+    },
+    {
+      "text": "Reboot",
+      "command": "sudo /sbin/reboot"
+    },
+    {
+      "text": "Shutdown",
+      "command": "sudo /sbin/shutdown"
+    }
+  ],
+  "macros": [],
+  "users": []
+}
+```
+
 ## Git Installation
 If you prefer to use Git instead of `npm install`, You can create a local clone of the repository on your computer and sync from GitHub. Type the following commands to install and run `cnc`:
 ```
-git clone https://github.com/cheton/cnc.git
+git clone https://github.com/cncjs/cncjs.git
 cd cnc
 git checkout master
 npm install
@@ -130,19 +175,19 @@ To install and set up cnc, take the following steps:
 
 <b>Step 1:</b> Enter the following command to retrieve the latest version of the image:
 ```
-docker pull cheton/cnc:latest
+docker pull cncjs/cncjs:latest
 ```
 
 <b>Step 2:</b> Use the `docker run` command to create the Docker container and run the server, like so:
 ```
-docker run --privileged -p 8000:8000 --rm --name cnc cheton/cnc:latest
+docker run --privileged -p 8000:8000 --rm --name cnc cncjs/cncjs:latest
 ```
 By default a container is not allowed to access any devices, but a "privileged" container is given access to all devices on the host.
 
 <b>Step 3:</b> If everything works fine, you should be able to view the web interface at `http://yourhostname:8000/`.
 
 ### Docker Images
-https://hub.docker.com/r/cheton/cnc/tags/
+https://hub.docker.com/r/cncjs/cncjs/tags/
 
 ### Tips
 
@@ -175,15 +220,4 @@ docker rmi IMAGE_ID
 To view the container in your terminal, use:
 ```
 docker attach cnc
-```
-
-------- 
-
-### Installing a Specific Version of [CNC.js Release](https://github.com/cheton/cnc/releases)
-```
-# Removed Current Version of CNC.js
-npm uninstall -g cncjs
-
-# Install Specific Version of CNC.js
-npm install -g cncjs@1.6.3  --unsafe-perm
 ```
