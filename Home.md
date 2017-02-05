@@ -1,6 +1,5 @@
 ## Index
 * [About](https://github.com/cncjs/cncjs/wiki/About)
-* [Features](https://github.com/cncjs/cncjs/wiki/Features)
 * [Installation](https://github.com/cncjs/cncjs/wiki/Installation)
   * [Raspberry Pi Setup Guide](https://github.com/cncjs/cncjs/wiki/Raspberry-Pi-Setup-Guide)
   * [Node.js Installation](https://github.com/cncjs/cncjs/wiki/Installation#nodejs-installation)
