@@ -14,9 +14,9 @@ If you don't have an Arduino, check out [grbl-sim](https://github.com/grbl/grbl-
 2. Edit the Grbl-sim Makefile to select the correct `PLATFORM =` line.
 3. Run `make new` to compile the Grbl sim. It will create an executable file named `grbl_sim.exe`. See below:
 
-  ![grbl-sim](https://raw.githubusercontent.com/cheton/cnc/master/media/grbl-sim.png).
-4. On Linux, run the updated version of [simport.sh](https://github.com/cheton/cnc/blob/master/examples/grbl-sim/simport.sh) (`examples/grbl-sim/simport.sh`) to create a fake serial port (`/dev/ttyFAKE`), and use it to test your Grbl interface software.
-5. Copy [.cncrc](https://github.com/cheton/cnc/blob/master/examples/grbl-sim/.cncrc) from [examples/grbl-sim](https://github.com/cheton/cnc/tree/master/examples/grbl-sim) to the home directory, and run `cnc -c ~/.cncrc` to start the server. The configuration file should look like below:
+  ![grbl-sim](https://raw.githubusercontent.com/cncjs/cncjs/master/media/grbl-sim.png).
+4. On Linux, run the updated version of [simport.sh](https://github.com/cncjs/cncjs/blob/master/examples/grbl-sim/simport.sh) (`examples/grbl-sim/simport.sh`) to create a fake serial port (`/dev/ttyFAKE`), and use it to test your Grbl interface software.
+5. Copy [.cncrc](https://github.com/cncjs/cncjs/blob/master/examples/.cncrc) from [examples](https://github.com/cncjs/cncjs/tree/master/examples) to the home directory, and run `cnc -c ~/.cncrc` to start the server. The configuration file should look like below:
 
   ```json
   {
@@ -30,4 +30,4 @@ If you don't have an Arduino, check out [grbl-sim](https://github.com/grbl/grbl-
   ```
 6. Open `/dev/ttyFAKE` from the Connection widget to interact with the Grbl simulator as if connected to an Arduino with Grbl.
 
-  ![ttyFAKE](https://raw.githubusercontent.com/cheton/cnc/master/media/ttyFAKE.png)
+  ![ttyFAKE](https://raw.githubusercontent.com/cncjs/cncjs/master/media/ttyFAKE.png)
