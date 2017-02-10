@@ -1,27 +1,45 @@
-## Index
-* [About](https://github.com/cncjs/cncjs/wiki/About)
-* [Installation](https://github.com/cncjs/cncjs/wiki/Installation)
-  * [Raspberry Pi Setup Guide](https://github.com/cncjs/cncjs/wiki/Raspberry-Pi-Setup-Guide)
-  * [Node.js Installation](https://github.com/cncjs/cncjs/wiki/Installation#nodejs-installation)
-  * [Git Installation](https://github.com/cncjs/cncjs/wiki/Installation#git-installation)
-  * [Docker Image Installation (x64 only)](https://github.com/cncjs/cncjs/wiki/Installation#docker-image-installation-x64-only)
-* [Desktop App](https://github.com/cncjs/cncjs/wiki/Desktop-App)
-* [Prerequisite](https://github.com/cncjs/cncjs/wiki/Prerequisite)
-  * [Running without using Arduino board](https://github.com/cncjs/cncjs/wiki/Prerequisite#running-without-using-arduino-board)
-* [User Guide](https://github.com/cncjs/cncjs/wiki/User-Guide)
-  * [Account Management](https://github.com/cncjs/cncjs/wiki/User-Guide#account-management)
-  * [Widget Management](https://github.com/cncjs/cncjs/wiki/User-Guide#widget-management)
-  * [TinyWeb Console on 320x240 LCD Display](https://github.com/cncjs/cncjs/wiki/User-Guide#tinyweb-console-on-320x240-lcd-display)
-  * [Keyboard Shortcuts](https://github.com/cncjs/cncjs/wiki/User-Guide#keyboard-shortcuts)
-  * [Contour ShuttleXpress](https://github.com/cncjs/cncjs/wiki/User-Guide#contour-shuttlexpress)
-* [FAQ](https://github.com/cncjs/cncjs/wiki/FAQ)
-  * [How can I enable WebGL in my browser?](https://github.com/cncjs/cncjs/wiki/FAQ/#how-can-i-enable-webgl-in-my-browser)
-  * [Raspberry Pi: Error opening serial port "ttyAMA0"](https://github.com/cncjs/cncjs/wiki/FAQ/#raspberry-pi-error-opening-serial-port-ttyama0)
-  * [Webcam Streaming with Raspberry Pi](https://github.com/cncjs/cncjs/wiki/FAQ/#webcam-streaming-with-raspberry-pi)
-  * [Restream RTSP to M-JPEG](https://github.com/cncjs/cncjs/wiki/FAQ/#restream-rtsp-to-m-jpeg)
-  * [Connect to an Arduino using WiFi](https://github.com/cncjs/cncjs/wiki/FAQ#connect-to-an-arduino-using-wifi)
-  * [Install Native Addons with Node.js v4](https://github.com/cncjs/cncjs/wiki/FAQ#install-native-addons-with-nodejs-v4)
-  * [Install Serialport on OS X El Capitan](https://github.com/cncjs/cncjs/wiki/FAQ/#install-serialport-on-os-x-el-capitan)
-  * [Kernel panic issue on macOS Sierra for devices using the CH340G, CH34G or CH34X chipset](https://github.com/cncjs/cncjs/wiki/FAQ#kernel-panic-issue-on-macos-sierra-for-devices-using-the-ch340g-ch34g-or-ch34x-chipset)
-* [Resources](https://github.com/cncjs/cncjs/wiki/Resources)
-* [Others](https://github.com/cncjs/cncjs/wiki/Others)
+[<img src="https://cnc.js.org/logo.png" width="128" height="128" />](https://cnc.js.org/)
+
+Site: https://cnc.js.org
+
+## Documentation
+* [Introduction](https://cnc.js.org/docs/)
+* [Installation](https://cnc.js.org/docs/installation/)
+  - [Raspberry Pi Setup Guide](https://github.com/cncjs/cncjs/wiki/Raspberry-Pi-Setup-Guide)
+  - [Node.js Installation](https://cnc.js.org/docs/installation/#nodejs-installation)
+  - [Git Installation](https://cnc.js.org/docs/installation/#git-installation)
+  - [Docker Image Installation (x64 only)](https://cnc.js.org/docs/installation/#docker-image-installation-x64-only)
+* [Desktop App](https://cnc.js.org/docs/desktop-app/)
+* [User Guide](https://cnc.js.org/docs/user-guide/)
+  - [Workspace](https://cnc.js.org/docs/user-guide/#workspace)
+    - [Widgets](https://cnc.js.org/docs/user-guide/#widgets)
+  - [Settings](https://cnc.js.org/docs/user-guide/#settings)
+    - [General](https://cnc.js.org/docs/user-guide/#general)
+    - [Account](https://cnc.js.org/docs/user-guide/#account)
+  - [Keyboard Shortcuts](https://cnc.js.org/docs/user-guide/#keyboard-shortcuts)
+  - [Contour ShuttleXpress](https://cnc.js.org/docs/user-guide/#contour-shuttlexpress)
+* [FAQ](https://cnc.js.org/docs/faq/)
+  - [How can I enable WebGL in my browser?](https://cnc.js.org/docs/faq/#how-can-i-enable-webgl-in-my-browser)
+  - [Raspberry Pi: Error opening serial port "ttyAMA0"](https://cnc.js.org/docs/faq/#raspberry-pi-error-opening-serial-port-ttyama0)
+  - [Webcam Streaming with Raspberry Pi](https://cnc.js.org/docs/faq/#webcam-streaming-with-raspberry-pi)
+  - [Restream RTSP to M-JPEG](https://cnc.js.org/docs/faq/#restream-rtsp-to-m-jpeg)
+  - [Connect to an Arduino using WiFi](https://cnc.js.org/docs/faq/#connect-to-an-arduino-using-wifi)
+  - [Install Native Addons with Node.js v4](https://cnc.js.org/docs/faq/#install-native-addons-with-nodejs-v4)
+  - [Install Serialport on OS X El Capitan](https://cnc.js.org/docs/faq/#install-serialport-on-os-x-el-capitan)
+  - [Kernel panic issue on macOS Sierra for devices using the CH340G, CH34G or CH34X chipset](https://cnc.js.org/docs/faq/#kernel-panic-issue-on-macos-sierra-for-devices-using-the-ch340g-ch34g-or-ch34x-chipset)
+  - [Run cncjs without Arduino board](https://cnc.js.org/docs/faq/#run-cncjs-without-arduino-board)
+* [Resources](https://cnc.js.org/docs/resources/)
+* [About](https://cnc.js.org/docs/about/)
+
+## Projects
+
+### Pendant
+
+* [cncjs-pendant-ps3](https://github.com/cncjs/cncjs-pendant-ps3) - Dual Shock / PS3 Bluetooth Remote Pendant for CNCjs
+* [cncjs-pendant-tinyweb](https://github.com/cncjs/cncjs-pendant-tinyweb) - A tiny web console for small 320x240 LCD display
+
+### G-code
+
+* [gcode-parser](https://github.com/cncjs/gcode-parser) - G-code parser
+* [gcode-interpreter](https://github.com/cncjs/gcode-interpreter) - G-code interpreter
+* [gcode-toolpath](https://github.com/cncjs/gcode-toolpath) - G-code toolpath generator
