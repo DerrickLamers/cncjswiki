@@ -1,5 +1,6 @@
 # Raspberry Pi Setup Guide
-I recommend that you use a [Raspberry Pi 3](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) or [Raspberry Pi 2](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/) because of the performance requirements of the Node.js application. If you a buying a raspberry pi, [buy a Raspberry Pi 3](https://www.amazon.com/Raspberry-Pi-RASP-PI-3-Model-Motherboard/dp/B01CD5VC92) or latest model.
+
+We recommend that you use a [Raspberry Pi 3](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) or [Raspberry Pi 2](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/) because of the performance requirements of the Node.js application. If you a buying a raspberry pi, [buy a Raspberry Pi 3](https://www.amazon.com/Raspberry-Pi-RASP-PI-3-Model-Motherboard/dp/B01CD5VC92) or latest model.
 
 #### Recommed Software (for a full web capatable CNC software stack):
 * [jscut](http://jscut.org/jscut.html) (converts SVG files to CNC cutting paths)
@@ -30,7 +31,7 @@ sudo raspi-config
 sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt-get dist-upgrade -y
-# sudo rpi-update. # Update Raspberry Pi kernel and firmware, [is already done with 'apt-get update / upgrade'](github.com/cncjs/cncjs/cnc/issues/97)
+# sudo rpi-update. # Update Raspberry Pi kernel and firmware, [is already done with 'apt-get update / upgrade'](github.com/cncjs/cncjs/issues/97)
 
 # Install Build Essentials & GIT
 sudo apt-get install -y build-essential git
@@ -44,7 +45,7 @@ sudo apt-get install htop iotop nmon lsof screen -y
  - [Install Node.js via Node Version Manager (NVM)](#install-install-nodejs-via-node-version-manager-nvm)
  - [Install Node.js Manually](#install-nodejs-manually)
  - Additional Configuration Options
-	 - [Wireless Setup](#wireless-setup)
+     - [Wireless Setup](#wireless-setup)
 
 ---------
 
@@ -236,7 +237,7 @@ Resume install at [Update Node Package Manager (NPM)](#update-node-package-manag
 sudo apt-get update
 sudo apt-get upgrade -y  # Should also update Node.js if you used method #1
 sudo apt-get dist-upgrade -y
-# sudo rpi-update. # Update Raspberry Pi kernel and firmware, [is already done with 'apt-get update / upgrade'](github.com/cncjs/cncjs/cnc/issues/97)
+# sudo rpi-update. # Update Raspberry Pi kernel and firmware, [is already done with 'apt-get update / upgrade'](github.com/cncjs/cncjs/issues/97)
 ```
 
 ### Update Node Package Manager (NPM)
@@ -255,7 +256,7 @@ echo "[NODE] ============"; which node; node -v
 pm2 stop cnc
 
 # Update CNC.js
-sudo npm update -g cncjs --unsafe-perm  # If fails, then reinstall CNC.js ( sudo npm uninstall -g cncjs; sudo npm install -g cncjs --unsafe-perm ) | https://github.com/cncjs/cncjs/cnc/issues/78
+sudo npm update -g cncjs --unsafe-perm  # If fails, then reinstall CNC.js ( sudo npm uninstall -g cncjs; sudo npm install -g cncjs --unsafe-perm ) | https://github.com/cncjs/cncjs/issues/78
 
 # Restart CNC.js in PM2
 pm2 start cnc
@@ -275,13 +276,13 @@ pm2 update
 
 ---------
 
-# [TinyWeb Console for 320x240 LCD Display](https://github.com/cncjs/cncjs/cnc/wiki/User-Guide#tinyweb-console-for-320x240-lcd-display)
+# [TinyWeb Console for 320x240 LCD Display](https://github.com/cncjs/cncjs/wiki/User-Guide#tinyweb-console-for-320x240-lcd-display)
 ```
 # Remove Older Downloads
 rm *tinyweb.zip
 
 # Download TinyWeb Example
-wget https://github.com/cncjs/cncjs/cnc/releases/download/v1.8.2/cnc-1.8.2-tinyweb.zip
+wget https://github.com/cncjs/cncjs-pendant-tinyweb/releases/download/latest/cncjs-pendant-tinyweb-1.0.0-613f598.zip
 
 # Extract Achieve
 unzip *tinyweb.zip -d /home/pi/
@@ -373,36 +374,36 @@ led_pin = 11  # (3) comes on when pi starts, (11) shuts off when pi powers down.
 
 # Define a function to keep script running
 def loop():
-	#input()  # (more efficient) but does not work with cron job
-	while True:
-		time.sleep(1)
+    #input()  # (more efficient) but does not work with cron job
+    while True:
+        time.sleep(1)
 
 # Define a function to blink LED
 def blink_led(interations):
-	for interation in range(interations):
-		gpio.output(led_pin,gpio.HIGH)
-		time.sleep(.5)
-		gpio.output(led_pin,gpio.LOW)
-		time.sleep(.5)
-		gpio.output(led_pin,gpio.HIGH)
+    for interation in range(interations):
+        gpio.output(led_pin,gpio.HIGH)
+        time.sleep(.5)
+        gpio.output(led_pin,gpio.LOW)
+        time.sleep(.5)
+        gpio.output(led_pin,gpio.HIGH)
 
 # Define a function to run when an interrupt is called
 def shutdown(pin):
-	# turn off led while pressed
-	gpio.output(led_pin,gpio.LOW)
+    # turn off led while pressed
+    gpio.output(led_pin,gpio.LOW)
 
-	#start counting pressed time
-	pressed_time=time.monotonic()
-	while gpio.input(button_pin): #call: is button still pressed
-		# Get Button Pressed Time
-		if time.monotonic()-pressed_time >= 3:
-			#os.system("echo long press, powering down") #os.system("sudo reboot")
-			blink_led(3)
-			call('halt', shell=False)
-			break
+    #start counting pressed time
+    pressed_time=time.monotonic()
+    while gpio.input(button_pin): #call: is button still pressed
+        # Get Button Pressed Time
+        if time.monotonic()-pressed_time >= 3:
+            #os.system("echo long press, powering down") #os.system("sudo reboot")
+            blink_led(3)
+            call('halt', shell=False)
+            break
 
-	# Turn LED back on
-	gpio.output(led_pin,gpio.HIGH)
+    # Turn LED back on
+    gpio.output(led_pin,gpio.HIGH)
 
 # Setup GPIO
 gpio.setmode(gpio.BOARD) # Set pin numbering to board numbering
