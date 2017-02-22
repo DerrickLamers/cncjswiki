@@ -71,7 +71,13 @@ echo "[NODE] ============"; which node; node -v
 ```npm install serialport```~~
 
 ### Install CNC.js
-```sudo npm install -g cncjs --unsafe-perm```
+```
+# Install Latest Release Version of CNCjs
+sudo npm install -g cncjs@latest --unsafe-perm
+
+# Install Specific Version of CNCjs
+#sudo npm install -g cncjs@v1.9.0-alpha.3 --unsafe-perm  # Installs Specific Version based on TAG
+```
 
 ### Install [Production Process Manager [PM2]](http://pm2.io)
 ```
