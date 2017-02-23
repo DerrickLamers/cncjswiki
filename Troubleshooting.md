@@ -18,7 +18,7 @@ Some symptoms of data transmission issues may be:
   - The toolhead is in a different location than the GCode indicated
   - Console reports errors, but the sent line is valid GCode, as in this screenshot:
 
-< Console Errors Screenshot here >
+![Console Errors](https://cloud.githubusercontent.com/assets/25835568/23258430/387af688-f996-11e6-8de4-f76fdfd8fc28.png)
 
 Possible resolutions for data transmission issues may be:
   - Update your Arduino firmware to address a known serial communication bug: https://github.com/grbl/grbl/wiki/Known-Bugs
