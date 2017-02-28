@@ -1,4 +1,4 @@
-[<img src="![](https://cnc.js.org/logo.png)" width="128" height="128" />](https://cnc.js.org/)
+[<img src="https://cnc.js.org/logo.png" width="128" height="128" />](https://cnc.js.org/)
 
 Site: https://cnc.js.org
 
@@ -21,6 +21,7 @@ Site: https://cnc.js.org
 * [Troubleshooting](https://cnc.js.org/docs/troubleshooting/) [[edit](https://github.com/cncjs/cncjs.org/edit/master/pages/docs/troubleshooting/index.md)]
   - [Experienced unexpected errors during data transmission](https://cnc.js.org/docs/troubleshooting/#experienced-unexpected-errors-during-data-transmission)
 * [FAQ](https://cnc.js.org/docs/faq/) [[edit](https://github.com/cncjs/cncjs.org/edit/master/pages/docs/faq/index.md)]
+  - [Forgot your password?](https://cnc.js.org/docs/faq/#forgot-your-password)
   - [How can I enable WebGL in my browser?](https://cnc.js.org/docs/faq/#how-can-i-enable-webgl-in-my-browser)
   - [Raspberry Pi: Error opening serial port "ttyAMA0"](https://cnc.js.org/docs/faq/#raspberry-pi-error-opening-serial-port-ttyama0)
   - [Webcam Streaming with Raspberry Pi](https://cnc.js.org/docs/faq/#webcam-streaming-with-raspberry-pi)
