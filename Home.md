@@ -30,7 +30,7 @@ Site: https://cnc.js.org
   - [Install Native Addons with Node.js v4](https://cnc.js.org/docs/faq/#install-native-addons-with-nodejs-v4)
   - [Install Serialport on OS X El Capitan](https://cnc.js.org/docs/faq/#install-serialport-on-os-x-el-capitan)
   - [Kernel panic issue on macOS Sierra for devices using the CH340G, CH34G or CH34X chipset](https://cnc.js.org/docs/faq/#kernel-panic-issue-on-macos-sierra-for-devices-using-the-ch340g-ch34g-or-ch34x-chipset)
-  - [Run cncjs without Arduino board](https://cnc.js.org/docs/faq/#run-cncjs-without-arduino-board)
+  - [Testing without Arduino board](https://cnc.js.org/docs/faq/#testing-without-arduino-board)
 * [Resources](https://cnc.js.org/docs/resources/) [[edit](https://github.com/cncjs/cncjs.org/edit/master/pages/docs/resources/index.md)]
 * [About](https://cnc.js.org/docs/about/) [[edit](https://github.com/cncjs/cncjs.org/edit/master/pages/docs/about/index.md)]
 
