@@ -78,7 +78,7 @@ echo "[NODE] ============"; which node; node -v
 sudo npm install -g cncjs@latest --unsafe-perm
 
 # Install Specific Version of CNCjs
-#sudo npm install -g cncjs@v1.9.0-alpha.3 --unsafe-perm  # Installs Specific Version based on TAG
+#sudo npm install -g cncjs@v1.9.0-alpha.5 --unsafe-perm  # Installs Specific Version based on TAG
 ```
 
 ### Install [Production Process Manager [PM2]](http://pm2.io)
@@ -90,7 +90,7 @@ sudo npm install -g pm2
 # sudo pm2 startup  # To Start PM2 as root
 pm2 startup  # To start PM2 as pi / current user
   #[PM2] You have to run this command as root. Execute the following command:
-  sudo su -c "env PATH=$PATH:/usr/bin pm2 startup linux -u pi --hp /home/pi"
+  sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u pi --hp /home/pi
 
 # Start CNC.js (on port 8000) with PM2
 pm2 start $(which cnc) -- --port 8000
