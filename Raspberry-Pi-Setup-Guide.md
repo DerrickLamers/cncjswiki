@@ -77,7 +77,7 @@ echo "[NODE] ============"; which node; node -v
 sudo npm install -g cncjs@latest --unsafe-perm
 
 # Install Specific Version of CNCjs
-#sudo npm install -g cncjs@v1.9.0-alpha.5 --unsafe-perm  # Installs Specific Version based on TAG
+#sudo npm install -g cncjs@v1.9.0-beta.1 --unsafe-perm  # Installs Specific Version based on TAG
 ```
 
 ### Install [Production Process Manager [PM2]](http://pm2.io)
