@@ -529,7 +529,7 @@ fi
 crontab -e
 
 # Add line
-#@reboot /home/pi/mjpg-streamer.sh start
+@reboot /home/pi/mjpg-streamer.sh start
 ```
 
 ---------
