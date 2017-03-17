@@ -525,6 +525,9 @@ fi
 
 ## Start on Boot
 ```
+# Make Executable
+chmod +x /home/pi/mjpg-streamer.sh
+
 # Open Cron Job
 crontab -e
 
