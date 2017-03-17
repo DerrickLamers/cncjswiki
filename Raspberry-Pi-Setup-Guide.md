@@ -286,13 +286,17 @@ pm2 update
 # [TinyWeb Console for 320x240 LCD Display](https://github.com/cncjs/cncjs/wiki/User-Guide#tinyweb-console-for-320x240-lcd-display)
 ```
 # Remove Older Downloads
-rm *tinyweb.zip
+rm -r cncjs-pendant-tinyweb*
 
 # Download TinyWeb Example
 wget https://github.com/cncjs/cncjs-pendant-tinyweb/releases/download/latest/cncjs-pendant-tinyweb-1.0.0-613f598.zip
 
-# Extract Achieve
-unzip *tinyweb.zip -d /home/pi/
+# Extract Archive & Delete
+unzip cncjs-pendant-tinyweb*.zip -d /home/pi/
+rm -r cncjs-pendant-tinyweb*.zip
+
+# Move / Rename Tinyweb Directory
+mv /home/pi/cncjs-pendant-tinyweb* /home/pi/tinyweb
 
 # How-to Start CNC.js w/ mounted TinyWeb
 #cnc -m /tinyweb:/home/pi/tinyweb
