@@ -614,6 +614,11 @@ gpio.setup(led_pin, gpio.OUT, initial=1)
 loop() # Run the loop function to keep script running
 ```
 
+## Set to Executable
+```
+sudo chmod +x  /root/shutdown_button_pi.py
+```
+
 ## Run Script & Test
 ```sudo python3 /root/shutdown_button_pi.py```
 
