@@ -49,7 +49,7 @@ sudo apt-get install htop iotop nmon lsof screen -y
  - Additional Configuration Options
      - [Wireless Setup](#wireless-setup)
 
----------
+----------------------------------------
 
 ### [Install Node.js via Package Manager](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions)
 ```
@@ -127,7 +127,7 @@ sudo apt-get install iptables-persistent -y
 #### **You're Done, STOP HERE!!!**
 The information below is a breakdown of the process above with different / additional options as part of a separate process.
 
------------
+----------------------------------------
 
 ## [Install Install Node.js via Node Version Manager (NVM)](https://github.com/creationix/nvm)
 ### [Install Node Version Manager (NVM)](https://github.com/creationix/nvm)
@@ -221,7 +221,7 @@ crontab -u pi -e
 
 #### **You're Done, STOP HERE!!!**
 
----------
+----------------------------------------
 
 ### Install Node.js Manually
 Information on how to install Node.js on Raspberry Pi 1 or ARM6 devices
@@ -235,7 +235,7 @@ sudo cp -R * /usr/local/
 ```
 Resume install at [Update Node Package Manager (NPM)](#update-node-package-manager-npm)
 
----------
+----------------------------------------
 
 ## Maintaining your Software Stack w/ Updates & Upgrades
 ### Updates & Upgrade System
@@ -281,7 +281,7 @@ And finally update the in-memory PM2 process:
 pm2 update
 ```
 
----------
+----------------------------------------
 
 # [TinyWeb Console for 320x240 LCD Display](https://github.com/cncjs/cncjs/wiki/User-Guide#tinyweb-console-for-320x240-lcd-display)
 ```
@@ -308,7 +308,7 @@ pm2 start $(which cnc) -- --port 8000 -m /tinyweb:/home/pi/tinyweb
 pm2 save # Set current running apps to startup
 ```
 
----------
+----------------------------------------
 
 # [Wireless Setup](https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md)
 https://www.raspberrypi.org/forums/viewtopic.php?f=63&t=139866
@@ -347,7 +347,8 @@ sudo ifup wlan0
 ifconfig wlan0
 ```
 
----------
+----------------------------------------
+
 # MJPEG-Streamer Install & Setup
 - https://github.com/jacksonliam/mjpg-streamer
 - http://raspberrypi.stackexchange.com/questions/36734/compile-mjpg-streamer-error
@@ -535,7 +536,44 @@ crontab -e
 @reboot /home/pi/mjpg-streamer.sh start
 ```
 
----------
+----------------------------------------
+
+# FFMpeg
+http://www.jeffreythompson.org/blog/2014/11/13/installing-ffmpeg-for-raspberry-pi/
+```
+# Run as Sudo
+sudo -i
+
+# INSTALL H264 SUPPORT
+cd /usr/src
+git clone git://git.videolan.org/x264
+cd x264
+./configure --host=arm-unknown-linux-gnueabi --enable-static --disable-opencl
+make
+sudo make install
+
+# INSTALL FFMPEG (This may take a REALLY long time, so be patient.)
+cd /usr/src
+git clone https://github.com/FFmpeg/FFmpeg.git
+cd FFmpeg
+sudo ./configure --arch=armel --target-os=linux --enable-gpl --enable-libx264 --enable-nonfree
+make
+sudo make install
+```
+
+# Recored Stream w/ ffmpeg
+```
+# [Varables]
+source_stram="http://xcarve:8080/?action=stream"
+destination_directory="/home/pi/Videos"
+destination_file="xcarve-recording_$(date +'%Y%m%d_%H%M%S').mpeg"
+
+# Recored Stream w/ ffmpeg
+ffmpeg -i "${source_stram}" "${destination_directory}/${destination_file}"
+```
+
+----------------------------------------
+
 # [Raspberry Pi Shutdown Button & LED Script](https://twitter.com/AustinStAubin/status/798058374059335680)
 Gracefully shutdown the Raspberry Pi using a hardware button.
 - http://www.banggood.com/Power-Symbol-Latching-Switch-LED-Light-Push-Button-SPST-p-1064278.html
