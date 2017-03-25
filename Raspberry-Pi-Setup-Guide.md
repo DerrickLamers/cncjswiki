@@ -91,8 +91,8 @@ pm2 startup  # To start PM2 as pi / current user
   #[PM2] You have to run this command as root. Execute the following command:
   sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u pi --hp /home/pi
 
-# Start CNC.js (on port 8000) with PM2
-pm2 start $(which cnc) -- --port 8000
+# Start CNC.js (on port 8000, /w Tinyweb mount point) with PM2
+pm2 start $(which cncjs) -- --port 8000 -m /tinyweb:/home/pi/tinyweb
 
 # Set current running apps to startup
 pm2 save
@@ -196,7 +196,7 @@ sudo apt-get install iptables-persistent -y
 npm install pm2 -g
 
 # Start CNC.js (on port 8000) with PM2
-pm2 start /home/pi/.nvm/versions/node/v4.5.0/bin/cnc -- --port 8000
+pm2 start $(which cncjs) -- --port 8000
 
 # Setup PM2 Startup Script
 pm2 startup debian
@@ -300,12 +300,12 @@ rm -r cncjs-pendant-tinyweb*.zip
 mv /home/pi/cncjs-pendant-tinyweb* /home/pi/tinyweb
 
 # How-to Start CNC.js w/ mounted TinyWeb
-#cnc -m /tinyweb:/home/pi/tinyweb
+cncjs -m /tinyweb:/home/pi/tinyweb
 
-# Start CNC.js (on port 8000) with PM2 w/ mounted TinyWeb
-pm2 stop cnc  # stop pervious instance
-pm2 delete cnc  # delete pervious instance
-pm2 start $(which cnc) -- --port 8000 -m /tinyweb:/home/pi/tinyweb
+# Start CNC.js (on port 8000, /w Tinyweb) with PM2
+pm2 stop cncjs  # stop pervious instance
+pm2 delete cnsjc  # delete pervious instance
+pm2 start $(which cncjs) -- --port 8000 -m /tinyweb:/home/pi/tinyweb
 pm2 save # Set current running apps to startup
 ```
 
