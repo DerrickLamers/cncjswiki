@@ -357,7 +357,7 @@ ifconfig wlan0
 ```
 # Update & Install Tools
 sudo apt-get update
-sudo apt-get upgrade
+sudo apt-get upgrade -y
 sudo apt-get install build-essential libjpeg8-dev imagemagick libv4l-dev cmake -y
 
 # Clone Repo in /tmp
