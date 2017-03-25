@@ -263,7 +263,7 @@ echo "[NODE] ============"; which node; node -v
 pm2 stop cnc
 
 # Update CNC.js
-#sudo npm update -g cncjs --unsafe-perm  #  Tends to fail to update CNCjs, so we will reinstall CNC.js (no settings will be lost)
+#sudo npm update -g cncjs --unsafe-perm  #  Tends to fail to update CNCjs, so we will reinstall CNC.js will the command bellow (no settings will be lost)
 sudo npm install -g cncjs --unsafe-perm  # Install CNCjs again, if this fails or causes issue then run (sudo npm uninstall -g cncjs; sudo npm install -g cncjs --unsafe-perm )   https://github.com/cncjs/cncjs/issues/78
 
 # Restart CNC.js in PM2
