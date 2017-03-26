@@ -76,6 +76,8 @@ echo "[NODE] ============"; which node; node -v
 # Install Latest Release Version of CNCjs
 sudo npm install -g cncjs@latest --unsafe-perm
 
+# --- OR ---
+
 # Install Specific Version of CNCjs
 #sudo npm install -g cncjs@v1.9.0-beta.1 --unsafe-perm  # Installs Specific Version based on TAG
 ```
