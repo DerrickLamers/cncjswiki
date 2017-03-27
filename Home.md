@@ -20,6 +20,7 @@ Site: https://cnc.js.org
   - [Contour ShuttleXpress](https://cnc.js.org/docs/user-guide/#contour-shuttlexpress)
 * [Troubleshooting](https://cnc.js.org/docs/troubleshooting/) [[edit](https://github.com/cncjs/cncjs.org/edit/master/pages/docs/troubleshooting/index.md)]
   - [Experienced unexpected errors during data transmission](https://cnc.js.org/docs/troubleshooting/#experienced-unexpected-errors-during-data-transmission)
+  - [Troubleshoot Electron app on Windows](https://cnc.js.org/docs/troubleshooting/#troubleshoot-electron-app-on-windows)
 * [FAQ](https://cnc.js.org/docs/faq/) [[edit](https://github.com/cncjs/cncjs.org/edit/master/pages/docs/faq/index.md)]
   - [Forgot your password?](https://cnc.js.org/docs/faq/#forgot-your-password)
   - [How can I enable WebGL in my browser?](https://cnc.js.org/docs/faq/#how-can-i-enable-webgl-in-my-browser)
