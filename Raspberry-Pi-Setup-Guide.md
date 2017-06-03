@@ -39,7 +39,7 @@ sudo apt-get dist-upgrade -y
 sudo apt-get install -y build-essential git
 
 # Install Useful Tools (Optional)
-sudo apt-get install htop iotop nmon lsof screen -y
+sudo apt-get install -y htop iotop nmon lsof screen
 ```
 
 #### **PAUSE HERE!!!, decide on which method to use:**
