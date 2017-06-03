@@ -395,7 +395,7 @@ RUNNING_CHECK_INTERVAL="2" # how often to check to make sure the server is runni
 HANGING_CHECK_INTERVAL="3" # how often to check to make sure the server is not hanging (in seconds)
 
 VIDEO_DEV="/dev/video0"
-FRAME_RATE="30"
+FRAME_RATE="15"
 QUALITY="80"
 RESOLUTION="800x600"  # 1920x1080, 1280x720, 640x480 (VGA, SVGA), 176x144, 160x120, 352x288, 320x240 (QVGA)
 PORT="8080"
