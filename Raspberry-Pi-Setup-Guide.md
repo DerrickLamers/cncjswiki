@@ -385,7 +385,8 @@ Add the below code to ( /home/pi/mjpg-streamer.sh )
 ```
 #!/bin/bash
 # chmod +x mjpg-streamer.sh
-# Crontab: @reboot /home/pi/mjpg-streamer.sh start
+# Crontab: @reboot /home/pi/mjpg-streamer/mjpg-streamer.sh start
+# Crontab: @reboot /home/pi/mjpg-streamer/mjpg-streamer-experimental/mjpg-streamer.sh start
 
 MJPG_STREAMER_BIN="/usr/local/bin/mjpg_streamer" # "$(dirname $0)/mjpg_streamer"
 MJPG_STREAMER_WWW="/usr/local/share/mjpg-streamer/www"
@@ -395,8 +396,8 @@ HANGING_CHECK_INTERVAL="3" # how often to check to make sure the server is not h
 
 VIDEO_DEV="/dev/video0"
 FRAME_RATE="30"
-QUALITY="60"
-RESOLUTION="VGA"  # 1920x1080, 1280x720, 640x480 (VGA, SVGA), 176x144, 160x120, 352x288, 320x240 (QVGA)
+QUALITY="80"
+RESOLUTION="800x600"  # 1920x1080, 1280x720, 640x480 (VGA, SVGA), 176x144, 160x120, 352x288, 320x240 (QVGA)
 PORT="8080"
 YUV="yes"
 
