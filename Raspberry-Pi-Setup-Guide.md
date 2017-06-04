@@ -589,6 +589,10 @@ NOTE: Jumping pins 5 & 6 (grounding GPIO3) will power on the RPi. So I altered t
 
 ## Python Script
 ```
+# Install Python & Libraries
+sudo apt-get install -y python python-dev python-rpi.gpio
+
+# Make Python Script
 sudo touch /root/shutdown_button_pi.py  # Create File
 sudo chmod +x /root/shutdown_button_pi.py  # Make Executable
 sudo nano /root/shutdown_button_pi.py  # Edit File
@@ -598,10 +602,10 @@ sudo nano /root/shutdown_button_pi.py  # Edit File
 
 ```
 #!/usr/bin/env python
-# Instll Python3 #sudo apt-get install -y python-dev python-rpi.gpio
+# Install Python2 #sudo apt-get install -y python python-dev python-rpi.gpio
 # Usage: sudo /usr/bin/python /root/shutdown_button_pi.py
 # Install: sudo crontab -e
-#          @reboot sudo /usr/bin/python3 /root/shutdown_button_pi.py > /root/shutdown_button_pi.log 2>&1
+#          @reboot sudo /usr/bin/python2 /root/shutdown_button_pi.py > /root/shutdown_button_pi.log 2>&1
 
 # Import the modules to send commands to the system and access GPIO pins
 from subprocess import call
