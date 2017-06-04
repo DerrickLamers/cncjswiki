@@ -598,7 +598,7 @@ sudo nano /root/shutdown_button_pi.py  # Edit File
 
 ```
 #!/usr/bin/env python
-# Instll Python3 #sudo apt-get install python3
+# Instll Python3 #sudo apt-get install -y python-dev python-rpi.gpio
 # Usage: sudo /usr/bin/python /root/shutdown_button_pi.py
 # Install: sudo crontab -e
 #          @reboot sudo /usr/bin/python3 /root/shutdown_button_pi.py > /root/shutdown_button_pi.log 2>&1
