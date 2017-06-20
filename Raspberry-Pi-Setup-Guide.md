@@ -568,9 +568,9 @@ sudo make install
 # Recored Stream w/ ffmpeg
 ```
 # [Varables]
-source_stram="http://xcarve:8080/?action=stream"
+source_stram="http://localhost:8080/?action=stream"
 destination_directory="/home/pi/Videos"
-destination_file="xcarve-recording_$(date +'%Y%m%d_%H%M%S').mpeg"
+destination_file="cncjs-recording_$(date +'%Y%m%d_%H%M%S').mpeg"
 
 # Recored Stream w/ ffmpeg
 ffmpeg -i "${source_stram}" "${destination_directory}/${destination_file}"
