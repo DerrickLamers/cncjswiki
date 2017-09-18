@@ -331,7 +331,8 @@ If you don't have an Arduino, check out [grbl-sim](https://github.com/grbl/grbl-
 3. Run `make new` to compile the Grbl sim. It will create an executable file named `grbl_sim.exe`. See below:
 
   ![grbl-sim](https://raw.githubusercontent.com/cncjs/cncjs/master/media/grbl-sim.png).
-4. On Linux, run the updated version of [simport.sh](https://github.com/cncjs/cncjs/blob/master/examples/grbl-sim/simport.sh) (`examples/grbl-sim/simport.sh`) to create a fake serial port (`/dev/ttyFAKE`), and use it to test your Grbl interface software.
+
+4. On Linux, replace the version of simport.sh in the grbl-sim directory with [this updated version](https://github.com/cncjs/cncjs/blob/master/examples/grbl-sim/simport.sh) (`examples/grbl-sim/simport.sh`) and run it. It creates a fake serial port (`/dev/ttyFAKE`) connected to grbl-sim.  If it complains about 'socat', install socat via 'sudo apt-get install socat' and perhaps 'apt-get update' before that.)
 5. Copy [.cncrc](https://github.com/cncjs/cncjs/blob/master/examples/.cncrc) from [examples](https://github.com/cncjs/cncjs/tree/master/examples) to the home directory, and run `cnc -c ~/.cncrc` to start the server. The configuration file should look like below:
 
   ```json
