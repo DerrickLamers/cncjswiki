@@ -1,5 +1,5 @@
 ## Table of Contents
-
+* [How to create a custom widget?](#how-to-load-a-custom-widget)
 * [Forgot your password?](#forgot-your-password)
 * [How can I enable WebGL in my browser?](#how-can-i-enable-webgl-in-my-browser)
 * [Raspberry Pi: Error opening serial port "ttyAMA0"](#raspberry-pi-error-opening-serial-port-ttyama0)
@@ -12,6 +12,18 @@
 * [Testing without Arduino board](#testing-without-arduino-board)
  
 ---
+
+## How to create a custom widget?
+
+**Custom widget support is only available for CNCjs 1.9.10 or later versions**
+
+You can download a working example widget from the releases page of [cncjs-widget-boilerplate](https://github.com/cncjs/cncjs-widget-boilerplate)
+
+Download: https://github.com/cncjs/cncjs-widget-boilerplate/releases
+
+![image](https://user-images.githubusercontent.com/447801/30728983-b866f4b6-9f8e-11e7-9a90-6b712344d270.png)
+
+For details, go to https://github.com/cncjs/cncjs-widget-boilerplate
 
 ## Forgot your password?
 
