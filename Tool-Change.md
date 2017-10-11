@@ -6,7 +6,7 @@
 
 ### 1. Determine the tool change and the tool probe location
 
-The tool change macro requires you to specify the tool change and the tool probe location in absolute coordinates. You can jog to the desire location and specify the position in your tool change macro with macro variables. It's recommended that you use upper case letters in variable names or prefix variable names with "_" or "$" to avoid conflict with reserved variables. The expressions must be prefixed with "%" at the beginning of each line. For example:
+The tool change macro requires you to specify the tool change and the tool probe location in absolute coordinates. You can jog to the desire location and specify the position in your tool change macro with macro variables. It's recommended that you use upper case letters in variable names or prefix variable names with "_" or "$" to avoid conflict with reserved variables. The expression must be prefixed with "%" at the beginning of each line. For example:
 
 ```
 ; Upper case letters
@@ -43,11 +43,13 @@ The tool change macro will perform the following operations:
   %RETRACTION_DISTANCE = 10
   ```
 
-* Keep a backup of current work position and modal states
+* Keep a backup of current work position
   ```
-  ; Work position
   %X0 = posx, Y0 = posy, Z0 = posz
+  ```
 
+* Save modal state
+  ```
   ; Work Coordinate System: G54, G55, G56, G57, G58, G59
   %WCS = modal.wcs
 
@@ -76,7 +78,7 @@ The tool change macro will perform the following operations:
 
 * Go to tool change X,Y
 
-* Pause the program with `M0` for a manual tool change
+* Pause the program with `M0` (pause w/ hold) for a manual tool change
 
 * Click <kbd>Continue</kbd> to resume
 
@@ -86,7 +88,7 @@ The tool change macro will perform the following operations:
 
 * Lower to tool probe Z
 
-* Pause the program with `M1` before probing
+* Pause the program with `M1` (pause w/o hold) before probing
 
 * Click <kbd>Continue</kbd> to resume
   
@@ -112,9 +114,9 @@ The tool change macro will perform the following operations:
   G0 Z[Z0]
   ```
 
-* Restore previous modal states
+* Restore modal state
   ```
-  [WCS] [PLANE] [UNITS] [DISTANCE] [SPINDLE] [COOLANT]
+  [WCS] [PLANE] [UNITS] [DISTANCE] [FEEDRATE] [SPINDLE] [COOLANT]
   ```
 
 * Continue program execution
@@ -143,20 +145,20 @@ Below is an example of the tool change macro, you can customize the macro for yo
 ; Keep a backup of current work position
 %X0=posx, Y0=posy, Z0=posz
 
-; Keep a backup of current modal state
-; Work Coordinate System: G54, G55, G56, G57, G58, G59
+; Save modal state
+; * Work Coordinate System: G54, G55, G56, G57, G58, G59
+; * Plane: G17, G18, G19
+; * Units: G20, G21
+; * Distance Mode: G90, G91
+; * Feed Rate Mode: G93, G94
+; * Spindle State: M3, M4, M5
+; * Coolant State: M7, M8, M9
 %WCS = modal.wcs
-; Plane: G17, G18, G19
 %PLANE = modal.plane
-; Units: G20, G21
 %UNITS = modal.units
-; Distance Mode: G90, G91
 %DISTANCE = modal.distance
-; Feed Rate Mode: G93, G94
 %FEEDRATE = modal.feedrate
-; Spindle State: M3, M4, M5
 %SPINDLE = modal.spindle
-; Coolant State: M7, M8, M9
 %COOLANT = modal.coolant
 
 ; Stop spindle
@@ -211,8 +213,8 @@ M0
 G0 X[X0] Y[Y0]
 G0 Z[Z0]
 
-; Restore to previous modal states
-[WCS] [PLANE] [UNITS] [DISTANCE] [SPINDLE] [COOLANT]
+; Restore modal state
+[WCS] [PLANE] [UNITS] [DISTANCE] [FEEDRATE] [SPINDLE] [COOLANT]
 ```
 
 ## M6 Tool Change
