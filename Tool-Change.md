@@ -217,6 +217,29 @@ G0 Z[Z0]
 [WCS] [PLANE] [UNITS] [DISTANCE] [FEEDRATE] [SPINDLE] [COOLANT]
 ```
 
+Use the following codes if you want to update the tool length offset (TLO) instead of adjusting the current WCS: 
+
+```
+; Cancel tool length offset
+G49
+
+; Probe toward workpiece with a maximum probe distance
+G91 ; Relative positioning
+G38.2 Z-[PROBE_DISTANCE] F[PROBE_FEEDRATE]
+G90 ; Absolute positioning
+
+; A dwell time of one second to make sure the planner queue is empty
+G4 P1
+
+; Update the tool length offset
+G43.1 [posz - TOUCH_PLATE_HEIGHT]
+
+; Retract from the touch plate
+G91 ; Relative positioning
+G0 Z[RETRACTION_DISTANCE]
+G90 ; Absolute positioning
+```
+
 ## M6 Tool Change
 
 When a M6 command is issued, CNCjs will pause program execution and prompt user the change the tool. You can run the above tool change macro to perform a manual tool change, and click ▶ (Resume) to continue.
