@@ -1,4 +1,12 @@
-**_The Tool Change function is only available for CNCjs 1.9.11 or later versions_**
+### **_The Tool Change function is only available for CNCjs 1.9.11 or later versions_**
+
+## Getting Started
+
+The manual tool change operation is initiated by a M6 command, it will pause program execution and prompt to change the tool. Read the following paragraphs to learn how to create a tool change macro to facilitate the process.
+
+```
+M6 ; Tool Change
+```
 
 ![image](https://user-images.githubusercontent.com/447801/31429228-180a3740-ae33-11e7-89db-d1bb83cf7670.png)
 
@@ -9,19 +17,13 @@
 The tool change macro requires you to specify the tool change and the tool probe location in absolute coordinates. You can jog to the desire location and specify the position in your tool change macro with macro variables. It's recommended that you use upper case letters in variable names or prefix variable names with "_" or "$" to avoid conflict with reserved variables. The expression must be prefixed with "%" at the beginning of each line. For example:
 
 ```
-; Upper case letters
 %CLEARANCE_HEIGHT = 100
-%X0 = posx, Y0 = posy, Z0 = posz
-
-; Variable names prefixed with "_"
-%_toolchangeX = -300
-%_toolchangeY = -300
-%_toolchangeZ = CLEARANCE_HEIGHT
-
-; Variable names prefixed with "$"
-%$toolprobeX = 0
-%$toolprobeY = 0
-%$toolprobeZ = 20    
+%TOOL_CHANGE_X = -300
+%TOOL_CHANGE_Y = -300
+%TOOL_CHANGE_Z = CLEARANCE_HEIGHT
+%TOOL_PROBE_X = 0
+%TOOL_PROBE_Y = 0
+%TOOL_PROBE_Z = 20
 ```
 
 ### 2. Create a tool change macro
@@ -121,7 +123,7 @@ The tool change macro will perform the following operations:
 
 * Continue program execution
 
-#### Tool Change Macro
+#### The Tool Change Macro
 
 Below is an example of the tool change macro, you can customize the macro for your needs:
 
