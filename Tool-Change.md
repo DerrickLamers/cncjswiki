@@ -31,6 +31,8 @@ The tool change macro requires you to specify the tool change and the tool probe
 
 ### 2. Create a tool change macro
 
+![image](https://user-images.githubusercontent.com/447801/31532272-cb468118-afb1-11e7-8b27-bbed8accc98a.png)
+
 The tool change macro will perform the following operations:
 
 * Set user-defined variables
