@@ -2,11 +2,12 @@
 
 ## Getting Started
 
-The manual tool change operation is initiated by a M6 command, it will pause program execution and prompt user to change the tool. You can run a tool change macro to perform a manual tool change, and click ▶ (Resume) to continue.
-
+The manual tool change operation is initiated by a M6 command:
 ```
 M6 ; Tool Change
 ```
+
+It will pause program execution and prompt user to change the tool. You can run a tool change macro to perform a manual tool change, and click ▶ (Resume) to continue.
 
 ![image](https://user-images.githubusercontent.com/447801/31432483-5b8e0470-ae3c-11e7-8ff3-035dce7ceec4.png)
 
