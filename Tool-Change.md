@@ -2,13 +2,15 @@
 
 ## Getting Started
 
-The manual tool change operation is initiated by a M6 command, it will pause program execution and prompt to change the tool. Read the following paragraphs to learn how to create a tool change macro to facilitate the process.
+The manual tool change operation is initiated by a M6 command, it will pause program execution and prompt user to change the tool. You can run a tool change macro to perform a manual tool change, and click ▶ (Resume) to continue.
 
 ```
 M6 ; Tool Change
 ```
 
-![image](https://user-images.githubusercontent.com/447801/31429228-180a3740-ae33-11e7-89db-d1bb83cf7670.png)
+![image](https://user-images.githubusercontent.com/447801/31432483-5b8e0470-ae3c-11e7-8ff3-035dce7ceec4.png)
+
+Read the following paragraphs to learn how to create a tool change macro to facilitate the process.
 
 ## Initial Setup
 
@@ -123,9 +125,9 @@ The tool change macro will perform the following operations:
 
 * Continue program execution
 
-#### The Tool Change Macro
+#### 2.1. Tool Change Macro (WCS)
 
-Below is an example of the tool change macro, you can customize the macro for your needs:
+Below is a tool change macro that adjusts the current WCS, you can customize the macro for your needs:
 
 ```
 ; Wait until the planner queue is empty
@@ -219,9 +221,71 @@ G0 Z[Z0]
 [WCS] [PLANE] [UNITS] [DISTANCE] [FEEDRATE] [SPINDLE] [COOLANT]
 ```
 
+#### 2.2. Tool Change Macro (TLO)
+
 Use the following codes if you want to update the tool length offset (TLO) instead of adjusting the current WCS: 
 
 ```
+; Wait until the planner queue is empty
+%wait
+
+; Set user-defined variables
+%CLEARANCE_HEIGHT = 100
+%TOOL_CHANGE_X = -300
+%TOOL_CHANGE_Y = -300
+%TOOL_CHANGE_Z = CLEARANCE_HEIGHT
+%TOOL_PROBE_X = 0
+%TOOL_PROBE_Y = 0
+%TOOL_PROBE_Z = 20
+%PROBE_DISTANCE = 15
+%PROBE_FEEDRATE = 20
+%TOUCH_PLATE_HEIGHT = 10
+%RETRACTION_DISTANCE = 10
+
+; Keep a backup of current work position
+%X0=posx, Y0=posy, Z0=posz
+
+; Save modal state
+; * Work Coordinate System: G54, G55, G56, G57, G58, G59
+; * Plane: G17, G18, G19
+; * Units: G20, G21
+; * Distance Mode: G90, G91
+; * Feed Rate Mode: G93, G94
+; * Spindle State: M3, M4, M5
+; * Coolant State: M7, M8, M9
+%WCS = modal.wcs
+%PLANE = modal.plane
+%UNITS = modal.units
+%DISTANCE = modal.distance
+%FEEDRATE = modal.feedrate
+%SPINDLE = modal.spindle
+%COOLANT = modal.coolant
+
+; Stop spindle
+M5
+; Absolute positioning
+G90
+
+; Raise to tool change Z
+G0 Z[TOOL_CHANGE_Z]
+; Go to tool change X,Y
+G0 X[TOOL_CHANGE_X] Y[TOOL_CHANGE_Y]
+; Wait until the planner queue is empty
+%wait
+
+; Pause the program for a manual tool change
+M0
+
+; Go to tool probe X,Y
+G0 X[TOOL_PROBE_X] Y[TOOL_PROBE_Y]
+; Lower to tool probe Z
+G0 Z[TOOL_PROBE_Z]
+; Wait until the planner queue is empty
+%wait
+
+; Pause the program before probing
+M1
+
 ; Cancel tool length offset
 G49
 
@@ -240,10 +304,21 @@ G43.1 [posz - TOUCH_PLATE_HEIGHT]
 G91 ; Relative positioning
 G0 Z[RETRACTION_DISTANCE]
 G90 ; Absolute positioning
+
+; Raise to tool change Z
+G0 Z[TOOL_CHANGE_Z]
+; Go to tool change X,Y
+G0 X[TOOL_CHANGE_X] Y[TOOL_CHANGE_Y]
+; Wait until the planner queue is empty
+%wait
+
+; Pause the program for cleanup (e.g. remove touch plate, wires, etc)
+M0
+
+; Go to previous work position
+G0 X[X0] Y[Y0]
+G0 Z[Z0]
+
+; Restore modal state
+[WCS] [PLANE] [UNITS] [DISTANCE] [FEEDRATE] [SPINDLE] [COOLANT]
 ```
-
-## M6 Tool Change
-
-When a M6 command is issued, CNCjs will pause program execution and prompt user the change the tool. You can run the above tool change macro to perform a manual tool change, and click ▶ (Resume) to continue.
-
-![image](https://user-images.githubusercontent.com/447801/31432483-5b8e0470-ae3c-11e7-8ff3-035dce7ceec4.png)
