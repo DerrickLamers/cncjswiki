@@ -147,8 +147,8 @@ Installing an ARM-version of Node has become very easy:
 
 ```
 # Install Node.js using Node Version Manager
-nvm install 4  # Installs Node v4, (nvm install stable) installs Latest version of node
-nvm use 4  # Sets Node to use v4
+nvm install 6  # Installs Node v6, (nvm install stable) installs Latest version of node
+nvm use 6  # Sets Node to use v6
 ```
 
 ### [Update Node Package Manager (NPM)](https://docs.npmjs.com/getting-started/installing-node)
@@ -203,7 +203,9 @@ pm2 start $(which cncjs) -- --port 8000
 # Setup PM2 Startup Script
 pm2 startup debian
 #[PM2] You have to run this command as root. Execute the following command:
-sudo su -c "env PATH=$PATH:/home/pi/.nvm/versions/node/v4.5.0/bin pm2 startup debian -u pi --hp /home/pi"
+#sudo su -c "env PATH=$PATH:/home/pi/.nvm/versions/node/v{NODE-VERSION}/bin pm2 startup debian -u pi --hp /home/pi"
+sudo su -c "env PATH=$PATH:/home/pi/.nvm/versions/node/v6.5.0/bin pm2 startup debian -u pi --hp /home/pi"
+
 
 # Set current running apps to startup
 pm2 save
