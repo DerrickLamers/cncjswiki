@@ -46,5 +46,10 @@ sudo apt-get install -y htop iotop nmon lsof screen
  - [Install Node.js via Package Manager](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Install-Node.js-via-Package-Manager-*(Recommended)*) *(Recommended)*
  - [Install Node.js via Node Version Manager (NVM)](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Install-Node.js-via-Node-Version-Manager-(NVM))
  - [Install Node.js Manually](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Install-Node.js-Manually)
+
+ - [Maintaining your Software Stack w Updates & Upgrades](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Maintaining-your-Software-Stack-w--Updates-&-Upgrades) 
  - Additional Configuration Options
      - [Wireless Setup](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Wireless-Setup)
+     - [MJPEG Streamer Install & Setup & FFMpeg Recording](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-MJPEG-Streamer-Install-&-Setup-&-FFMpeg-Recording)
+     - [Raspberry Pi Shutdown Button & LED Script](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Raspberry-Pi-Shutdown-Button-&-LED-Script)
+     - [TinyWeb Console for 320x240 LCD Display](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-TinyWeb-Console-for-320x240-LCD-Display)
