@@ -8,4 +8,4 @@ tar -xvf node-v8.9.1-linux-armv7l.tar.xz
 cd node-v8.9.1-linux-armv7l
 sudo cp -R * /usr/local/
 ```
-Resume install at [Update Node Package Manager (NPM)](#update-node-package-manager-npm)
+Resume install at [Update Node Package Manager (NPM)](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Install-Node.js-via-Package-Manager-*(Recommended)*#update-node-package-manager-npm)
