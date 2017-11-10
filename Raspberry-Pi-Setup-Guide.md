@@ -47,4 +47,4 @@ sudo apt-get install -y htop iotop nmon lsof screen
  - [Install Node.js via Node Version Manager (NVM)](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Install-Node.js-via-Node-Version-Manager-(NVM))
  - [Install Node.js Manually](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Install-Node.js-Manually)
  - Additional Configuration Options
-     - [Wireless Setup](#wireless-setup)
+     - [Wireless Setup](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Wireless-Setup)
