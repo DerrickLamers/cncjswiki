@@ -3,7 +3,7 @@
 
 ```
 # Install Node Version Manager (NVM)
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.7/install.sh | bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
 
 # Rerun Profile script to start NVM
 source ~/.bashrc  # Rerun profile after installing nvm
@@ -14,8 +14,8 @@ Installing an ARM-version of Node has become very easy:
 
 ```
 # Install Node.js using Node Version Manager
-nvm install 6  # Installs Node v6, (nvm install stable) installs Latest version of node
-nvm use 6  # Sets Node to use v6
+nvm install 8  # Installs Node v8, (nvm install stable) installs Latest version of node
+nvm use 8  # Sets Node to use v8
 ```
 
 ### [Update Node Package Manager (NPM)](https://docs.npmjs.com/getting-started/installing-node)
