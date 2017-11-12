@@ -14,16 +14,12 @@ Site: https://cnc.js.org
     - [Install Node.js via Node Version Manager (NVM)](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Install-Node.js-via-Node-Version-Manager-(NVM))
     - [Install Node.js Manually](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Install-Node.js-Manually)
   - Maintain
-    - [Maintaining your Software Stack w Updates & Upgrades](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Maintaining-your-Software-Stack-w--Updates-&-Upgrades) 
+    - [Maintaining your Software Stack w// Updates & Upgrades](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Maintaining-your-Software-Stack-w--Updates-&-Upgrades) 
   - Additional Setup Options:
      - [Wireless Setup](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Wireless-Setup)
      - [MJPEG Streamer Install & Setup & FFMpeg Recording](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-MJPEG-Streamer-Install-&-Setup-&-FFMpeg-Recording)
      - [Raspberry Pi Shutdown Button & LED Script](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Raspberry-Pi-Shutdown-Button-&-LED-Script)
      - [TinyWeb Console for 320x240 LCD Display](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-TinyWeb-Console-for-320x240-LCD-Display)
-
-
-
-
 * [Desktop App](https://github.com/cncjs/cncjs/wiki/desktop-app)
 * [User Guide](https://github.com/cncjs/cncjs/wiki/User-Guide)
   - [Workspace](https://github.com/cncjs/cncjs/wiki/User-Guide#workspace)
