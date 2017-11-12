@@ -1,3 +1,8 @@
+[<img src="https://cnc.js.org/logo.png" width="128" height="128" />](https://cnc.js.org/)
+
+Site: https://cnc.js.org
+
+## Documentation
 * [Introduction](https://github.com/cncjs/cncjs/wiki/Introduction)
 * [Installation](https://github.com/cncjs/cncjs/wiki/Installation)
   - [Node.js Installation](https://github.com/cncjs/cncjs/wiki/Installation#nodejs-installation)
