@@ -34,7 +34,15 @@ echo "[NODE] ============"; which node; node -v
 ```npm install serialport```~~
 
 ### Install CNCjs
-```npm install -g cncjs```
+```
+# Install Latest Release Version of CNCjs
+npm install -g cncjs@latest --unsafe-perm
+
+# --- OR ---
+
+# Install Specific Version of CNCjs
+#npm install -g cncjs@v1.9.0-beta.1 --unsafe-perm  # Installs Specific Version based on TAG
+```
 
 ### Allow access to port 8000 from port 80
 ```
