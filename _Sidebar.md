@@ -8,7 +8,7 @@ Site: https://cnc.js.org
   - [Node.js Installation](https://github.com/cncjs/cncjs/wiki/Installation#nodejs-installation)
   - [Git Installation](https://github.com/cncjs/cncjs/wiki/Installation#git-installation)
   - [Docker Image Installation (x64 only)](https://github.com/cncjs/cncjs/wiki/Installation#docker-image-installation-x64-only)
-* [Raspberry Pi Setup Guide](https://github.com/cncjs/cncjs/wiki/Raspberry-Pi-Setup-Guide)
+* [Raspberry Pi Setup Guide](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi)
   - [System Setup & Preparation](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-System-Setup-&-Preparation)
   - Install Node.js & CNCjs
     - [Install Node.js via Package Manager](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Install-Node.js-via-Package-Manager-*(Recommended)*) *(Recommended)*
