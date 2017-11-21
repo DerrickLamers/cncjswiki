@@ -91,6 +91,9 @@ pm2 list
 
 ### Auto Start on Boot with cron (Alternative)
 ```
+# Get Node Location (take note of this)
+which node
+
 # Open crontab
 crontab -u pi -e
 
