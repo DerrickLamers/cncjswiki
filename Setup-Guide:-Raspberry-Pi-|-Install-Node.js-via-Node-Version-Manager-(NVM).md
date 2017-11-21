@@ -95,5 +95,5 @@ pm2 list
 crontab -u pi -e
 
 # Paste the following into Cron Tab [ NOTE: which cnc  # used to find location of application ]
-@reboot env PATH=$PATH:/home/pi/.nvm/versions/node/v4.5.0/bin /home/pi/.nvm/versions/node/v4.5.0/bin/cnc >> $HOME/cncjs.log 2>&1
+@reboot env PATH=$PATH:/home/pi/.nvm/versions/node/v8.0.0/bin /home/pi/.nvm/versions/node/v8.0.0/bin/cnc >> $HOME/cncjs.log 2>&1
 ```
