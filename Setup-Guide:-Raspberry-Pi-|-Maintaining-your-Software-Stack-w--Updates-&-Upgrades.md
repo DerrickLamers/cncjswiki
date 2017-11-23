@@ -6,7 +6,9 @@ sudo apt-get update
 sudo apt-get upgrade -y  # Should also update Node.js if you used method #1
 sudo apt-get dist-upgrade -y
 # sudo rpi-update. # Update Raspberry Pi kernel and firmware, [is already done with 'apt-get update / upgrade'](github.com/cncjs/cncjs/issues/97)
+sudo reboot
 ```
+If you experience problems after rebooting, see [Upgrade Problems](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Upgrade-Problems) for possible solutions.
 
 ### Update Node Package Manager (NPM)
 ```
