@@ -30,3 +30,7 @@ The bottom line: As of this writing (Nov 2017), a Raspberry Pi is not well-suite
 
 There are some alternative CNCjs user interfaces that do not push the Raspberry Pi so hard - for example cncjs-pendant-tinyweb and cncjs-shopfloor-tablet.  They have far fewer features than the full CNCjs UI, but they may be enough for some use cases.
 
+### Older Raspbian Releases
+
+The current Rasbian release is called "stretch".  The one before that was "jessie", and before that "wheezy".  Trying to run the CNCjs UI on wheezy was an exercise in frustration - various components were so old that many things about CNCjs would not work at all.  Jessie was somewhat better, but it was difficult to get an up to date browser working with jessie.
+The process of upgrading from wheezy to jessie, and then to stretch, took several days.
