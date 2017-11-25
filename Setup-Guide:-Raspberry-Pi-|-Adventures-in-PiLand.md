@@ -22,6 +22,8 @@ The cncjs user interface runs inside a browser program.  Modern browsers are eno
 
 A Raspberry Pi is just barely powerful enough for the full cncjs UI - but not powerful enough for a satisfying user experience.  The Pi3's graphics processor (GPU) is slow (400 MHz) and the other Pis are even slower (250 MHz).  The GPU shares memory with the CPU, and there isn't a lot of memory to start with(1 GB total on Pi3 and Pi2B, 512 MB total on PiB and Pi0).  The GPU is optimized for video, not 3D graphics.  The software support for GPU 3D graphics is so new that it listed as "experimental" in the most recent OS release (Raspbian Stretch) and must be enabled manually - it is not turned on by default, and it conflicts with some other software.  It works with version 60 of the Chromium browser, but it is common for display operations to take a long time, with the CPU usage pegged at 100%.  Firefox also seems to work, but is similarly sluggish.
 
+The Epiphany browser does not support 3D viewing, but seems to work okay with 3D turned off.  It too is sluggish.  For example, after running a short GCode program, it takes 17 seconds for the "play pause stop close" icon bar to update.
+
 The system tends to crash if you try to do too much - such as running Chromium and Firefox simultaneously.  That is probably caused by using up all the system memory.
 
 The bottom line: As of this writing (Nov 2017), a Raspberry Pi is not well-suited for the full cncjs user interface with its 3D viewer enabled.  If you turn off the 3D viewer and just view the GCode as text, it seems to be okay, but some operations like starting up and establishing the serial connection can take awhile.
