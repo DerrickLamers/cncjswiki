@@ -176,7 +176,7 @@ Check out an example configuration file [here](https://github.com/cncjs/cncjs/bl
 If you prefer to use Git instead of `npm install`, You can create a local clone of the repository on your computer and sync from GitHub. Type the following commands to install and run `cnc`:
 ```
 git clone https://github.com/cncjs/cncjs.git
-cd cnc
+cd cncjs
 git checkout master
 npm install
 npm run prepublish
