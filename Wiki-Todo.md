@@ -7,3 +7,4 @@ To-do List:
 
 Documentation Issues
 * Need a quick start guide for developers 
+* Explain what node.js and npm are, for the benefit of non-programmers
