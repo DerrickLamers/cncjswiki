@@ -22,7 +22,7 @@ Site: https://cnc.js.org
      - [Raspberry Pi Shutdown Button & LED Script](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Raspberry-Pi-Shutdown-Button-&-LED-Script)
      - [TinyWeb Console for 320x240 LCD Display](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-TinyWeb-Console-for-320x240-LCD-Display)
   - [CNCjs UI on Pi - Adventures in PiLand](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Adventures-in-PiLand)
-* [Desktop App](https://github.com/cncjs/cncjs/wiki/desktop-app)
+* [Electron App](https://github.com/cncjs/cncjs/wiki/electron-app)
 * [User Guide](https://github.com/cncjs/cncjs/wiki/User-Guide)
   - [Workspace](https://github.com/cncjs/cncjs/wiki/User-Guide#workspace)
     - [Widgets](https://github.com/cncjs/cncjs/wiki/User-Guide#widgets)
@@ -47,16 +47,3 @@ Site: https://cnc.js.org
   - [Testing without Arduino board](https://github.com/cncjs/cncjs/wiki/FAQ#testing-without-arduino-board)
 * [Resources](https://github.com/cncjs/cncjs/wiki/Resources)
 * [About](https://github.com/cncjs/cncjs/wiki/About)
-
-## Projects
-
-### Pendant
-
-* [cncjs-pendant-ps3](https://github.com/cncjs/cncjs-pendant-ps3) - Dual Shock / PS3 Bluetooth Remote Pendant for CNCjs
-* [cncjs-pendant-tinyweb](https://github.com/cncjs/cncjs-pendant-tinyweb) - A tiny web console for small 320x240 LCD display
-
-### G-code
-
-* [gcode-parser](https://github.com/cncjs/gcode-parser) - G-code parser
-* [gcode-interpreter](https://github.com/cncjs/gcode-interpreter) - G-code interpreter
-* [gcode-toolpath](https://github.com/cncjs/gcode-toolpath) - G-code toolpath generator
