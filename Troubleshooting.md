@@ -10,6 +10,7 @@ Please bear the following precautions in mind when troubleshooting:
 
 * [Experienced unexpected errors during data transmission](#experienced-unexpected-errors-during-data-transmission)
 * [Troubleshoot Electron app on Windows](#troubleshoot-electron-app-on-windows)
+* [Compilation Problems](#compilation-problems)
 
 ## Experienced unexpected errors during data transmission
 
@@ -37,3 +38,44 @@ Possible resolutions for data transmission issues may be:
 4. Run <b>C:\\Temp\\electron-{version}-win32-x64\\electron.exe main.js -vvv</b>, then you will be able to see verbose output with `-vvv`.
 
     ![image](https://cloud.githubusercontent.com/assets/447801/24361796/7c4bc25a-133d-11e7-80f7-07392c175899.png)
+
+## Compilation Problems
+
+CNCjs can be tricky to compile.  It is a large body of Javascript code that has many dependencies on external libraries and frameworks.  The compilation tools and the project are configured to compile well on powerful computers with good network connectivity.  Compiling on systems with limited resources, such as a Raspberry Pi, or an entry-level cloud container, or a computer with a slow network connection, can be challenging. Sometimes the compilation (with "npm install") will run for a long time, only to fail late in the process.  Here are some situations that have arisen:
+
+### ETIMEDOUT
+
+Sometimes the compilation fails and, near the end, these lines appear:
+
+```
+npm ERR! network connect ETIMEDOUT
+npm ERR! network This is most likely not a problem with npm itself
+npm ERR! network and is related to network connectivity.
+```
+
+When I had that problem, it turned out that the compiler tool ("npm") was trying to use a lot of network connections at once, in hopes of speeding up the process of fetching dependencies by doing a lot of it in parallel.  Unfortunately, that overloaded some server or router, which just refused to respond anymore.  The solution is to tell npm to be less aggressive:
+
+```
+$ npm set maxsockets 3
+```
+The default value for maxsockets is 50.  Dialing it down to 3 solved all of my ETIMEDOUT problems, without slowing things down much.  You might try some intermediate values if 3 seems too conservative.
+
+### ELIFECYCLE
+
+Sometimes a compile runs for a long time then fails with messages that include
+
+```
+error code ELIFECYCLE
+```
+
+I have diagnosed at least one of these failures to an "out of memory" condition on the computer.  The compiler (in this case, typically the "webpack" component) wants to use more memory than the system has.  This is especially a problem with free-plan cloud containers that have only 256MB of RAM.
+
+Sometimes you can work around this by splitting up the compilation into substeps.  The cncjs compilation configuration tries to run some steps in parallel, which saves time on sufficiently powerful computers, but needs more memory.  Instead doing everything automatically with "npm install", you can run the last phases separately, with
+
+```
+$ npm run build-prod-app
+$ npm run build-prod-web
+```
+Sometimes that works.
+
+
