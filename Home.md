@@ -33,6 +33,7 @@ Site: https://cnc.js.org
 * [Troubleshooting](https://github.com/cncjs/cncjs/wiki/Troubleshooting)
   - [Experienced unexpected errors during data transmission](https://github.com/cncjs/cncjs/wiki/Troubleshooting#experienced-unexpected-errors-during-data-transmission)
   - [Troubleshoot Electron app on Windows](https://github.com/cncjs/cncjs/wiki/Troubleshooting#troubleshoot-electron-app-on-windows)
+  - [Compilation Problems](https://github.com/cncjs/cncjs/wiki/Troubleshooting#compilation-problems)
 * [FAQ](https://github.com/cncjs/cncjs/wiki/FAQ)
   - [Forgot your password?](https://github.com/cncjs/cncjs/wiki/FAQ#forgot-your-password)
   - [How can I enable WebGL in my browser?](https://github.com/cncjs/cncjs/wiki/FAQ#how-can-i-enable-webgl-in-my-browser)
