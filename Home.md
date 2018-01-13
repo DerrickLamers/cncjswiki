@@ -30,6 +30,7 @@ Site: https://cnc.js.org
     - [Account](https://github.com/cncjs/cncjs/wiki/User-Guide#account)
   - [Keyboard Shortcuts](https://github.com/cncjs/cncjs/wiki/User-Guide#keyboard-shortcuts)
   - [Contour ShuttleXpress](https://github.com/cncjs/cncjs/wiki/User-Guide#contour-shuttlexpress)
+* [Tool Change](https://github.com/cncjs/cncjs/wiki/Tool-Change)
 * [Troubleshooting](https://github.com/cncjs/cncjs/wiki/Troubleshooting)
   - [Experienced unexpected errors during data transmission](https://github.com/cncjs/cncjs/wiki/Troubleshooting#experienced-unexpected-errors-during-data-transmission)
   - [Troubleshoot Electron app on Windows](https://github.com/cncjs/cncjs/wiki/Troubleshooting#troubleshoot-electron-app-on-windows)
