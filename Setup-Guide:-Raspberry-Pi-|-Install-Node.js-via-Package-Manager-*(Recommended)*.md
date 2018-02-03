@@ -22,6 +22,7 @@ echo "[NODE] ============"; which node; node -v
 ```
 # Install Latest Release Version of CNCjs
 sudo npm install -g cncjs@latest --unsafe-perm
+sudo npm install -g react-scripts  # react-grid-system@3.1.2 requires a peer of react@^16.0.0 but none is installed. You must install peer dependencies yourself.
 
 # --- OR ---
 
