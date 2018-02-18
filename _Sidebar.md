@@ -19,6 +19,7 @@ Site: https://cnc.js.org
   - Additional Setup Options:
      - [Wireless Setup](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Wireless-Setup)
      - [MJPEG Streamer Install & Setup & FFMpeg Recording](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-MJPEG-Streamer-Install-&-Setup-&-FFMpeg-Recording)
+       - [Recording Triggered by Events](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Recording-Triggered-by-Events)
      - [Raspberry Pi Shutdown Button & LED Script](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Raspberry-Pi-Shutdown-Button-&-LED-Script)
      - [TinyWeb Console for 320x240 LCD Display](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-TinyWeb-Console-for-320x240-LCD-Display)
   - [CNCjs UI on Pi - Adventures in PiLand](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Adventures-in-PiLand)
