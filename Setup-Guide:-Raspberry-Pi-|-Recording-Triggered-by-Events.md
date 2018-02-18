@@ -6,7 +6,7 @@ This is done by calling `~/record.sh start` & `~/record.sh stop` (as seen in the
 
 Setup Process:
 * First, you will want to follow [Setup Guide: Raspberry Pi | MJPEG Streamer Install & Setup, and FFMpeg Recording](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-MJPEG-Streamer-Install-&-Setup-&-FFMpeg-Recording)
-* After you have MJPEG Streamer & FFMpeg setup and working. Configure and place the [script below](https://github.com/cncjs/cncjs/wiki/_new#mjpeg-streamer-recorder-w-ffmpeg) to `~/record.sh`.
+* After you have MJPEG Streamer & FFMpeg setup and working. Configure and place the [script below](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Recording-Triggered-by-Events#mjpeg-streamer-recorder-w-ffmpeg) to `~/record.sh`.
 * Setup the CNCjs Events as show in the screenshot above.
 ** Event to start recording on Job Start
 ** Event to stop recording on Job Stop
