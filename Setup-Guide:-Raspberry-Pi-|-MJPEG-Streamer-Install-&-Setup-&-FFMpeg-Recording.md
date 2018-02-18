@@ -188,7 +188,7 @@ crontab -e
 
 ----------------------------------------
 
-# FFMpeg
+# FFMpeg Install & Setup
 http://www.jeffreythompson.org/blog/2014/11/13/installing-ffmpeg-for-raspberry-pi/
 ```
 # Run as Sudo
