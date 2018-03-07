@@ -129,7 +129,11 @@ These are the current keys used in the cnc (from v0.15.3).<br>
 <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>command</kbd> + <kbd>y</kbd> - Select/Deselect Y Axis<br>
 <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>command</kbd> + <kbd>z</kbd> - Select/Deselect Z Axis<br>
 <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>command</kbd> + <kbd>a</kbd> - Select/Deselect A Axis<br>
-<kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>command</kbd> + <kbd>=</kbd> or <kbd>d</kbd> - Select Jog Distance<br>
+<kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>command</kbd> + <kbd>b</kbd> - Select/Deselect B Axis (_Supported in v1.9.15_)<br>
+<kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>command</kbd> + <kbd>c</kbd> - Select/Deselect C Axis (_Supported in v1.9.15_)<br>
+<kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>command</kbd> + <kbd>=</kbd> - Toggle Jog Distance<br>
+<kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>command</kbd> + <kbd>+</kbd> - Increase Jog Distance (_Supported in v1.9.15_)<br>
+<kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>command</kbd> + <kbd>-</kbd> - Decrease Jog Distance (_Supported in v1.9.15_)<br>
 <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>command</kbd> + <kbd>[</kbd> or <kbd>b</kbd> - Jog Backward<br>
 <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>command</kbd> + <kbd>]</kbd> or <kbd>f</kbd> - Jog Forward<br>
 <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>shift</kbd> + <kbd>7</kbd> - Shuttle Backward (Fastest)<br>
