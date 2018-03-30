@@ -270,19 +270,23 @@ M5
 G90
 
 ; Raise to tool change Z
-G0 Z[TOOL_CHANGE_Z]
+G53 Z[TOOL_CHANGE_Z]
 ; Go to tool change X,Y
-G0 X[TOOL_CHANGE_X] Y[TOOL_CHANGE_Y]
+G53 X[TOOL_CHANGE_X] Y[TOOL_CHANGE_Y]
+
 ; Wait until the planner queue is empty
 %wait
 
 ; Pause the program for a manual tool change
 M0
 
+; Go to Clearance Height
+G53 Z[CLEARANCE_HEIGHT]
 ; Go to tool probe X,Y
-G0 X[TOOL_PROBE_X] Y[TOOL_PROBE_Y]
-; Lower to tool probe Z
-G0 Z[TOOL_PROBE_Z]
+G53 X[TOOL_PROBE_X] Y[TOOL_PROBE_Y]
+; Go to tool probe Z
+G53 Z[TOOL_PROBE_Z]
+
 ; Wait until the planner queue is empty
 %wait
 
@@ -301,7 +305,7 @@ G90 ; Absolute positioning
 G4 P1
 
 ; Update the tool length offset
-G43.1 [posz - TOUCH_PLATE_HEIGHT]
+G43.1 Z[posz - TOUCH_PLATE_HEIGHT]
 
 ; Retract from the touch plate
 G91 ; Relative positioning
@@ -312,6 +316,7 @@ G90 ; Absolute positioning
 G0 Z[TOOL_CHANGE_Z]
 ; Go to tool change X,Y
 G0 X[TOOL_CHANGE_X] Y[TOOL_CHANGE_Y]
+
 ; Wait until the planner queue is empty
 %wait
 
