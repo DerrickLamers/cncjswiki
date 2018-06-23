@@ -191,9 +191,16 @@ crontab -e
 
 ----------------------------------------
 
-# FFMpeg Install & Setup
+# FFMpeg Compile, Install, & Setup
 http://www.jeffreythompson.org/blog/2014/11/13/installing-ffmpeg-for-raspberry-pi/
 ```
+# Install FFMpeg from Package Manager
+sudo apt-get update  
+sudo apt-get install ffmpeg -y
+
+---- OR ------
+
+# COMPILE & INSTALL FFMPEG
 # Run as Sudo
 sudo -i
 
@@ -205,7 +212,7 @@ cd x264
 make
 sudo make install
 
-# INSTALL FFMPEG (This may take a REALLY long time, so be patient.)
+# COMPILE & INSTALL FFMPEG (This may take a REALLY long time, so be patient.)
 cd /usr/src
 git clone https://github.com/FFmpeg/FFmpeg.git
 cd FFmpeg
