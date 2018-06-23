@@ -3,6 +3,10 @@
 # Install Node.js via Package Manager & Add Package Source
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -  # Install NodeJS v10
 sudo apt-get install -y nodejs  # npm nodejs-legacy #(Installed with nodesource)
+
+# Optional: install build tools
+# To compile and install native addons from npm you may also need to install build tools:
+sudo apt-get install -y build-essential
 ```
 
 ### Update Node Package Manager (NPM)
