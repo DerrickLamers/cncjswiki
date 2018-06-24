@@ -9,7 +9,7 @@
 
 ## Raspberry Pi Setup Guide
 
-We have a dedicated setup guide for setting up Node.js, NVM, CNC.js, Autostart with pm2, all tested on the Raspberry Pi. Go to https://cnc.js.org/docs/rpi-setup-guide/ for more details.
+We have a dedicated setup guide for setting up Node.js, NVM, CNC.js, Autostart with pm2, all tested on the Raspberry Pi. Go to https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Install-Node.js-via-Package-Manager-*(Recommended)* OR https://cnc.js.org/docs/rpi-setup-guide/ for more details.
 
 ---
 
