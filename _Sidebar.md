@@ -48,5 +48,6 @@ Site: https://cnc.js.org
   - [Install Serialport on OS X El Capitan](https://github.com/cncjs/cncjs/wiki/FAQ#install-serialport-on-os-x-el-capitan)
   - [Kernel panic issue on macOS Sierra for devices using the CH340G, CH34G or CH34X chipset](https://github.com/cncjs/cncjs/wiki/FAQ#kernel-panic-issue-on-macos-sierra-for-devices-using-the-ch340g-ch34g-or-ch34x-chipset)
   - [Testing without Arduino board](https://github.com/cncjs/cncjs/wiki/FAQ#testing-without-arduino-board)
+* [Wiki History](https://github.com/cncjs/cncjs/wiki/_history)
 * [Resources](https://github.com/cncjs/cncjs/wiki/Resources)
 * [About](https://github.com/cncjs/cncjs/wiki/About)
