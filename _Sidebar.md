@@ -23,6 +23,7 @@ Site: https://cnc.js.org
      - [Raspberry Pi Shutdown Button & LED Script](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Raspberry-Pi-Shutdown-Button-&-LED-Script)
      - [TinyWeb Console for 320x240 LCD Display](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-TinyWeb-Console-for-320x240-LCD-Display)
   - [CNCjs UI on Pi - Adventures in PiLand](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Adventures-in-PiLand)
+  - [Pi with Arduino Due](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Pi-with-Arduino-Due)
 * [Electron App](https://github.com/cncjs/cncjs/wiki/electron-app)
 * [User Guide](https://github.com/cncjs/cncjs/wiki/User-Guide)
   - [Workspace](https://github.com/cncjs/cncjs/wiki/User-Guide#workspace)
