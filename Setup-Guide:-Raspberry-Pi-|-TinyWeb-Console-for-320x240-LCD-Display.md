@@ -17,8 +17,8 @@ mv /home/pi/cncjs-pendant-tinyweb* /home/pi/tinyweb
 cncjs -m /tinyweb:/home/pi/tinyweb
 
 # Start CNCjs (on port 8000, /w Tinyweb) with PM2
-pm2 stop cncjs  # stop pervious instance
-pm2 delete cnsjc  # delete pervious instance
+pm2 stop $(which cncjs)  # stop pervious instance
+pm2 delete $(which cncjs)  # delete pervious instance
 pm2 start $(which cncjs) -- --port 8000 -m /tinyweb:/home/pi/tinyweb
 pm2 save # Set current running apps to startup
 ```
