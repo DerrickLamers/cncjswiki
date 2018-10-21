@@ -4,7 +4,7 @@
 rm -r cncjs-pendant-tinyweb*
 
 # Download TinyWeb Example
-wget https://github.com/cncjs/cncjs-pendant-tinyweb/releases/download/v1.2.1/cncjs-pendant-tinyweb-1.2.1.zip
+wget https://github.com/cncjs/cncjs-pendant-tinyweb/releases/download/latest/cncjs-pendant-tinyweb-1.2.4-352767f.zip
 
 # Extract Archive & Delete
 unzip cncjs-pendant-tinyweb*.zip -d /home/pi/
