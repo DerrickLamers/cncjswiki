@@ -13,12 +13,15 @@ rm -r cncjs-pendant-tinyweb*.zip
 # Move / Rename Tinyweb Directory
 mv /home/pi/cncjs-pendant-tinyweb* /home/pi/tinyweb
 
-# How-to Start CNCjs w/ mounted TinyWeb
+# If you are using PM2 to auto-run cncjs, you must turn that off,
+# otherwise the next cncjs command will fail
+pm2 stop $(which cncjs)  # stop previous instance
+pm2 delete $(which cncjs)  # delete previous instance
+
+# To start CNCjs manually with mounted TinyWeb, do this
 cncjs -m /tinyweb:/home/pi/tinyweb
 
-# Start CNCjs (on port 8000, /w Tinyweb) with PM2
-pm2 stop $(which cncjs)  # stop pervious instance
-pm2 delete $(which cncjs)  # delete pervious instance
+# If you want to use PM2 to auto-start CNCjs/TinyWeb, do this:
 pm2 start $(which cncjs) -- --port 8000 -m /tinyweb:/home/pi/tinyweb
 pm2 save # Set current running apps to startup
 ```
