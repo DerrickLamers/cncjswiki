@@ -14,7 +14,8 @@ rm -r cncjs-pendant-tinyweb*.zip
 mv /home/pi/cncjs-pendant-tinyweb* /home/pi/tinyweb
 
 # If you are using PM2 to auto-run cncjs, you must turn that off,
-# otherwise the next cncjs command will fail
+# otherwise the next cncjs command will fail.
+# If you are not using PM2, skip the next two lines.
 pm2 stop $(which cncjs)  # stop previous instance
 pm2 delete $(which cncjs)  # delete previous instance
 
