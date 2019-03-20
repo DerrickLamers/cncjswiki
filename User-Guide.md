@@ -111,6 +111,13 @@ G0 X[cx] Y[cy]
   %wait
   ```
 
+* Print the value of a variable in the console
+  ```
+  %X0=posx
+  (X0=[X0]) ; Print the value in the inline comment
+  G4 P0 (X0=[X0]) ; Print the value in the inline comment right after a G4 dwell command
+  ```
+
 * Keep a backup of current work position
   ```
   %X0=posx, Y0=posy, Z0=posz, A0=posa, B0=posb, C0=posc
