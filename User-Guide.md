@@ -15,31 +15,29 @@
 
 ## Workspace
 
-### Widgets
-
 ![](https://raw.githubusercontent.com/cncjs/cncjs/master/media/widgets.png)
 
-#### Visualizer Widget
+### Visualizer Widget
 
 This widget visualizes a G-code file and simulates the tool path.
 
-#### Connection Widget
+### Connection Widget
 
 This widget lets you establish a connection to a serial port.
 
-#### Axes Widget
+### Axes Widget
 
 This widget shows the XYZ position. It includes jog controls, homing, and axis zeroing.
 
-#### Console Widget
+### Console Widget
 
 This widget lets you read and write data to the CNC controller connected to a serial port.
 
-#### G-code Widget
+### G-code Widget
 
 This widgets shows the current status of G-code commands.
 
-#### Grbl Widget
+### Grbl Widget
 
 This widet shows the Grbl state and provides Grbl specific features.
 
@@ -47,54 +45,128 @@ Set `$10=2` for Grbl v1.1d (or `$10=15` for Grbl v0.9) to see planner buffer and
 
 ![](https://cloud.githubusercontent.com/assets/447801/20649442/5912660e-b4fb-11e6-8ff8-60b2602f5d79.png)
 
-#### Smoothie Widget
+### Smoothie Widget
 
 This widget shows the Smoothie state and provides Smoothie specific features.
 
-#### TinyG widget
+### TinyG widget
 
 This widget shows the TinyG state and provides TinyG specific features.
 
-#### Laser Widget
+### Laser Widget
 
 This widget allows you control laser intensity and turn the laser on/off.
 
-#### Macro Widget
+### Macro Widget
 
-This widget can use macros to automate routine tasks. The following variables are supported since cncjs 1.9:
-- [xmin]
-- [xmax]
-- [ymin]
-- [ymax]
-- [zmin]
-- [zmax]
+This widget can use macros to automate routine tasks.
 
-You can create a macro with the following content:
+#### Statements
+
+Each line prefixed with `%` is a JavaScript statement. You can set a variable to the value of a mathematical expression.
 
 ```
-; Traverse around the boundary
-G90
-G0 Z10 ; go to z-safe
-G0 X[xmin] Y[ymin]
-G0 X[xmax]
-G0 Y[ymax]
-G0 X[xmin]
-G0 Y[ymin]
+%p1x = posx
+%p1y = posy
+%p2x = posx
+%p2y = posy
+%p3x = posx
+%p3y = posy
+%ma = (p2y - p1y) / (p2x - p1x)
+%mb = (p3y - p2y) / (p3x - p2x)
+%cx = (ma * mb * (p1y - p3y) + mb * (p1x + p2x) - ma * (p2x + p3x)) / (2 * (mb - ma))
+%cy = (-1 / ma) * (cx - (p1x + p2x) * 0.5) + (p1y + p2y) * 0.5
 ```
 
-Once a G-code file is loaded, run the macro for perimeter tracing with respect to current G-code boundary.
+`%wait` is a reserved word that was used in CNCjs to wait until the planner queue is empty.
 
-![image](https://cloud.githubusercontent.com/assets/447801/24189183/f924b7aa-0f1e-11e7-8b6f-64a14c23d441.png)
+#### Variables
 
-#### Probe Widget
+To use variables in a G-code program, you need to surround each variable with a pair of square brackets:
+
+```
+%cx = 10
+%cy = 10
+G0 X[cx] Y[cy]
+```
+
+#### System Variables
+
+##### Bounding Box
+`xmin`, `xmax`, `ymin`, `ymax`, `zmin`, `zmax`
+
+##### Machine Position
+`mposx`, `mposy`, `mposz`, `mposa`, `mposb`, `mposc`
+
+##### Work Position
+`posx`, `posy`, `posz`, `posa`, `posb`, `posc`
+
+##### Modal Group
+`modal.motion`, `modal.wcs`, `modal.plane`, `modal.units`, `modal.distance`, `modal.feedrate`, `modal.program`, `modal.spindle`, `modal.coolant`
+
+#### Examples
+
+* Wait until the planner queue is empty
+  ```
+  %wait
+  ```
+
+* Keep a backup of current work position
+  ```
+  %X0=posx, Y0=posy, Z0=posz, A0=posa, B0=posb, C0=posc
+  ```
+
+* Go to previous work position
+  ```
+  G0 X[X0] Y[Y0]
+  G0 Z[Z0]
+  ```
+
+* Save modal state
+  ```
+  %WCS=modal.wcs
+  %PLANE=modal.plane
+  %UNITS=modal.units
+  %DISTANCE=modal.distance
+  %FEEDRATE=modal.feedrate
+  %SPINDLE=modal.spindle
+  %COOLANT=modal.coolant
+  ```
+
+* Restore previously saved modal state
+  ```
+  [WCS] [PLANE] [UNITS] [DISTANCE] [FEEDRATE] [SPINDLE] [COOLANT]
+  ```
+
+* Set bounding box
+  ```
+  %xmin=0,xmax=100,ymin=0,ymax=100,zmin=0,zmax=50
+  ```
+
+* Traverse around the boundary
+  ```
+  G90
+  G0 Z10 ; go to z-safe
+  G0 X[xmin] Y[ymin]
+  G0 X[xmax]
+  G0 Y[ymax]
+  G0 X[xmin]
+  G0 Y[ymin]
+  ```
+
+  Once a G-code file is loaded, run the macro for perimeter tracing with respect to current G-code boundary.
+
+  ![image](https://cloud.githubusercontent.com/assets/447801/24189183/f924b7aa-0f1e-11e7-8b6f-64a14c23d441.png)
+
+### Probe Widget
 
 This widget helps you use a touch plate to set your Z zero offset.
 
-#### Spindle Widget
+### Spindle Widget
 
 This widget provides the spindle control.
 
-#### Webcam Widget
+### Webcam Widget
 
 This widget lets you monitor a webcam.
 
