@@ -1,1 +1,3 @@
-test
+There is currently only a [Electron App](https://github.com/cncjs/cncjs/wiki/Electron-App) available.
+
+A Electron App is a Webbrowser disguised as a normal desktop program and does almost the same as a native program. The only difference is that the Electron App uses considerably more resources than its counterpart, but it let's developers focus on only one single thing, that is the main CNCJS Web inteface, which can then be used across all devices.
