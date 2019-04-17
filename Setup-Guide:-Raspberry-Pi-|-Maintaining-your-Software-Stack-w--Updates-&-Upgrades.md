@@ -23,14 +23,14 @@ echo "[NODE] ============"; which node; node -v
 ### Update CNCjs
 ```
 # Stop CNCjs in PM2 
-pm2 stop cnc
+pm2 stop cncjs
 
 # Update CNCjs
 #sudo npm update -g cncjs --unsafe-perm  #  Tends to fail to update CNCjs, so we will reinstall CNCjs will the command bellow (no settings will be lost)
 sudo npm install -g cncjs --unsafe-perm  # Install CNCjs again, if this fails or causes issue then run (sudo npm uninstall -g cncjs; sudo npm install -g cncjs --unsafe-perm )   https://github.com/cncjs/cncjs/issues/78
 
 # Restart CNCjs in PM2
-pm2 start cnc
+pm2 start cncjs
 ```
 
 ### [Update Production Process Manager [PM2]](http://pm2.keymetrics.io/docs/usage/update-pm2/)
