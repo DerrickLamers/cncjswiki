@@ -26,6 +26,7 @@ Install Windows Build Tools under **PowerShell**. You need to right-click on **P
 
 ```sh
 npm install --global --production windows-build-tools
+npm config set msvs_version 2017
 ```
 
 ![image](https://user-images.githubusercontent.com/447801/56358007-e8b94c00-620f-11e9-99e5-e8c295350d76.png)
