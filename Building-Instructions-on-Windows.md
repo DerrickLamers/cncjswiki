@@ -37,6 +37,8 @@ npm config set msvs_version 2017
 
 Launch **Git Bash** to clone the repository from the command line, do not use **Windows Command Prompt** or **Windows PowerShell**.
 
+![image](https://user-images.githubusercontent.com/447801/56489481-6df47780-6514-11e9-9b88-054a685928d7.png)
+
 ```sh
 $ git clone https://github.com/cncjs/cncjs.git
 $ cd cncjs
