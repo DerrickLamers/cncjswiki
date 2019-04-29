@@ -1,6 +1,6 @@
 # Development Tips
 
-You can compile cncjs in development mode to enable some node.js debugging tools, but there are some tricks you can use to do effective debugging with a production compile. If you live and breathe javascript and node.js development, you probably know much better ways to debug, but for the rest of us "casual javascripters", the following tips may be helpful.
+You can build cncjs in development mode to enable some node.js debugging tools, but there are some tricks you can use to do effective debugging with a production build. If you live and breathe javascript and node.js development, you probably know much better ways to debug, but for us "casual javascripters", the following tips may be helpful.
 
 ## Debugging the browser app
 In the Chrome browser, you can enable Developer Tools to set breakpoints in the cncjs application code, view the console log, etc.  Developer Tools is found via the "Customize and Control" button in the upper right corner, under More Tools > Developer tools.  The shortcut under Windows is Ctrl-Shift-i.
