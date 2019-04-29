@@ -30,3 +30,4 @@ to
 const linuxList = require('./wsl-list')
 ```
 You can, of course, compile CNCjs for Windows without WSL, but, apart from the serialport thing, WSL is a bit less trouble if you already have it set up.
+There is no need to rebuild cncjs after making the serialport change, or after editing wsl-list.js to change the serial port names.  All you have to do is kill the cncjs process and restart it.
