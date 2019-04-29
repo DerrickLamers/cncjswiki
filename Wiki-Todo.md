@@ -7,12 +7,12 @@ To-do List:
 * * [ ] Explanation on Watch Directory's and what they do. 
 * [  ] Explanation of Configuration Options.
 * * [NOTE](https://github.com/cncjs/cncjs/issues/242#issuecomment-352294549)
-* [ ] Consider naming the server node "app" component to "cncjs-server" to distinguish it from the "all-in-one" Electron app?
+* [ ] Change wiki pages to conform to the new naming "cncjs-server" etc.
 * [ ] Draw some pictures showing different scenarios - desktop app, server and client on same computer, server and client(s) separate
 
 
 Documentation Issues
-* Need a quick start guide for developers 
+* Need a quick start guide for developers.  There is a rudimentary development page with some tips, but it needs to be filled out and made comprehensive
 * Explain what node.js and npm are, for the benefit of non-programmers
 * https://github.com/cncjs/cncjs/wiki/Installation says "npm run prepublish" in two places.  There is no prepublish target in the top-level package.json
 
