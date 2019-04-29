@@ -1,6 +1,6 @@
 # Running CNCjs under WSL
 
-[WSL (Wndows Subsystem for Linux)](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux) first appearing in Windows 10, lets you run Linux programs under Linux with somewhat less hassle than virtualization alternatives like VirtualBox, Docker,etc.  You still have to install a Linux distro, but then WSL starts faster than a virtualized solution and is somewhat better integrated into Windows.  It's not perfect, but many things work reasonably well, and it is getting better, as Microsoft appears to be committed to improving it.
+[WSL (Wndows Subsystem for Linux)](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux)lets you run Linux programs under Windows 10 with somewhat less hassle than virtualization alternatives like VirtualBox, Docker, etc.  You still have to install a Linux distro, but then WSL starts faster than a virtualized solution and is somewhat better integrated into Windows.  It's not perfect, but many things work reasonably well, and it is getting better, as Microsoft appears to be committed to improving it.
 
 CNCjs can be made to run under WSL.  Compilation is quite straighforward, essentially identical to CNCjs compilation under Linux.  Basically you just say `npm install` and the build process succeeds.
 
