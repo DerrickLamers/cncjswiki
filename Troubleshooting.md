@@ -34,7 +34,10 @@ Possible resolutions for data transmission issues may be:
 
 1. Go to https://github.com/electron/electron/releases, and download a zip file that matches your target platform. For example, you can download `electron-{version}-win32-x64.zip` when running the x64 version of Windows.
 2. Extract the ZIP file to a folder. For example: <b>C:\\Temp\\electron-{version}-win32-x64\\</b>.
-3. Go to the installation directory of cncjs: `cd C:\Users\{Username}\AppData\Local\Programs\cncjs\resources\app\`
+3. Change current working directory to <b>C:\\Users\{Username}\\AppData\\Local\\Programs\\cncjs-app\\resources\\app\\</b>.
+
+    ![image](https://user-images.githubusercontent.com/447801/58223054-c0f75f80-7d4a-11e9-8328-404571d5a25c.png)
+
 4. Run <b>C:\\Temp\\electron-{version}-win32-x64\\electron.exe main.js -vvv</b>, then you will be able to see verbose output with `-vvv`.
 
     ![image](https://cloud.githubusercontent.com/assets/447801/24361796/7c4bc25a-133d-11e7-80f7-07392c175899.png)
