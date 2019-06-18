@@ -217,8 +217,8 @@ G0 X[TOOL_CHANGE_X] Y[TOOL_CHANGE_Y]
 M0
 
 ; Go to previous work position
-G0 X[X0] Y[Y0]
-G0 Z[Z0]
+G53 X[X0] Y[Y0]
+G53 Z[Z0]
 
 ; Restore modal state
 [WCS] [PLANE] [UNITS] [DISTANCE] [FEEDRATE] [SPINDLE] [COOLANT]
@@ -324,8 +324,8 @@ G0 X[TOOL_CHANGE_X] Y[TOOL_CHANGE_Y]
 M0
 
 ; Go to previous work position
-G0 X[X0] Y[Y0]
-G0 Z[Z0]
+G53 X[X0] Y[Y0]
+G53 Z[Z0]
 
 ; Restore modal state
 [WCS] [PLANE] [UNITS] [DISTANCE] [FEEDRATE] [SPINDLE] [COOLANT]
