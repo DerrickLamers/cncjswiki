@@ -21,7 +21,7 @@ System Setup & Preparation](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Ras
 
 ### Node.js Installation
 
-Node.js 4 or higher is recommended. You can install [Node Version Manager](https://github.com/creationix/nvm) to manage multiple Node.js versions. If you have `git` installed, just clone the `nvm` repo, and check out the latest version:
+Node.js 6 or higher is recommended. You can install [Node Version Manager](https://github.com/creationix/nvm) to manage multiple Node.js versions. If you have `git` installed, just clone the `nvm` repo, and check out the latest version:
 ```
 git clone https://github.com/creationix/nvm.git ~/.nvm
 cd ~/.nvm
@@ -38,11 +38,11 @@ export NVM_DIR="$HOME/.nvm"
 
 Once installed, you can select Node.js versions with:
 ```
-nvm install 4
-nvm use 4
+nvm install 6
+nvm use 6
 ```
 
-If you're using Node.js 4 or earlier versions, it's recommended that you upgrade npm to the latest version. To upgrade, run:
+It's recommended that you upgrade npm to the latest version. To upgrade, run:
 ```
 npm install npm@latest -g
 ```
@@ -65,16 +65,16 @@ Check out [https://cnc.js.org/docs/installation/](https://cnc.js.org/docs/instal
 
 ### Upgrade
 
-Run `npm install -g cncjs@latest` to install the latest version. To determine the version, use `cnc -V`.
+Run `npm install -g cncjs@latest` to install the latest version. To determine the version, use `cncjs -V`.
 
 ### Usage
 
-Run `cnc` to start the server, and visit `http://yourhostname:8000/` to view the web interface. Pass `--help` to `cnc` for more options.
+Run `cncjs` to start the server, and visit `http://yourhostname:8000/` to view the web interface. Pass `--help` to `cncjs` for more options.
 
 ```
-pi@rpi3$ cnc -h
+pi@rpi3$ cncjs -h
 
-  Usage: cnc [options]
+  Usage: cncjs [options]
   
   Options:
 
@@ -113,7 +113,7 @@ Instead of passing command line options for `--watch-directory`, `--access-token
 
 To troubleshoot issues, run:
 ```
-cnc -vvv
+cncjs -vvv
 ```
 
 ### Configuration File
@@ -183,8 +183,8 @@ git clone https://github.com/cncjs/cncjs.git
 cd cncjs
 git checkout master
 npm install
-npm run prepublish
-./bin/cnc
+npm run prepare
+./bin/cncjs
 ```
 
 To update your local copy with latest changes, use:
@@ -192,8 +192,8 @@ To update your local copy with latest changes, use:
 git checkout master
 git pull origin master
 npm install
-npm run prepublish
-./bin/cnc
+npm run prepare
+./bin/cncjs
 ```
 
 This is the fastest method to bring your local copy up-to-date.
@@ -213,7 +213,7 @@ docker pull cncjs/cncjs:latest
 
 <b>Step 2:</b> Use the `docker run` command to create the Docker container and run the server, like so:
 ```
-docker run --privileged -p 8000:8000 --rm --name cnc cncjs/cncjs:latest
+docker run --privileged -p 8000:8000 --rm --name cncjs cncjs/cncjs:latest
 ```
 By default a container is not allowed to access any devices, but a "privileged" container is given access to all devices on the host.
 
@@ -227,8 +227,8 @@ https://hub.docker.com/r/cncjs/cncjs/tags/
 
 If you run into issues and need to restart the Docker container, use the following commands to first stop the Docker application, and then start it up again:
 ```
-docker stop cnc
-docker start cnc 
+docker stop cncjs
+docker start cncjs
 ```
 
 To view a list of all containers that are currently running in your Docker environment, use:
@@ -253,5 +253,5 @@ docker rmi IMAGE_ID
 
 To view the container in your terminal, use:
 ```
-docker attach cnc
+docker attach cncjs
 ```
