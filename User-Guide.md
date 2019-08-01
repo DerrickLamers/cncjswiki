@@ -59,11 +59,17 @@ This widget allows you control laser intensity and turn the laser on/off.
 
 ### Macro Widget
 
-This widget can use macros to automate routine tasks.
+This widget can use macros to automate routine tasks.  The body of a macro is a GCode program, but you can replace parts of the GCode with calculated values.  The calculations can be performed on literal numbers or on values representing current machine positions. You can create variables - names that represent values - and use them in calculations or replacements.
 
-#### Statements
+The characters that distinguish regular GCode from the extra CNCjs macro syntax are % , [ , and ] .  Lines beginning with % are used to create variables for later use.  Inside a GCode line, [ _expression_ ]  is replaced with the value of _expression_
 
-Each line prefixed with `%` is a JavaScript statement. You can set a variable to the value of a mathematical expression.
+The GCode program must be suitable for the controller (Grbl, TinyG, Marlin, etc) that you are using.  There are subtle difference in the dialect of GCode that the different controllers support.  For example, Marlin only accepts capital letters like `G0`, while Grbl will accept either `G0` or `g0`.
+
+The macro language can be used in GCode programs loaded from files too, not only from the Macro Widget.
+
+#### Creating Variables
+
+Lines that start with `%` (except for the special case `%wait`) create variables that can be used later. You can set a variable to the value of an arithmetic expression.  Inside an expression, you can use variables that you created earlier, and predefined system variables that report the state of the machine.  The syntax of expressions is a subset of the JavaScript programming language expression syntax.
 
 ```
 %p1x = posx
@@ -77,20 +83,41 @@ Each line prefixed with `%` is a JavaScript statement. You can set a variable to
 %cx = (ma * mb * (p1y - p3y) + mb * (p1x + p2x) - ma * (p2x + p3x)) / (2 * (mb - ma))
 %cy = (-1 / ma) * (cx - (p1x + p2x) * 0.5) + (p1y + p2y) * 0.5
 ```
+You can declare more than one variable on the same line by using comma to separate the variables, as with:
+```
+%p2x=posx, %p2y=posy
+```
 
-`%wait` is a reserved word that was used in CNCjs to wait until the planner queue is empty.
+`%wait` is a special word.  CNCjs replaces it with code to make the controller wait until it has finished all previous operations.
 
-#### Variables
+#### Replacements
 
-To use variables in a G-code program, you need to surround each variable with a pair of square brackets:
-
+When CNCjs encounters a pair of square brackets [ _expression_ ] in GCode, it replaces it with the value of 
+_expression_.  The following sequence:
 ```
 %cx = 10
 %cy = 10
 G0 X[cx] Y[cy]
 ```
+results in this being sent to the controller:
+```
+G0 X10 Y10
+```
+
+The text inside the brackets can be an expression, not just a simple variable.  You could say, for example:
+```
+%scale = 0.4
+%cx = 10
+%cy = 10
+G0 X[cx*scale] Y[cy*scale]
+```
+which would send this to the controller:
+```
+G0 X4 Y4
+```
 
 #### System Variables
+There are some predefined variables that report the current state of the machine and the GCode program.
 
 ##### Bounding Box
 `xmin`, `xmax`, `ymin`, `ymax`, `zmin`, `zmax`
@@ -102,6 +129,8 @@ G0 X[cx] Y[cy]
 `posx`, `posy`, `posz`, `posa`, `posb`, `posc`
 
 ##### Modal Group
+The values of the following system variables are not numbers, but rather GCode words like `G90`.  They can be used to save the current modal state of the controller and then later restore that state.  For example, `modal.units` is either `G20` for inches or `G21` for millimeters.  You could write a macro that works in inches, regardless of the current controller setting, then, at the end, restore the controller setting to whatever it was before.
+
 `modal.motion`, `modal.wcs`, `modal.plane`, `modal.units`, `modal.distance`, `modal.feedrate`, `modal.program`, `modal.spindle`, `modal.coolant`
 
 #### Examples
@@ -118,7 +147,7 @@ G0 X[cx] Y[cy]
   G4 P0 (X0=[X0]) ; Print the value in the inline comment right after a G4 dwell command
   ```
 
-* Keep a backup of current work position
+* Save the current work position for later
   ```
   %X0=posx, Y0=posy, Z0=posz, A0=posa, B0=posb, C0=posc
   ```
@@ -129,7 +158,8 @@ G0 X[cx] Y[cy]
   G0 Z[Z0]
   ```
 
-* Save modal state
+* Saving and restoring modal state
+This would go at the beginning of the macro, to record the current modal state in variables:
   ```
   %WCS=modal.wcs
   %PLANE=modal.plane
@@ -139,11 +169,12 @@ G0 X[cx] Y[cy]
   %SPINDLE=modal.spindle
   %COOLANT=modal.coolant
   ```
+During the execution of the macro, the modal state (and the values of the modal special variables) might change as a result of GCode words inside the macro.  At the end of the macro, you could write this to restore the modes to their saved values:
 
-* Restore previously saved modal state
   ```
   [WCS] [PLANE] [UNITS] [DISTANCE] [FEEDRATE] [SPINDLE] [COOLANT]
   ```
+Note that Marlin does not permit multiple GCode words on the same line, so if you are using Marlin, you would have to put each of the above bracketed expressions on a separate line.
 
 * Set bounding box
   ```
