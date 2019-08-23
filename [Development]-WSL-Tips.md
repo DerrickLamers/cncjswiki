@@ -16,13 +16,14 @@ function listLinux() {
     const ports = [
         { comName: "/dev/ttyS3"},
         { comName: "/dev/ttyS4"}
+    ]
     return Promise.resolve(ports);
 }
 module.exports = listLinux
 ```
 For simplicity, I hardcoded only the serial ports that connect to my test controllers.
 
-In node_modules/@serialport/bindings/linux.js, I changed the line
+In node_modules/@serialport/bindings/lib/linux.js, I changed the line
 ```
 const linuxList = require('./linux-list')
 ```
