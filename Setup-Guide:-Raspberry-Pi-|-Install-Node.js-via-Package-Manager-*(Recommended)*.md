@@ -64,6 +64,44 @@ sudo npm install -g cncjs@latest --unsafe-perm
       ```
       Then re-execute the 'npm install' command.  Supposedly the problem is that npm normally tries to fetch a lot of things at the same time, using say 50 simultaneous network connections, and that overloads some network routers.  Setting maxsockets to 3 makes it less aggressive and thus more likely to succeed.  When I tried it, the 'npm install' succeeded, and seemed to work faster than before.  I suspect that the Raspberry Pi does not have enough memory and CPU resources to run a lot of simultaneous connections efficiently.
 
+### Test the Installation
+
+At this point you should run a quick test to see if things are working.  Run this command:
+
+```
+cncjs --port 8000
+```
+Something like this should be displayed in the terminal:
+```
+2019-10-04T22:45:16.701Z - info init Loading configuration from "/home/pi/.cncrc"
+2019-10-04T22:45:17.931Z - info init Starting the server at http://127.0.1.1:8000
+```
+That means the CNCjs server is running, ready to accept connections from a browser.  Start the Chromium browser on your Pi (other browsers than Chromium will probably work too) and enter the URL "127.0.1.1:8000" (alternatively, you can write that as "localhost:8000").  It should say "Loading" and after a few seconds the CNCjs user interface should appear in the browser.
+
+To stop the CNCjs server, type ^C (Ctrl-C) in the terminal.
+
+If your Pi is headless (no graphics display), you can connect from a browser on a different machine on the same network as the Pi.  To find the Pi's external IP address, you can use the command `hostname -I`.  Let's assume that the Pi's external IP address is "192.168.2.23" - then you would browse to "192.168.2.23:8000" from that other machine.  (If you had to stop the server with ^C in order to run the hostname command, you will need to restart it with the `cncjs --port 8000` command.)
+
+* Possible Install Problems & Solutions:
+
+  * #### Serialport version problem
+
+   You might see an error message like this:
+   ```
+   Error: Error: The module '/usr/lib/node_modules/cncjs/node_modules/serialport/build/Release/serialport.node'
+   was compiled against a different Node.js version using NODE_MODULE_VERSION 57. This version of Node.js
+   requires NODE_MODULE_VERSION 64. Please try re-compiling or re-installing the module (for instance,
+   using `npm rebuild` or `npm install`).
+   ```
+   To fix that, you can do this:
+   ```
+   cd /usr/lib/node_modules/cncjs/node_modules
+   sudo npm rebuild --update-binary--unsafe-perm 
+   ```
+   There should be many lines of output as it recompiles the serialport code.  When it finishes, you can retry the `cncjs --port 8000` command and connect from a browser.
+
+After you get a successful test, kill the CNCjs server by typing ^C (Ctrl-C) and proceed to the next step, whose purpose is to make the CNCjs server start automatically every time you reboot the Pi.  Note that starting the server *does not* start the user interface in a browser.  Autostarting the browser requires an additional step.
+
 ### Install [Production Process Manager [PM2]](http://pm2.io)
 ```
 # Install PM2
@@ -104,6 +142,12 @@ sudo apt-get install iptables-persistent -y
 # Run this if issues to reconfigure iptables-persistent
 # sudo dpkg-reconfigure iptables-persistent
 ```
+
+### Autostarting the browser
+
+To make the Chromium browser start automatically, and display the CNCjs user interface, do this:
+
+(To be supplied; meanwhile, start the browser manually and enter the URL "localhost:8000")
 
 ### Reboot to test
 ```sudo reboot```
