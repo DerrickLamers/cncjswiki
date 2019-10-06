@@ -12,9 +12,10 @@ Site: https://cnc.js.org
   - [System Setup & Preparation](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-System-Setup-&-Preparation)
   - Install Node.js & CNCjs
     - [Install Node.js via Package Manager](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Install-Node.js-via-Package-Manager-*(Recommended)*) *(Recommended)*
-    - [Install Node.js via Node Version Manager (NVM)](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Install-Node.js-via-Node-Version-Manager-(NVM))
-    - [Install Node.js Manually](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Install-Node.js-Manually)
-    - [Use PM2 to auto-start CNCjs](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Auto-start-server-using-pm2-(OPTIONAL)) (OPTIONAL)
+    - [Install Node.js via Node Version Manager (NVM)](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Install-Node.js-via-Node-Version-Manager-(NVM)) (Alternative)
+    - [Install Node.js Manually](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Install-Node.js-Manually) (Alternative)
+    - [Use PM2 to auto-start CNCjs](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Auto-start-server-using-pm2-(OPTIONAL)) (Optional)
+    - [Use Port 80](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Use-Port-80-(OPTIONAL)) (Optional)
   - Maintain
     - [Maintaining your Software Stack w/ Updates & Upgrades](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Maintaining-your-Software-Stack-w--Updates-&-Upgrades) 
   - Additional Setup Options:
