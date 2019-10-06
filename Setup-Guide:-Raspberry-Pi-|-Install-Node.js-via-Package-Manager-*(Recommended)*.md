@@ -1,3 +1,5 @@
+This is the official way to install CNCjs on a Raspberry Pi.  There are some alternative ways, but this is the one you should use unless you have a good reason - and are familiar enough with Linux and the node.js ecosystem to understand the ins and outs of the various tools.  Using this approach will make it easier to get help on the Facebook CNCjs User's Group.
+
 ### [Install Node.js via Package Manager](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions)
 ```
 # Install Node.js via Package Manager & Add Package Source
@@ -69,7 +71,7 @@ sudo npm install -g cncjs@latest --unsafe-perm
 At this point you should run a quick test to see if things are working.  Run this command:
 
 ```
-cncjs --port 8000
+cncjs
 ```
 Something like this should be displayed in the terminal:
 ```
@@ -102,46 +104,26 @@ If your Pi is headless (no graphics display), you can connect from a browser on 
 
 After you get a successful test, kill the CNCjs server by typing ^C (Ctrl-C) and proceed to the next step, whose purpose is to make the CNCjs server start automatically every time you reboot the Pi.  Note that starting the server *does not* start the user interface in a browser.  Autostarting the browser requires an additional step.
 
-### Install [Production Process Manager [PM2]](http://pm2.io)
+
+### Autostarting the server
+
+To make the CNCjs server start automatically, do this:
+
 ```
-# Install PM2
-sudo npm install -g pm2
-
-# Setup PM2 Startup Script
-# sudo pm2 startup  # To Start PM2 as root
-pm2 startup  # To start PM2 as pi / current user
-  #[PM2] You have to run this command as root. Execute the following command:
-  sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u pi --hp /home/pi
-
-# Start CNCjs (on port 8000, /w Tinyweb mount point) with PM2
-pm2 start $(which cncjs) -- --port 8000 -m /tinyweb:/home/pi/tinyweb
-
-# Set current running apps to startup
-pm2 save
-
-# Get list of PM2 processes
-pm2 list
+crontab -u pi -e
+```
+That will start a text editor to modify the file that controls what happens at system startup for the default user *pi*.  Use the editor to add the following line at the end of that file:
+```
+@reboot /usr/bin/cncjs >> $HOME/cncjs.log 2>&1 &
 ```
 
-### Iptables (allow access to port 8000 from port 80)
-```
-# Iptables (allow access to port 8000 from port 80)
-sudo iptables -t nat -I PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8000
+Then write out the file (with ^O if you are using the default editor *nano*) and exit (^X with *nano*).  Subsequently, every time you reboot, the CNCjs server will start automatically.
 
-# Make Iptables Persistent
-sudo apt-get install iptables-persistent -y
+If you want to turn off auto-start, again use ```crontab -u pi -e``` and either delete that last line or comment it out by inserting **#** at the beginning of the line.
 
-# How-to: Save & Reload Rules
-#sudo netfilter-persistent save
-#sudo netfilter-persistent reload
+You can put cncjs command line options on that line, just after the */usr/bin/cncjs * For example you could add the *-m* option to use various pendants like *tinyweb* and *shopfloor-tablet*, as described in the instructions for those pendants.
 
-# How-to: Manually Save Rules
-#sudo sh -c "iptables-save > /etc/iptables/rules.v4"
-#sudo sh -c "ip6tables-save > /etc/iptables/rules.v6"
-
-# Run this if issues to reconfigure iptables-persistent
-# sudo dpkg-reconfigure iptables-persistent
-```
+Note that starting the server does not start a user interface; to get the user interface you need to run a browser and point it at localhost:8000 as per the earlier instructions in the **Test the Installation** section of this page.  If you wish, you can also autostart the browser.
 
 ### Autostarting the browser
 
@@ -189,3 +171,5 @@ That does two things
 The net result is that the CNCjs user interface will start automatically and take over the screen, as soon as the system is ready.
 ### Reboot to test
 ```sudo reboot```
+
+If all goes well, the Pi should reboot, then start the windowing environment.  A message should appear saying that it is waiting for the CNCjs server to start.  After a few seconds (possibly almost instantly on a newer, faster Pi), the browser should start, connect to CNCjs, and run the CNCjs user interface.
