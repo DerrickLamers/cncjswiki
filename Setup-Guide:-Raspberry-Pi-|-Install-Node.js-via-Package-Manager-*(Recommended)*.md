@@ -147,7 +147,45 @@ sudo apt-get install iptables-persistent -y
 
 To make the Chromium browser start automatically, and display the CNCjs user interface, do this:
 
-(To be supplied; meanwhile, start the browser manually and enter the URL "localhost:8000")
+```
+cd /home/pi
 
+cat >startCNCjsUI <<EOF
+#!/bin/bash
+
+# Prevent the screen from turning off
+xset s off
+xset -dpms
+
+# Show the user why it is taking so long
+zenity --info --no-wrap --timeout 240 --width=400 --height=400 --text="Waiting for CNCjs server to start" &
+
+# Wait until the CNCjs server becomes responsive before starting the browser
+until $(curl --output /dev/null --silent --head --fail http://localhost:8000); do
+  sleep 1
+done
+
+# Finally, start the browser, pointing to the CNCjs server
+# --kiosk makes the browser occupy the entire screen.
+# If you want to kill the full-screen browser, use ALT-F4
+# If you omit --kiosk, the browser will start in a normal window
+chromium-browser --kiosk http://localhost:8000
+EOF
+
+chmod a+x startCNCjsUI
+
+mkdir -p .config/lxsession/LXDE-pi
+
+cat >.config/lxsession/LXDE-pi/autostart <<EOF
+@lxpanel --profile LXDE-pi
+@pcmanfm --desktop --profile LXDE-pi
+/home/pi/startCNCjsUI
+EOF
+```
+That does two things
+* It creates an executable script named _startCNCjsUI_ that waits for the cncJS server to finish starting, then starts a full-screen browser to talk to the server.
+* It creates an autostart file _.config/lxsession/LXDE-pi/autostart_ to override the system-supplied startup file for the windowing environment.  The new autostart file invokes the _startCNCjsUI_ script.
+
+The net result is that the CNCjs user interface will start automatically and take over the screen, as soon as the system is ready.
 ### Reboot to test
 ```sudo reboot```
