@@ -110,24 +110,35 @@ After you get a successful test, kill the CNCjs server by typing ^C (Ctrl-C) and
 To make the CNCjs server start automatically, do this:
 
 ```
-crontab -u pi -e
-```
-That will start a text editor to modify the file that controls what happens at system startup for the default user *pi*.  Use the editor to add the following line at the end of that file:
-```
-@reboot /usr/bin/cncjs >> $HOME/cncjs.log 2>&1 &
+(crontab -l | grep -v cncjs; echo "@reboot $(which cncjs) >>$HOME/cncjs.log 2>&1") | crontab -
 ```
 
-Then write out the file (with ^O if you are using the default editor *nano*) and exit (^X with *nano*).  Subsequently, every time you reboot, the CNCjs server will start automatically.
+That looks pretty cryptic, so I will break it down in cause you are interested.  `crontab -l` lists the current contents of the user's crontab file (the file that controls automatic execution of programs).  `| grep -v cncjs` takes the output of the previous command and removes any existing lines that contain the word 'cncjs' (necessary in case you re-execute the command; you don't want to start CNCjs twice).  `echo "SOMETHING"` emits a line containing SOMETHING.  '( A ; B )` appends the output of the command B to the end of the command A, so the echo'ed line gets added to the end of the existing crontab file minus any previous cncjs lines. `| crontab -` takes what comes before and puts it back in the crontab file.
 
-If you want to turn off auto-start, again use ```crontab -u pi -e``` and either delete that last line or comment it out by inserting **#** at the beginning of the line.
+SOMETHING in this case is `@reboot $(which cncjs) >>$HOME/cncjs.log 2>&1` .  `@reboot` is the crontab time specification for "run the following command once every time the computer reboots".  `$(which cncjs)` means "find where the cncjs executable command is located and insert the full pathname in place of the `$(which cncjs)`.  `>>$HOME/cncjs.log` means "append any normal (non-error) output of the command to the file cncjs.log in the user's home directory".  `2>&1` means "also send error output to the same place that normal output is going".
 
-You can put cncjs command line options on that line, just after the */usr/bin/cncjs * For example you could add the *-m* option to use various pendants like *tinyweb* and *shopfloor-tablet*, as described in the instructions for those pendants.
+If you need to add arguments to the cncjs command, for example to set up mounts for pendants, the extra arguments go between the `$(which cncjs)` and the `>>$HOME/cncjs.log`.  For example, if you want to use the cncjs-shopfloor-tablet UI, you could say:
 
-Note that starting the server does not start a user interface; to get the user interface you need to run a browser and point it at localhost:8000 as per the earlier instructions in the **Test the Installation** section of this page.  If you wish, you can also autostart the browser.
+```
+(crontab -l | grep -v cncjs; echo "@reboot $(which cncjs) -m /tablet:$HOME/cncjs-shopfloor-tablet/src >>$HOME/cncjs.log 2>&1") | crontab -
+```
+
+If you want to turn off auto-start, you can do this:
+
+```
+crontab -l | grep -v cncjs | crontab -
+```
+
+and to turn it back on you can repeat the earlier recipe.  Alternatively you can use `crontab -e` with a text editor to manually edit the file and delete or comment-out (with #) the `@reboot ...` line.
+
 
 ### Autostarting the browser
 
-To make the Chromium browser start automatically, and display the CNCjs user interface, do this:
+Starting the server as above does not start a user interface; to get the user interface you need to run a browser and point it at localhost:8000 as per the earlier instructions in the **Test the Installation** section of this page.  The browser can, but does not have to, run on the Pi with the server.  Some people use the Pi only for the server, running the browser on a different computer, or a tablet, or even on a smartphone.
+
+Running the browser on the Pi works best with a faster Pi like a Pi3 or Pi4.  The CNCjs user interface performance on lower-end Pis is marginal at best.  Running only the cncjs server works well on any Pi, even a Pi Zero.
+
+To make the Chromium browser start automatically, and display the CNCjs user interface, do this (lines beginning with "# " are comments that are provided for your understanding):
 
 ```
 cd /home/pi
