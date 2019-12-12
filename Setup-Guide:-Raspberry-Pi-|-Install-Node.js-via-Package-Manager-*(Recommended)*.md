@@ -26,11 +26,11 @@ Something like this should be displayed in the terminal:
 2019-10-04T22:45:16.701Z - info init Loading configuration from "/home/pi/.cncrc"
 2019-10-04T22:45:17.931Z - info init Starting the server at http://127.0.1.1:8000
 ```
-That means the CNCjs server is running, ready to accept connections from a browser.  Start the Chromium browser on your Pi (other browsers than Chromium will probably work too) and enter the URL "localhost:8000" (without the quotes).  It should say "Loading" and after a few seconds the CNCjs user interface should appear in the browser.
+That means the CNCjs server is running, ready to accept connections from a browser.  Start the Chromium browser on your Pi (other browsers than Chromium will probably work too) and enter the URL "http://127.0.1.1:8000" (i.e. the URL shown in the "Starting the server" message above).  The browser should say "Loading" and after a few seconds the CNCjs user interface should appear.
 
 To stop the CNCjs server, type ^C (Ctrl-C) in the terminal.
 
-If your Pi is headless (no graphics display), you can connect from a browser on a different machine on the same network as the Pi.  To find the Pi's external IP address, you can use the command `hostname -I`.  Let's assume that the Pi's external IP address is "192.168.2.23" - then you would browse to "192.168.2.23:8000" from that other machine.  (If you had to stop the server with ^C in order to run the hostname command, you will need to restart it with the `cncjs --port 8000` command.)
+If your Pi is headless (no graphics display), you can connect from a browser on a different machine on the same network as the Pi.  To find the Pi's external IP address, you can use the command `hostname -I`.  Let's assume that the Pi's external IP address is "192.168.2.23" - then you would browse to "192.168.2.23:8000" from that other machine.  (If you had to stop the server with ^C in order to run the hostname command, you will need to restart it with the `cncjs` command.)
 
 * Possible Install Problems & Solutions:
 
@@ -47,8 +47,9 @@ If your Pi is headless (no graphics display), you can connect from a browser on 
    ```
    cd /usr/lib/node_modules/cncjs/node_modules
    sudo npm rebuild --update-binary --unsafe-perm 
+   cd ~   
    ```
-   There should be many lines of output as it recompiles the serialport code.  When it finishes, you can retry the `cncjs --port 8000` command and connect from a browser.
+   There should be many lines of output as it recompiles the serialport code ([sample output](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Output-from-npm-rebuild-serialport)).  When it finishes, you can retry the `cncjs` command and connect from a browser.
 
 After you get a successful test, kill the CNCjs server by typing ^C (Ctrl-C) and proceed to the next step, whose purpose is to make the CNCjs server start automatically every time you reboot the Pi.  Note that starting the server *does not* start the user interface in a browser.  Autostarting the browser requires an additional step.
 
