@@ -2,37 +2,18 @@ This is the official way to install CNCjs on a Raspberry Pi.  There are some alt
 
 ### [Install Node.js via Package Manager](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions)
 ```
-# Install Node.js via Package Manager & Add Package Source
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -  # Install NodeJS v8
-sudo apt-get install -y nodejs  # npm nodejs-legacy #(Installed with nodesource)
-
-# Optional: install build tools
-# To compile and install native addons from npm you may also need to install build tools:
-sudo apt-get install -y build-essential
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt install -y nodejs build-essential
 ```
 
 ### Update Node Package Manager (NPM)
 ```
-# Update Node Package Manager (NPM)
 sudo npm install npm@latest -g
-
-# Get Version info
-echo "[NPM] ============"; which npm; npm -v;
-echo "[NODE] ============"; which node; node -v
 ```
-
-~~### Install Node.JS Serial Port application first (OPTIONAL)
-```npm install serialport```~~
 
 ### Install CNCjs
 ```
-# Install Latest Release Version of CNCjs
 sudo npm install -g cncjs@latest --unsafe-perm
-
-# --- OR ---
-
-#### Install Specific Version of CNCjs
-#sudo npm install -g cncjs@v1.9.0-beta.1 --unsafe-perm  # Installs Specific Version based on TAG
 ```
 
 * Possible Install Problems & Solutions:
