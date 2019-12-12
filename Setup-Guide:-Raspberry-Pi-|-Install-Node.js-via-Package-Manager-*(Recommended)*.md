@@ -3,7 +3,7 @@ This is the official way to install CNCjs on a Raspberry Pi.  There are some alt
 ### [Install Node.js via Package Manager](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions)
 ```
 # Install Node.js via Package Manager & Add Package Source
-curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -  # Install NodeJS v10
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -  # Install NodeJS v8
 sudo apt-get install -y nodejs  # npm nodejs-legacy #(Installed with nodesource)
 
 # Optional: install build tools
