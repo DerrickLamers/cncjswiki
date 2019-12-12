@@ -1,51 +1,15 @@
 This is the official way to install CNCjs on a Raspberry Pi.  There are some alternative ways, but this is the one you should use unless you have a good reason - and are familiar enough with Linux and the node.js ecosystem to understand the ins and outs of the various tools.  Using this approach will make it easier to get help on the Facebook CNCjs User's Group.
 
+The first step is to open a console window.  If you are using the graphical environment, do that by clicking on the black square icon at the upper left.  If you are not using the graphical environment, you are probably already at a console prompt like "pi@SOMENAME:~ $".  In the following instructions, you are supposed to type the commands shown at that prompt.
+
 ### [Install Node.js via Package Manager](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions)
 ```
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt install -y nodejs build-essential
-```
-
-### Update Node Package Manager (NPM)
-```
-sudo npm install npm@latest -g
-```
-
-### Install CNCjs
-```
+sudo npm install -g npm@latest
 sudo npm install -g cncjs@latest --unsafe-perm
 ```
-
-* Possible Install Problems & Solutions:
-
-  * ##### [JSON ERROR](https://github.com/cncjs/cncjs/issues/326)
-    * PROBLEM: Fails at `sudo npm install -g cncjs@latest --unsafe-perm`
-    * SOLUTION: Try updating npm installer itself to the latest version (6.x), and removing the cache (~/.npm/) before installing CNCjs again. 
-      ```
-      npm i -g npm
-      $ rm -rf ~/.npm/
-      ```
-  * ##### ETIMEDOUT
-    * PROBLEM: My 'npm install' runs frequently fail with 'ETIMEDOUT' errors, like this:
-      ```
-      npm ERR! code ETIMEDOUT
-      npm ERR! errno ETIMEDOUT
-      npm ERR! network request to https://registry.npmjs.org/@trendmicro/react-paginations/-/react-paginations-0.6.1.tgz failed, reason: connec t ETIMEDOUT 151.101.24.162:443
-      npm ERR! network This is a problem related to network connectivity.
-      npm ERR! network In most cases you are behind a proxy or have bad network settings.
-      npm ERR! network
-      npm ERR! network If you are behind a proxy, please make sure that the
-      npm ERR! network 'proxy' config is set properly.  See: 'npm help config'
-      
-      npm ERR! A complete log of this run can be found in:
-      npm ERR!     /root/.npm/_logs/2017-11-23T18_29_57_208Z-debug.log
-      ```
-    
-    * SOLUTION: Sometimes simply re-executing the 'npm install' commands works, but the following solution has also been suggested (see https://github.com/npm/npm/blob/5b4e3f3caff1f7ed30281b0b450de056a817bbc5/CHANGELOG.md#limit-concurrent-requests for more info):
-      ```
-      $ npm set maxsockets 3
-      ```
-      Then re-execute the 'npm install' command.  Supposedly the problem is that npm normally tries to fetch a lot of things at the same time, using say 50 simultaneous network connections, and that overloads some network routers.  Setting maxsockets to 3 makes it less aggressive and thus more likely to succeed.  When I tried it, the 'npm install' succeeded, and seemed to work faster than before.  I suspect that the Raspberry Pi does not have enough memory and CPU resources to run a lot of simultaneous connections efficiently.
+This will take awhile and generate quite a lot of output as shown [here](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Example-Output-from-Installation).  If this step appears to fail you can look [here](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Installation-Problems-and-Solutions) for possible solutions.
 
 ### Test the Installation
 
