@@ -1,8 +1,11 @@
 This is the official way to install CNCjs on a Raspberry Pi.  There are some alternative ways, but this is the one you should use unless you have a good reason - and are familiar enough with Linux and the node.js ecosystem to understand the ins and outs of the various tools.  Using this approach will make it easier to get help on the Facebook CNCjs User's Group.
 
-The first step is to open a console window.  If you are using the graphical environment, do that by clicking on the black square icon at the upper left.  If you are not using the graphical environment, you are probably already at a console prompt like "pi@SOMENAME:~ $".  In the following instructions, you are supposed to type the commands shown at that prompt.
+The first step is to open a console window.  If you are using the graphical environment, do that by clicking on the black square icon at the upper left.  If you are not using the graphical environment, you are probably already at a console prompt like "pi@SOMENAME:~ $".
 
 ### [Install Node.js via Package Manager](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions)
+
+Type these commands, one at a time, at the command prompt.
+
 ```
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt install -y nodejs build-essential
@@ -23,7 +26,7 @@ Something like this should be displayed in the terminal:
 2019-10-04T22:45:16.701Z - info init Loading configuration from "/home/pi/.cncrc"
 2019-10-04T22:45:17.931Z - info init Starting the server at http://127.0.1.1:8000
 ```
-That means the CNCjs server is running, ready to accept connections from a browser.  Start the Chromium browser on your Pi (other browsers than Chromium will probably work too) and enter the URL "127.0.1.1:8000" (alternatively, you can write that as "localhost:8000").  It should say "Loading" and after a few seconds the CNCjs user interface should appear in the browser.
+That means the CNCjs server is running, ready to accept connections from a browser.  Start the Chromium browser on your Pi (other browsers than Chromium will probably work too) and enter the URL "localhost:8000" (without the quotes).  It should say "Loading" and after a few seconds the CNCjs user interface should appear in the browser.
 
 To stop the CNCjs server, type ^C (Ctrl-C) in the terminal.
 
