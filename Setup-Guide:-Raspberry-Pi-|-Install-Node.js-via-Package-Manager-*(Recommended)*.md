@@ -46,7 +46,7 @@ If your Pi is headless (no graphics display), you can connect from a browser on 
    To fix that, you can do this:
    ```
    cd /usr/lib/node_modules/cncjs/node_modules
-   sudo npm rebuild --update-binary--unsafe-perm 
+   sudo npm rebuild --update-binary --unsafe-perm 
    ```
    There should be many lines of output as it recompiles the serialport code.  When it finishes, you can retry the `cncjs --port 8000` command and connect from a browser.
 
