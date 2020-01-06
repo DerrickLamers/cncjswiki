@@ -20,9 +20,9 @@ pm2 stop $(which cncjs)  # stop previous instance
 pm2 delete $(which cncjs)  # delete previous instance
 
 # To start CNCjs manually with mounted TinyWeb, do this
-cncjs -m /tinyweb:/home/pi/tinyweb
+cncjs -m /tinyweb:/home/pi/tinyweb/src
 
 # If you want to use PM2 to auto-start CNCjs/TinyWeb, do this:
-pm2 start $(which cncjs) -- --port 8000 -m /tinyweb:/home/pi/tinyweb
+pm2 start $(which cncjs) -- --port 8000 -m /tinyweb:/home/pi/tinyweb/src
 pm2 save # Set current running apps to startup
 ```
