@@ -1,10 +1,14 @@
 This is the official way to install CNCjs on a Raspberry Pi.  There are some alternative ways, but this is the one you should use unless you have a good reason - and are familiar enough with Linux and the node.js ecosystem to understand the ins and outs of the various tools.  Using this approach will make it easier to get help on the Facebook CNCjs User's Group.
 
-The first step is to open a console window.  If you are using the graphical environment, do that by clicking on the black square icon at the upper left.  If you are not using the graphical environment, you are probably already at a console prompt like "pi@SOMENAME:~ $".
+### Basics of Terminal Commands
 
-### [Install Node.js via Package Manager](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions)
+The first step is to open a terminal (console) window.  If you are using the graphical environment, do that by clicking on the black square icon at the upper left.  If you are not using the graphical environment, you are probably already in a terminal environment.  A terminal prompt looks like **pi@HOSTNAME:~ $**.  "pi" is the user name - on a Raspberry Pi, the default username is "pi", and the instructions below assume that you have not changed that.  "HOSTNAME" is the name of the machine itself - if you have multiple Raspberry Pis, they will probably have different names.  The part after the ":" is the directory name - "\~" is shorthand for "the current user's home directory".  If you have changed to a different directory, that field with show where you are.
 
-Type these commands, one at a time, at the command prompt.
+**In the following discussion, when it says to enter something at the terminal prompt, you can type them manually, but it is much better to copy and paste from these instructions to avoid mistakes.**
+
+### Install Node.js via Package Manager
+
+Enter these commands, one at a time, at the terminal prompt.
 
 ```
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
@@ -12,11 +16,11 @@ sudo apt install -y nodejs build-essential
 sudo npm install -g npm@latest
 sudo npm install -g cncjs@latest --unsafe-perm
 ```
-This will take awhile and generate quite a lot of output as shown [here](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Example-Output-from-Installation).  If this step appears to fail you can look [here](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Installation-Problems-and-Solutions) for possible solutions.
+This will take awhile and generate quite a lot of output as shown [here](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Example-Output-from-Installation).  Note that WARN lines are not errors, so do not worry about them.  If this step appears to fail - by generating ERROR lines - you can look [here](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Installation-Problems-and-Solutions) for possible solutions.
 
 ### Test the Installation
 
-At this point you should run a quick test to see if things are working.  Run this command:
+At this point you should run a quick test to see if things are working.  Enter this at the terminal prompt:
 
 ```
 cncjs
@@ -43,7 +47,7 @@ If your Pi is headless (no graphics display), you can connect from a browser on 
    requires NODE_MODULE_VERSION 64. Please try re-compiling or re-installing the module (for instance,
    using `npm rebuild` or `npm install`).
    ```
-   To fix that, you can do this:
+   To fix that, enter these commands at the terminal prompt:
    ```
    cd /usr/lib/node_modules/cncjs/node_modules
    sudo npm rebuild --update-binary --unsafe-perm 
@@ -56,7 +60,7 @@ After you get a successful test, kill the CNCjs server by typing ^C (Ctrl-C) and
 
 ### Autostarting the server
 
-To make the CNCjs server start automatically, do this:
+To make the CNCjs server start automatically, enter this at the terminal prompt:
 
 ```
 (crontab -l | grep -v cncjs; echo "@reboot $(which cncjs) >>$HOME/cncjs.log 2>&1") | crontab -
@@ -66,19 +70,19 @@ That looks pretty cryptic, so I will break it down in cause you are interested. 
 
 SOMETHING in this case is `@reboot $(which cncjs) >>$HOME/cncjs.log 2>&1` .  `@reboot` is the crontab time specification for "run the following command once every time the computer reboots".  `$(which cncjs)` means "find where the cncjs executable command is located and insert the full pathname in place of the `$(which cncjs)`.  `>>$HOME/cncjs.log` means "append any normal (non-error) output of the command to the file cncjs.log in the user's home directory".  `2>&1` means "also send error output to the same place that normal output is going".
 
-If you need to add arguments to the cncjs command, for example to set up mounts for pendants, the extra arguments go between the `$(which cncjs)` and the `>>$HOME/cncjs.log`.  For example, if you want to use the cncjs-shopfloor-tablet UI, you could say:
+If you need to add arguments to the cncjs command, for example to set up mounts for pendants, the extra arguments go between the `$(which cncjs)` and the `>>$HOME/cncjs.log`.  For example, if you want to use the cncjs-shopfloor-tablet UI, you could enter the following instead of the previous:
 
 ```
 (crontab -l | grep -v cncjs; echo "@reboot $(which cncjs) -m /tablet:$HOME/cncjs-shopfloor-tablet/src >>$HOME/cncjs.log 2>&1") | crontab -
 ```
 
-If you want to turn off auto-start, you can do this:
+If you want to turn off auto-start, you can enter this at the terminal prompt:
 
 ```
 crontab -l | grep -v cncjs | crontab -
 ```
 
-and to turn it back on you can repeat the earlier recipe.  Alternatively you can use `crontab -e` with a text editor to manually edit the file and delete or comment-out (with #) the `@reboot ...` line.
+and to turn it back on you can repeat the earlier recipe.  Alternatively you can enter `crontab -e` and then use the text editor that pops up to manually edit the file and delete or comment-out (with #) the `@reboot ...` line.
 
 
 ### Autostarting the browser
@@ -87,7 +91,7 @@ Starting the server as above does not start a user interface; to get the user in
 
 Running the browser on the Pi works best with a faster Pi like a Pi3 or Pi4.  The CNCjs user interface performance on lower-end Pis is marginal at best.  Running only the cncjs server works well on any Pi, even a Pi Zero.
 
-To make the Chromium browser start automatically, and display the CNCjs user interface, do this (lines beginning with "# " are comments that are provided for your understanding):
+To make the Chromium browser start automatically, and display the CNCjs user interface, enter this at the terminal prompt:
 
 ```
 cd /home/pi
