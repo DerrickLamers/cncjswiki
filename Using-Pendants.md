@@ -2,7 +2,7 @@
 
 Pendants are CNCjs extensions that let you control CNCjs in other ways than the main CNCjs UI.  For example, there are pendants for minimal jogging on a small display (cncjs-pendant-tinyweb) and running jobs in a shop environment on a tablet computer (cncjs-shopfloor-tablet).
 
-The fundamental way of accessing a pendant is by adding a suffix to the browser URL that points to CNCjs.  For example, if the main CNCjs URL is "http://localhost:8000/", you might access cncjs-shopfloor-tablet via "http://localhost:8000/tablet". There are some complications and specific scenarios that will be described below in the Using Pendants section.
+The fundamental way of accessing a pendant is by adding a suffix to the browser URL that points to CNCjs.  For example, if the main CNCjs URL is "http://localhost:8000/", you might access cncjs-shopfloor-tablet via "http://localhost:8000/tablet". Some specific scenarios are described below in the [Running Pendants](https://github.com/cncjs/cncjs/wiki/Using-Pendants#running-pendants) section.
 
 _This page describes pendants that involve graphical controls.  There are some other "keyboard" pendants that do not involve a graphical user interface, but rather let you use the buttons on various kinds of keyboards and game controllers.  They work differently and are not described here._
 
@@ -69,15 +69,15 @@ You can have multiple pendants at once, like this
 * The individual mounts go inside the [ ] brackets
 * If you have more than one mount, they must be separated by commas, but the last one must NOT have a comma after it
 
-## Using Pendants
+## Running Pendants
 
 To use a pendant you must browse to a URL that includes the pendant name at the end.  If the main CNCjs UI is at the URL "http://localhost:8000", the tinyweb pendant would be at "http://localhost:8000/tinyweb".  The suffix is not necessarily "tinyweb", but rather whatever name you used in the "route" line in .cncjs.
 
-### Using Pendants from the CNCjs App
+### Running Pendants from the CNCjs App
 
 The "app" version of CNCjs does not use an external browser, but instead bundles a browser and everything else into a "click to run" application.  In that version, there is no URL bar, so you can't just add the right suffix to the URL.  Instead, the View dropdown menu has a "View in Browser" section at the bottom, with choices for all the pendants that you have installed.  If you click on one of those items, it will open an external browser with the URL set to the pendant.
 
-### Using Pendants from Phones and Other Machines
+### Running Pendants from Phones and Other Machines
 
 The key to using a pendant from a machine other than the one running CNCjs is to find the right URL.  In the normal URL "http://localhost:8000", the "localhost" part refers to the IP address of the machine that is running the CNCjs server component. The "server" is the part of the code that talks directly to the CNC controller.  It runs on the computer that is physically connected - typically via a USB cable - to the CNC controller (Grbl, etc).  The CNCjs user interface, which runs inside a web browser, can run on that same computer or on any computer that can get to the "server" computer over the network.
 
