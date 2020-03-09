@@ -86,3 +86,98 @@ To run the user interface - either the normal CNCjs UI or a pendant UI - on anot
 There are ways to force a given computer to have an address that will not change, but they differ from OS to OS.  Search the web for "assign static IP" to learn how to do it on different systems.
 
 Once you have found the IP address of the CNCjs server computer, you can run a CNCjs user interface on any browser that is on that same network by entering a URL like "http://192.168.1.5:8000/tinyweb".  If you omit the /tinyweb suffix you will get the main CNCjs UI.  With the suffix you will get the selected pendant UI.
+
+### Using the App with Browsers on Other Machines (like Phones)
+
+The bundled "app" version of CNCjs works nicely when everything is running on one machine, but it is tricky - but not impossible - to access from outside machines.  There are several problems to solve:
+
+* Instead of listening for any network connection that comes into the server machine, the app normally only listens for internal connections inside the same computer.  Instead of listening on the server computer's outside IP address - something like 192.168.1.15 - it listens on the special "myself" IP address 127.0.0.1.  You can't get to that from, say, a phone, because if you browse to http://127.0.0.1 on the phone, that means the phone itself. On any machine, 127.0.0.1 means "this machine".
+* Instead of using the normal CNCjs port number 8000, the app chooses a random port number that can change every time.  This works within the app because it controls all components that run on the one machine, and can thus inform them of the special addressing.
+* It is possible that a firewall - for example Windows Defender Firewall that comes bundled with Windows - might block external access to the CNCjs port, even after we set it to the standard 8000 one.
+
+#### Forcing the App IP Address and Port (Windows)
+
+So how do we work around this?  You can tell the CNCjs app to use the main computer's normal IP address and the normal CNCjs port number.  Unfortunately, you can't do it in the .cncrc file; it has to be done on the command line that is used to start the app.  Getting to that command line is a bit of a dance.  Here is how to do it on Windows:
+
+First, type CNCjs in the "Type here to search" Cortana bar at the bottom of the screen.  That should find the CNCjs app. 
+ Choose Open File Location:
+
+![image](https://user-images.githubusercontent.com/4861133/76241521-339dd280-61d9-11ea-9eeb-f35866c6a6c2.png)
+
+That will take you to an Explorer window with the CNCjs shortcut highlighted. Right-click on that and choose Properties:
+
+![image](https://user-images.githubusercontent.com/4861133/76240813-f7b63d80-61d7-11ea-987a-277d0716e80e.png)
+
+That, in turn, will bring up a Properties panel:
+
+![CNCjs-shortcut](https://user-images.githubusercontent.com/4861133/76240477-6777f880-61d7-11ea-9a71-f0e9bffc3257.png)
+
+You will need to change the value of the Target field.  It will normally contain something like
+
+`C:\Users\wmb\AppData\Local\Programs\cncjs-app\CNCjs.exe`
+
+You need to add stuff to the end, which will require clicking in the box and using the arrow keys to scroll to the end, then typing the new stuff:
+
+`C:\Users\wmb\AppData\Local\Programs\cncjs-app\CNCjs.exe --host 192.168.2.12 --port 8000`
+
+In the host field, you need the actual IP address of your PC.  Ask the internet to teach you how to find it if you don't already know.  Unfortunately, as mentioned above, it might not stay the same forever unless you have assigned a static IP address.  The --port field should be set to 8000.
+
+### Getting Through the Windows Firewall
+
+(If you think doing this is a pain in the ass, you should try writing these instructions and getting all the screenshots.)
+
+#### Firewall Off - Easy, but Insecure
+The easy, and insecure, way is to turn off the Windows Firewall for private networks:
+
+First type "Firewall" in the Cortana "Type here to search" box.  That should bring up a Windows Security window.
+
+![image](https://user-images.githubusercontent.com/4861133/76243184-030b6800-61dc-11ea-84fc-85e896d0f2dc.png)
+
+I assume that you are on a private network.  You really should not turn off the firewall on a public one.  Click on Private Network to get to this screen:
+
+![image](https://user-images.githubusercontent.com/4861133/76244247-c80a3400-61dd-11ea-8e92-f3fbe44d9ad6.png)
+
+Click on the On button to turn it off, then allow the changes when the warning pops up.
+
+Now you should be able to access CNCjs from another device, using a URL like http://192.168.1.15:8000, or a pendant with a URL like http://192.168.1.15:8000/tinyweb .
+
+#### Special Firewall Rule - Harder, More Secure
+
+The right way to allow CNCjs access from another machine is to create a special firewall rule.  Start by typing "firewall" in the Cortana "Type here to search" box, bringing up this screen:
+
+![image](https://user-images.githubusercontent.com/4861133/76244041-6944ba80-61dd-11ea-94a8-4e268c21bde0.png)
+
+Click On Advanced Settings for this screen:
+
+![image](https://user-images.githubusercontent.com/4861133/76244823-e7ee2780-61de-11ea-9f91-0dede902ecf6.png)
+
+Click on Inbound Rules to get this:
+
+![image](https://user-images.githubusercontent.com/4861133/76244955-284da580-61df-11ea-91cc-5cef1c11910a.png)
+
+Click on New Rule... to get this:
+
+![image](https://user-images.githubusercontent.com/4861133/76245138-719df500-61df-11ea-927b-a82b218e9079.png)
+
+Choose Port and Next
+
+![image](https://user-images.githubusercontent.com/4861133/76245257-a447ed80-61df-11ea-8fdb-3e3008efb3ee.png)
+
+Choose TCP, enter port 8000, and Next
+
+![image](https://user-images.githubusercontent.com/4861133/76245331-c5104300-61df-11ea-8813-6f693d84209a.png)
+
+Choose Allow
+
+![image](https://user-images.githubusercontent.com/4861133/76245405-ea04b600-61df-11ea-9a82-88070b6c8740.png)
+
+Choose Domain and Private.  It is not safe to allow access on CNCjs on public networks (although you could set up CNCjs to require a user login - but that is a separate topic).
+
+![image](https://user-images.githubusercontent.com/4861133/76245493-16203700-61e0-11ea-9be0-ab0c40526bbc.png)
+
+Enter the name for this rule and a description, and hit Finish
+
+![image](https://user-images.githubusercontent.com/4861133/76245721-76af7400-61e0-11ea-99bc-4c8f887b0f38.png)
+
+When you succeed there will be a new CNCjs rule that allows incoming connections to the CNCjs server.
+
