@@ -124,7 +124,7 @@ In the host field, you need the actual IP address of your PC.  Ask the internet 
 
 ### Getting Through the Windows Firewall
 
-(If you think doing this is a pain in the ass, you should try writing these instructions and getting all the screenshots.)
+(If you think doing this is tedious (it is), you should try writing these instructions and getting all the screenshots.)
 
 #### Firewall Off - Easy, but Insecure
 The easy, and insecure, way is to turn off the Windows Firewall for private networks:
