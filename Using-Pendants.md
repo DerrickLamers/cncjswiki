@@ -95,6 +95,18 @@ The bundled "app" version of CNCjs works nicely when everything is running on on
 * Instead of using the normal CNCjs port number 8000, the app chooses a random port number that can change every time.  This works within the app because it controls all components that run on the one machine, and can thus inform them of the special addressing.
 * It is possible that a firewall - for example Windows Defender Firewall that comes bundled with Windows - might block external access to the CNCjs port, even after we set it to the standard 8000 one.
 
+#### Forcing the App IP Address and Port (MacOS)
+
+_I don't have a Mac anymore so I can't give detailed step by step instructions, and I can't test this; I got this information by piecing together stuff from the web.  Somebody with a Mac, please check this and fix it if necessary._
+
+You need to use **AppleScript Editor** to make an executable script that uses "open" to run the command and add the --host and --port arguments.  The script command will look something like:
+
+```
+do shell script "open -a CNCjs --args --host 192.168.1.15 --port 8000"
+```
+
+Replace 192.168.1.15 with the IP address of your Mac.
+
 #### Forcing the App IP Address and Port (Windows)
 
 So how do we work around this?  You can tell the CNCjs app to use the main computer's normal IP address and the normal CNCjs port number.  Unfortunately, you can't do it in the .cncrc file; it has to be done on the command line that is used to start the app.  Getting to that command line is a bit of a dance.  Here is how to do it on Windows:
