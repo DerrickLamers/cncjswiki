@@ -102,7 +102,7 @@ _I don't have a Mac anymore so I can't give detailed step by step instructions, 
 You need to use **AppleScript Editor** to make an executable script that uses "open" to run the command and add the --host and --port arguments.  The script command will look something like:
 
 ```
-do shell script "open -a CNCjs --args --host 192.168.1.15 --port 8000"
+do shell script "open -a CNCjs --args -- --host 192.168.1.15 --port 8000"
 ```
 
 Replace 192.168.1.15 with the IP address of your Mac.
