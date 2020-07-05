@@ -6,7 +6,7 @@
 # Update & Install Tools
 sudo apt-get update -y
 sudo apt-get upgrade -y
-sudo apt-get install build-essential imagemagick libv4l-dev libjpeg-dev cmake -y
+sudo apt-get install build-essential git imagemagick libv4l-dev libjpeg-dev cmake -y
 
 # Clone Repo in /tmp
 cd /tmp
