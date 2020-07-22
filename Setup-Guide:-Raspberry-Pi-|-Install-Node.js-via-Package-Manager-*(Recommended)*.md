@@ -12,8 +12,13 @@ Enter these commands, one at a time, at the terminal prompt.
 
 ```
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-sudo apt install -y nodejs build-essential
+sudo apt install -y nodejs build-essential npm
 sudo npm install -g npm@latest
+```
+
+Ignore warnings from the npm install step.  It is just being annoying.
+
+```
 sudo npm install -g cncjs@latest --unsafe-perm
 ```
 This will take awhile and generate quite a lot of output as shown [here](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Example-Output-from-Installation).  Note that WARN lines are not errors, so do not worry about them.  If this step appears to fail - by generating ERROR lines - you can look [here](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Installation-Problems-and-Solutions) for possible solutions.
@@ -60,21 +65,18 @@ After you get a successful test, kill the CNCjs server by typing ^C (Ctrl-C) and
 
 ### Autostarting the server
 
-To make the CNCjs server start automatically, enter this at the terminal prompt:
+To make the CNCjs server start automatically, enter this verbatim at the terminal prompt:
 
 ```
-(crontab -l | grep -v cncjs; echo "@reboot $(which cncjs) >>$HOME/cncjs.log 2>&1") | crontab -
+((crontab -l || true) | grep -v cncjs; echo "@reboot $(which cncjs) >>$HOME/cncjs.log 2>&1") | crontab -
 ```
+If it says "no crontab for pi", don't worry about it.
 
-That looks pretty cryptic, so I will break it down in cause you are interested.  `crontab -l` lists the current contents of the user's crontab file (the file that controls automatic execution of programs).  `| grep -v cncjs` takes the output of the previous command and removes any existing lines that contain the word 'cncjs' (necessary in case you re-execute the command; you don't want to start CNCjs twice).  `echo "SOMETHING"` emits a line containing SOMETHING.  '( A ; B )` appends the output of the command B to the end of the command A, so the echo'ed line gets added to the end of the existing crontab file minus any previous cncjs lines. `| crontab -` takes what comes before and puts it back in the crontab file.
+That looks pretty cryptic, so I will break it down in cause you are interested.  `(crontab -l || true)` lists the current contents of the user's crontab file (the file that controls automatic execution of programs) - but if there is no crontab file, it just continues.  `| grep -v cncjs` takes the output of the previous command and removes any existing lines that contain the word 'cncjs' (necessary in case you re-execute the command; you don't want to start CNCjs twice).  `echo "SOMETHING"` emits a line containing SOMETHING.  '( A ; B )` appends the output of the command B to the end of the command A, so the echo'ed line gets added to the end of the existing crontab file minus any previous cncjs lines. `| crontab -` takes what comes before and puts it back in the crontab file.
 
 SOMETHING in this case is `@reboot $(which cncjs) >>$HOME/cncjs.log 2>&1` .  `@reboot` is the crontab time specification for "run the following command once every time the computer reboots".  `$(which cncjs)` means "find where the cncjs executable command is located and insert the full pathname in place of the `$(which cncjs)`.  `>>$HOME/cncjs.log` means "append any normal (non-error) output of the command to the file cncjs.log in the user's home directory".  `2>&1` means "also send error output to the same place that normal output is going".
 
-If you need to add arguments to the cncjs command, for example to set up mounts for pendants, the extra arguments go between the `$(which cncjs)` and the `>>$HOME/cncjs.log`.  For example, if you want to use the cncjs-shopfloor-tablet UI, you could enter the following instead of the previous:
-
-```
-(crontab -l | grep -v cncjs; echo "@reboot $(which cncjs) -m /tablet:$HOME/cncjs-shopfloor-tablet/src >>$HOME/cncjs.log 2>&1") | crontab -
-```
+If you need to add arguments to the cncjs command, the extra arguments go between the `$(which cncjs)` and the `>>$HOME/cncjs.log`.
 
 If you want to turn off auto-start, you can enter this at the terminal prompt:
 
