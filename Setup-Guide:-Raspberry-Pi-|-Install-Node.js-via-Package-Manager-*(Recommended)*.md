@@ -11,7 +11,7 @@ The first step is to open a terminal (console) window.  If you are using the gra
 Enter these commands, one at a time, at the terminal prompt.
 
 ```
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt install -y nodejs build-essential
 sudo npm install -g npm@latest
 sudo npm install -g cncjs@latest --unsafe-perm
