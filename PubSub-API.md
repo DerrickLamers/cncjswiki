@@ -12,5 +12,18 @@ The cncjs frontend webapp uses PubSubJS for communication between widgets. (It a
 |App|message:connect|
 ||message:resize|
 |Visualizer|gcode:bbox|
+||gcode:unload|
+
+## Pubsub subscribers
+|Component|Topics|
+|---|---|
+|PrimaryWidgets|updatePrimaryWidgets|
+|SecondaryWidgets|updateSecondaryWidgets|
+|Console|resize|
+|Custom|message:connect|
+||message:resize|
+|Gcode|gcode:bbox|
+|SecondaryToolbar|updateMachineProfiles|
+|Visualizer|resize|
 
 
