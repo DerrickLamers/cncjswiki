@@ -67,10 +67,10 @@ The 'command' event can be used to send the following commands to the controller
 |rapidOverride|||
 |energizeMotors:on|||
 |energizeMotors:off|||
-|gcode| gcode, context)||
-|macro:load|'\<macro-id\>', context, callback)||
-|macro:run|'\<macro-id\>', context, callback)||
-|watchdir:load|'/path/to/file', callback)||
+|gcode| gcode, context||
+|macro:load|'\<macro-id\>', context, callback||
+|macro:run|'\<macro-id\>', context, callback||
+|watchdir:load|'/path/to/file', callback||
 
 
 ### Socket.io events
