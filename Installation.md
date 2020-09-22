@@ -213,7 +213,10 @@ docker pull cncjs/cncjs:latest
 
 <b>Step 2:</b> Use the `docker run` command to create the Docker container and run the server, like so:
 ```
-docker run --privileged -p 8000:8000 --rm --name cncjs cncjs/cncjs:latest
+docker stop cncjs # [optional] stop a running cncjs container
+docker rm cncjs # [optional] remove existing cncjs container
+docker run --privileged -p 8000:8000 --detach --name cncjs cncjs/cncjs:latest
+docker exec -it cncjs /bin/bash # [optional] to get a bash shell in the container
 ```
 By default a container is not allowed to access any devices, but a "privileged" container is given access to all devices on the host.
 
