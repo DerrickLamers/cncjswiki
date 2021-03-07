@@ -21,7 +21,7 @@ System Setup & Preparation](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Ras
 
 ### Node.js Installation
 
-Node.js 6 or higher is recommended. You can install [Node Version Manager](https://github.com/creationix/nvm) to manage multiple Node.js versions. If you have `git` installed, just clone the `nvm` repo, and check out the latest version:
+Node.js 6 or higher and 10 or lower is recommended. However You can install [Node Version Manager](https://github.com/creationix/nvm) to manage multiple Node.js versions. If you have `git` installed, just clone the `nvm` repo, and check out the latest version:
 ```
 git clone https://github.com/creationix/nvm.git ~/.nvm
 cd ~/.nvm
