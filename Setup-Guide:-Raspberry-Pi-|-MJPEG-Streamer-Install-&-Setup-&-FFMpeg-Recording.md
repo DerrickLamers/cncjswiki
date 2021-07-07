@@ -224,7 +224,7 @@ sudo make install
 # Recored Stream w/ ffmpeg
 ```
 # [Varables]
-source_stram="http://localhost:8080/?action=stream"
+source_stream="http://localhost:8080/?action=stream"
 destination_directory="/home/pi/Videos"
 destination_file="cncjs-recording_$(date +'%Y%m%d_%H%M%S').mpeg"
 
