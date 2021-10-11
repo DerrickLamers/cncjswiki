@@ -1,6 +1,6 @@
 # cncjs Server API
 
-The cncjs server is an [Express web server](expressjs.com) running on [Node.js](nodejs.org). The server defines an HTTP API.
+The cncjs server is an [Express web server](https://expressjs.com) running on [Node.js](https://nodejs.org). The server defines an HTTP API.
 
 # Endpoints
 
