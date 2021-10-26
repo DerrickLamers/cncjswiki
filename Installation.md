@@ -177,15 +177,22 @@ Check out an example configuration file [here](https://github.com/cncjs/cncjs/bl
 
 ## Git Installation
 
-If you prefer to use Git instead of `npm install`, You can create a local clone of the repository on your computer and sync from GitHub. Type the following commands to install and run `cnc`:
+If you prefer to use Git instead of `npm install`, You can create a local clone of the repository on your computer and sync from GitHub. Type the following commands to install and run `cncjs`:
 ```
 git clone https://github.com/cncjs/cncjs.git
 cd cncjs
 git checkout master
-npm install
-npm run prepare
-./bin/cncjs
+
+yarn install
+yarn build-prod
+    
+cd dist/cncjs
+yarn install
+cd ../..
+
+node bin/cncjs
 ```
+For running only the generated `dist` folder and `bin\cncjs` script is required, you can copy this to other drives etc.
 
 To update your local copy with latest changes, use:
 ```
