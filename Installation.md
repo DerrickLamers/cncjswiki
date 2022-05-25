@@ -137,7 +137,7 @@ Check out an example configuration file [here](https://github.com/cncjs/cncjs/bl
 {
   "ports": [
      {
-       "comName": "/dev/ttyAMA0",
+       "path": "/dev/ttyAMA0",
        "manufacturer": ""
      }
   ],
