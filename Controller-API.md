@@ -37,7 +37,7 @@ The CNC controller listens for and handles these events. The cncjs-controller ha
 |open|openPort(port, options, callback)|
 |close|closePort(port, callback)|
 |list|listPorts(callback)|
-|command|command(cmd, ...args)|
+|command|command(cmd, port, ...args)|
 |write|write(port, data, context)|
 |writeln|writeln(port data, context)|
 
